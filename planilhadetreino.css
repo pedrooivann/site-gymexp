@@ -1,0 +1,79 @@
+body{
+    background-image: url('/images/planilhabackground.png');
+    background-repeat: repeat;
+}
+
+#painel-section {
+    height: 100vh;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+
+}
+
+#right-main-section {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 400px); 
+    margin-left: 400px;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+
+
+#painel-container {
+    margin-top: 30px;
+    height: 500px;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+
+
+.weekdiv {
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-top: 30px;
+    min-height: 300px;
+    background-color: rgb(255, 255, 255);
+}
+
+.weekdiv h2{
+    font-weight: 900;
+    color: rgb(231, 189, 0);
+    margin-top: 20px;
+}
+
+.weekdiv-container {
+    margin: 40px
+}
+
+.addExerciceBtn {
+    cursor: pointer;
+    background-color: rgb(255, 217, 0);
+    border-radius: 100%;
+    border-style: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+}
+.weektable{
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+
+.weektable td,
+.weektable th {
+    min-width: 150px;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 5px;
+}
+
+
