@@ -26,7 +26,16 @@
     </header>
 
     <section id="painel-section">
-        <div id="painel-container"></div>
+
+        <div id="painel-container">
+            <div id="checkbox-container">
+                <input type="checkbox" name="" id="resttime-checkbox"> Incluir tempo de descanso.<br>
+                <input type="checkbox" name="" id="weight-checkbox"> Incluir peso.<br>
+                <input type="checkbox" name="" id="tempo-checkbox"> Incluir tempo.<br>
+                <input type="checkbox" name="" id="repsinreserve-checkbox"> Incluir Repetitions in Reserve (RIR)<br>
+            </div>
+        </div>
+
     </section>
 
     <section id="right-main-section">
@@ -36,107 +45,113 @@
                 <h1 id="weektitle">Semana 1</h1>
 
                 <h2>Segunda Feira</h2>
-                <table  class="weektable" id="t-segunda">
+                <table class="weektable" id="t-segunda">
                     <thead>
                         <th>Exercício</th>
                         <th>Séries</th>
                         <th>Repetições</th>
                     </thead>
-                    
-                    <tbody>
+
+                    <tbody class="table-tbody">
 
                     </tbody>
                 </table>
-                <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
-                
+                <button class="addExerciseBtn" onclick="adicionarExercicio('t-segunda')">➕</button>
+
                 <h2>Terça Feira</h2>
-                <table  class="weektable" id="t-terca">
+                <table class="weektable" id="t-terca">
                     <thead>
                         <th>Exercício</th>
                         <th>Séries</th>
                         <th>Repetições</th>
                     </thead>
-                    
+
                     <tbody>
 
                     </tbody>
                 </table>
-               <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
 
-               <h2>Quarta Feira</h2>
-                <table  class="weektable" id="t-quarta">
+                <button class="addExerciseBtn" onclick="adicionarExercicio('t-terca')">➕</button>
+
+                <h2>Quarta Feira</h2>
+                <table class="weektable" id="t-quarta">
                     <thead>
                         <th>Exercício</th>
                         <th>Séries</th>
                         <th>Repetições</th>
                     </thead>
-                          
+
                     <tbody>
 
                     </tbody>
                 </table>
-               <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
 
-               <h2>Quinta Feira</h2>
-                <table  class="weektable" id="t-quinta">
+                <button class="addExerciseBtn" onclick="adicionarExercicio('t-quarta')">➕</button>
+
+                <h2>Quinta Feira</h2>
+                <table class="weektable" id="t-quinta">
                     <thead>
                         <th>Exercício</th>
                         <th>Séries</th>
                         <th>Repetições</th>
                     </thead>
-                          
+
                     <tbody>
 
                     </tbody>
                 </table>
-               <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
 
-               <h2>Sexta Feira</h2>
-                <table  class="weektable" id="t-sexta">
+                <button class="addExerciseBtn" onclick="adicionarExercicio('t-quinta')">➕</button>
+               
+
+                <h2>Sexta Feira</h2>
+                <table class="weektable" id="t-sexta">
                     <thead>
                         <th>Exercício</th>
                         <th>Séries</th>
                         <th>Repetições</th>
                     </thead>
-                          
+
                     <tbody>
 
                     </tbody>
                 </table>
-               <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
+                <button class="addExerciseBtn" onclick="adicionarExercicio('t-sexta')">➕</button>
+                   
+                    <h2>Sábado</h2>
+                    <table class="weektable" id="t-sabado">
+                        <thead>
+                            <th>Exercício</th>
+                            <th>Séries</th>
+                            <th>Repetições</th>
+                        </thead>
 
-               <h2>Sábado</h2>
-                <table  class="weektable" id="t-sabado">
-                    <thead>
-                        <th>Exercício</th>
-                        <th>Séries</th>
-                        <th>Repetições</th>
-                    </thead>
-                          
-                    <tbody>
+                        <tbody>
 
-                    </tbody>
-                </table>
-               <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
+                        </tbody>
+                    </table>
+                    <button class="addExerciseBtn" onclick="adicionarExercicio('t-sabado')">➕</button>
+                        
 
-               <h2>Domingo</h2>
-                <table  class="weektable" id="t-domingo">
-                    <thead>
-                        <th>Exercício</th>
-                        <th>Séries</th>
-                        <th>Repetições</th>
-                    </thead>
-                          
-                    <tbody>
+                        <h2>Domingo</h2>
+                        <table class="weektable" id="t-domingo">
+                            <thead>
+                                <th>Exercício</th>
+                                <th>Séries</th>
+                                <th>Repetições</th>
+                            </thead>
 
-                    </tbody>
-                </table>
-               <button class="addExerciceBtn" onclick="adicionarExercicio">➕</button>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <button class="addExerciseBtn" onclick="adicionarExercicio('t-domingo')">➕</button>
+                            
             </div>
         </div>
 
     </section>
-
+    <script src="planilhadetreino.js"></script>
 
 </body>
 
