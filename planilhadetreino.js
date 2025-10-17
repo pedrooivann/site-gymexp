@@ -1,22 +1,27 @@
+
+
 function adicionarExercicio(idTabela) {
-    const nomeExercicio = prompt("Digite o nome do exercício:");
-    const numSeries = parseInt(prompt("Digite o número de séries:"));
-    const numRepeticoes = parseInt(prompt("Digite o número de repetições:"));
 
-    const weektable = document.getElementById(idTabela);
-
+    //Cria linha da tabela e celulas
     const linha = document.createElement("tr");
-    const novoExercicio = document.createElement("td");
-    const novaSerie = document.createElement("td");
-    const novaRepeticao = document.createElement("td");
+    const novo_exercicio = document.createElement("td");
+    const nova_serie = document.createElement("td");
+    const nova_repeticao = document.createElement("td"); 
 
-    novoExercicio.textContent = nomeExercicio;
-    novaSerie.textContent = numSeries;
-    novaRepeticao.textContent = numRepeticoes;
+    //Cria os inputs
+    const input_exercicio = document.createElement(input);
+    const input_serie = document.createElement(input);
+    const input_repeticao = document.createElement(input);
 
-    linha.appendChild(novoExercicio);
-    linha.appendChild(novaSerie);
-    linha.appendChild(novaRepeticao);
+    //Coloca os inputs dentro das células
+    novo_exercicio.appendChild(input_exercicio);
+    nova_serie.appendChild(input_serie);
+    nova_repeticao.appendChild(input_repeticao);
+
+    //Coloca as células dentro da linha
+    linha.appendChild(novo_exercicio);
+    linha.appendChild(nova_serie);
+    linha.appendChild(nova_repeticao);
 
     weektable.appendChild(linha);
 }
