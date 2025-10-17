@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url('/images/planilhabackground.png');
     background-repeat: repeat;
 }
@@ -15,7 +15,7 @@ body{
 #right-main-section {
     display: flex;
     flex-direction: row;
-    width: calc(100% - 400px); 
+    width: calc(100% - 400px);
     margin-left: 400px;
     min-height: 100vh;
     align-items: flex-start;
@@ -29,12 +29,14 @@ body{
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
 }
-#checkbox-container{
+
+#checkbox-container {
     margin: 40px 0 0 30px;
 }
-#checkbox-container input{
+
+#checkbox-container input {
     width: 20px;
-    height: 20px; 
+    height: 20px;
 }
 
 
@@ -47,7 +49,7 @@ body{
     background-color: rgb(255, 255, 255);
 }
 
-.weekdiv h2{
+.weekdiv h2 {
     font-weight: 900;
     color: rgb(231, 189, 0);
     margin-top: 20px;
@@ -67,19 +69,38 @@ body{
     width: 50px;
     height: 50px;
 }
-.weektable{
+
+.weektable {
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-
-
-.weektable td,
-.weektable th {
-    min-width: 150px;
-    border: 1px solid rgb(0, 0, 0);
-    font-size: 20px;
-    padding: 5px;
+.th-exercicio {
+    width: 200px;
+    height: 25px;
 }
 
+.th-series{
+    width: 50px;
+}
+.th-repeticoes{
+    width: 100px;
+}
 
+.th-series,
+.th-repeticoes {
+    height: 25px;
+    text-align: center;
+}
+
+.th-exercicio,
+.th-series,
+.th-repeticoes{
+    height: 25px;
+    background-color: rgb(255, 224, 167);
+}
+
+.weekdiv th,
+.weekdiv td{
+    padding: 2px;
+}

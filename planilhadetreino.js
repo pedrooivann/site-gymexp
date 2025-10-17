@@ -1,27 +1,75 @@
 
+const botaofuncao = document.querySelectorAll('.addExerciseBtn');
 
-function adicionarExercicio(idTabela) {
+botaofuncao.forEach((botao) => {
+    botao.addEventListener('click', () => {
 
-    //Cria linha da tabela e celulas
-    const linha = document.createElement("tr");
-    const novo_exercicio = document.createElement("td");
-    const nova_serie = document.createElement("td");
-    const nova_repeticao = document.createElement("td"); 
+        const plan_tabela = botao.previousElementSibling.querySelector('.table-tbody');
 
-    //Cria os inputs
-    const input_exercicio = document.createElement(input);
-    const input_serie = document.createElement(input);
-    const input_repeticao = document.createElement(input);
+        //Cria linha da tabela e celulas
+        const linha = document.createElement("tr");
+        const novo_exercicio = document.createElement("td");
+        const nova_serie = document.createElement("td");
+        const nova_repeticao = document.createElement("td");
 
-    //Coloca os inputs dentro das células
-    novo_exercicio.appendChild(input_exercicio);
-    nova_serie.appendChild(input_serie);
-    nova_repeticao.appendChild(input_repeticao);
+        //Cria os inputs
+        const input_exercicio = document.createElement("input");
+        const input_serie = document.createElement("input");
+        const input_repeticao = document.createElement("input");
 
-    //Coloca as células dentro da linha
-    linha.appendChild(novo_exercicio);
-    linha.appendChild(nova_serie);
-    linha.appendChild(nova_repeticao);
 
-    weektable.appendChild(linha);
-}
+        input_exercicio.type = "text";
+        input_serie.type = "number";
+        input_repeticao.type = "number";
+
+        Object.assign(input_exercicio.style, {
+            width: "200px",
+            textAlign: "left",
+        })
+
+        Object.assign(input_serie.style, {
+
+            width: "50px",
+            textAlign: "center"
+        })
+
+        Object.assign(input_repeticao.style, {
+            width: "100px",
+            textAlign: "center",
+        });
+
+        [input_exercicio, input_serie, input_repeticao].forEach(input => {
+            Object.assign(input.style, {
+                fontSize: "15px",
+                height: "25px",
+                backgroundColor: "rgb(229, 229, 229)",
+                borderRadius: "4px",
+                border: "none",
+                paddingLeft: "15px"
+            })
+        })
+
+        //Inputs
+
+        /*
+        novo_exercicio.className = "tinput_exercicio";
+        nova_serie.className = "tinput_serie";
+        nova_repeticao.className = "tinuput_repeticao";
+        */
+
+
+        //Coloca os inputs dentro das células
+        novo_exercicio.appendChild(input_exercicio);
+        nova_serie.appendChild(input_serie);
+        nova_repeticao.appendChild(input_repeticao);
+
+
+        //Coloca as células dentro da linha
+        linha.appendChild(novo_exercicio);
+        linha.appendChild(nova_serie);
+        linha.appendChild(nova_repeticao);
+
+        plan_tabela.appendChild(linha);
+
+    })
+});
