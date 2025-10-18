@@ -47,6 +47,7 @@ body {
     margin-top: 30px;
     min-height: 300px;
     background-color: rgb(255, 255, 255);
+    max-width: 500px;
 }
 
 .weekdiv h2 {
@@ -76,15 +77,15 @@ body {
 }
 
 .th-exercicio {
-    width: 200px;
+    width: 210px;
     height: 25px;
 }
 
 .th-series{
-    width: 50px;
+    width: 75px;
 }
 .th-repeticoes{
-    width: 100px;
+    width: 115px;
 }
 
 .th-series,
