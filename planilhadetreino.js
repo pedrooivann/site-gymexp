@@ -27,28 +27,30 @@ botaofuncao.forEach((botao) => {
 
         //Estilização dos Inputs criados
         Object.assign(input_exercicio.style, {
-            width: "200px",
+            backgroundColor: "rgba(255, 255, 255, 1)",
             textAlign: "left",
         })
 
         Object.assign(input_serie.style, {
 
-            width: "50px",
+            backgroundColor: "rgb(205, 205, 205)",
             textAlign: "center"
         })
 
         Object.assign(input_repeticao.style, {
-            width: "100px",
+
+            backgroundColor: "rgba(255, 255, 255, 1)",
             textAlign: "center",
         });
 
         [input_exercicio, input_serie, input_repeticao].forEach(input => {
             Object.assign(input.style, {
+                width: "100%",
+                boxSizing: "border-box",
                 fontSize: "15px",
                 height: "25px",
-                backgroundColor: "rgb(229, 229, 229)",
-                borderRadius: "4px",
                 border: "none",
+                borderBottom: "2px solid grey",
                 paddingLeft: "15px"
             })
         })
@@ -56,8 +58,9 @@ botaofuncao.forEach((botao) => {
         //Estilização botão de remover linha
         removerLinhaBtn.textContent = "❌";
         removerLinhaBtn.style.cursor = "pointer";
-        removerLinhaBtn.style.backgroundColor = "none";
+        removerLinhaBtn.style.backgroundColor = "transparent";
         removerLinhaBtn.style.border = "none";
+        removerLinhaBtn.style.padding = "0";
 
         //Coloca os inputs dentro das células
         novo_exercicio.appendChild(input_exercicio);
@@ -76,6 +79,5 @@ botaofuncao.forEach((botao) => {
         removerLinhaBtn.addEventListener('click', () => {
             linha.remove();
         })
-
     })
 });
