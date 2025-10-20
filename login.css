@@ -27,7 +27,7 @@ body {
     object-fit: cover;
     width: 100%;
     z-index: -1;
-    filter: brightness(0.3);
+    filter: brightness(0.3);/
 }
 
 
@@ -41,10 +41,10 @@ body {
 .div-login {
     display: flex;
     padding: 60px;
-    background: rgba(255, 255, 255, 0.503);
+    background: rgba(055, 055, 055, 0.503); /*rgba(255, 255, 255, 0.503)*/
     backdrop-filter: blur(10px) saturate(100%);
     border-radius: 20px;
-    box-shadow: 0 5px 80px rgba(102, 126, 234, 0.2);
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .User-div {
@@ -65,6 +65,13 @@ body {
 
 }
 
+.login-area a {
+    text-decoration: none;
+    color: #ffd460;
+    font-size: 14px;
+    font-weight: 700;
+}
+
 input {
     border-radius: 5px;
     background: rgba(238, 242, 240, 0.15);
@@ -74,15 +81,17 @@ input {
     padding: 15px;
     border: none;
     transition: all 0.4s ease;
+    color: white;
 }
 
 
 input:focus {
     outline: none;
-    background: rgba(216, 223, 13, 0.15);
+    background: white;
     backdrop-filter: blur(10px) saturate(180%);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
+    color: black;
 }
 
 .buttons-area {
@@ -98,32 +107,18 @@ button {
 
 .submit {
     background-color: #ffc428;
-    border: 1px solid black;
+    border: none;
     cursor: pointer;
 
 }
 
 .submit:hover {
-    background: linear-gradient(to bottom, #ffd999, #ffb333, #ff5d00);
-    transition: 0.3s;
-    animation: moverGradiente 5s linear infinite;
-    background-size: 100% 300%;
-
+    background-color: rgb(81, 255, 58);
+    box-shadow: 1px 0px 10px rgb(81, 255, 58);
+    transition: 1s;
 }
 
-@keyframes moverGradiente {
-    0% {
-        background-position: 50% 0%;
-    }
 
-    50% {
-        background-position: 50% 100%;
-    }
-
-    100% {
-        background-position: 50% 0%;
-    }
-}
 
 .criar-conta {
     border: none;
