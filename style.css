@@ -54,9 +54,9 @@
 }
 
 #sobrenos-link:hover {
-    color: green;
+    color: rgb(0, 204, 255);
 }
 
 #perfil-link:hover {
-    color: rgb(0, 204, 255);
+    color: green;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./perfil.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header id="main-header">
         <div id="div-logo">
@@ -25,29 +27,41 @@
 
     <main id="profile-main">
 
-        <section id="user-section">
-            <div id="user-info">
-                <img src="./images/user.png" alt="" id="user-img">
-                <h2 class="info">Nome do usuário</h2>
-                <p class="info">e-mail:</p>
-                <p class="info">Senha:</p>
-                <p class="info">Data de nascimento:</p>
-                <p class="info">Sexo:</p>
+        <section id="main-section">
+
+            <div class="user-container-general" id="usercontainer-infos">
+                <div id="user-placeholder">
+                    <img src="./images/user.png" alt="" id="user-img">
+                    <p>Login do user</p>
+                </div>
+                <div class="user-divs-general ">
+                    <p class="info">Nome:</p>
+                    <p class="info">E-mail:</p>
+                    <p class="info">Idade:</p>
+                    <p class="info">Sexo:</p>
+                </div>
+            </div>
+
+            <div class="user-container-general" id="usercontainer-fisico">
+                <h2 style="margin-top: 30px;">Informações físicas</h2>
+                <div class="user-divs-general ">
+                    
+                    <p class="info">Altura:</p>
+                    <p class="info">Peso:</p>
+                    <p class="info">IMC:</p>
+
+                    <button id="add-info">Adicionar informações</button>
+                </div>
             </div>
         </section>
 
         <section id="physical-section">
-            <div id="body-info">
-                <h2>Informações físicas</h2>
-                <p class="info">Altura:</p>
-                <p class="info">Peso:</p>
-                <p class="info">IMC:</p>
-            </div>
 
-            <button id="add-info">Adicionar informações</button>
+
         </section>
 
     </main>
-    
+
 </body>
+
 </html>
