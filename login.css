@@ -46,14 +46,16 @@ body {
     backdrop-filter: blur(10px) saturate(100%);
     border-radius: 20px;
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+    
 
 }
 
 .User-div {
     display: flex;
-    height: 30%;
+    height: 100px;
     margin-bottom: 50px;
     justify-content: center;
+    align-items: center;
 }
 
 .user-logo {
@@ -107,6 +109,10 @@ button {
     padding: 5px;
 }
 
+.account-redirect {
+    margin-top: 10px;
+}
+
 /* BOTÃO DE SUBMIT */
 .submit {
     background-color: #ffc428;
@@ -141,4 +147,17 @@ button {
         height: 100%;
     }
 
+}
+
+/*Registro CSS*/
+
+#names-div {
+    display: flex;
+    gap: 10px;
+}
+
+.info-div {
+    gap: 10px;
+    color: white;
+    display: flex;
 }

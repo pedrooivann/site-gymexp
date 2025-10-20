@@ -46,9 +46,9 @@ body {
 }
 
 .weekdiv {
+    display: block;
+    margin: 50px;
     color: rgb(255, 255, 255);
-    margin-left: 50px;
-    margin-top: 30px;
     min-height: 300px;
     max-width: 500px;
 }
