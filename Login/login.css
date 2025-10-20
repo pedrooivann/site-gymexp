@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+/* VIDEO DE FUNDO */
+.background {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.3);
+}
+
+/*LOGOMARCA*/
+.logo {
+    height: 300px;
+    margin-top: -50px;
+}
+
+
+/* AREA DE LOGIN */
+.div-login {
+    display: flex;
+    padding: 60px;
+    background: rgba(055, 055, 055, 0.503); /*rgba(255, 255, 255, 0.503)*/
+    backdrop-filter: blur(10px) saturate(100%);
+    border-radius: 20px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+    
+
+}
+
+.User-div {
+    display: flex;
+    height: 100px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-logo {
+    height: 110px;
+}
+
+.login-area {
+    flex-flow: column wrap;
+    display: flex;
+    gap: 10px;
+
+}
+
+.login-area a {
+    text-decoration: none;
+    color: #ffd460;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px) saturate(180%);
+    height: 25px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    transition: all 0.4s ease;
+    color: white;
+}
+
+
+input:focus {
+    outline: none;
+    background: white;
+    backdrop-filter: blur(10px) saturate(180%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    color: black;
+}
+
+.buttons-area {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+button {
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.account-redirect {
+    margin-top: 10px;
+}
+
+/* BOTÃO DE SUBMIT */
+.submit {
+    background-color: #ffc428;
+    border: none;
+    cursor: pointer;
+
+}
+
+.submit:hover {
+    background-color: rgb(81, 255, 58);
+    box-shadow: 1px 0px 10px rgb(81, 255, 58);
+    transition: 1s;
+}
+
+
+/* BOTÃO DE CRIAR CONTA */
+.criar-conta {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease
+}
+
+.criar-conta:hover {
+    transform: translateY(-5px);
+}
+
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 768px) {
+    .background video {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+

@@ -27,8 +27,9 @@ body {
     left: 0;
     object-fit: cover;
     width: 100%;
+    height: 100%;
     z-index: -1;
-    filter: brightness(0.3);/
+    filter: brightness(0.3);
 }
 
 /*LOGOMARCA*/
@@ -41,25 +42,13 @@ body {
 /* AREA DE LOGIN */
 .div-login {
     display: flex;
-    padding: 60px;
+    padding: 35px;
     background: rgba(055, 055, 055, 0.503); /*rgba(255, 255, 255, 0.503)*/
     backdrop-filter: blur(10px) saturate(100%);
     border-radius: 20px;
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
     
 
-}
-
-.User-div {
-    display: flex;
-    height: 100px;
-    margin-bottom: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-.user-logo {
-    height: 110px;
 }
 
 .login-area {
@@ -140,14 +129,6 @@ button {
     transform: translateY(-5px);
 }
 
-/* RESPONSIVIDADE */
-@media screen and (max-width: 768px) {
-    .background video {
-        width: 100%;
-        height: 100%;
-    }
-
-}
 
 /*Registro CSS*/
 
@@ -161,3 +142,13 @@ button {
     color: white;
     display: flex;
 }
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 768px) {
+    .background video {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
