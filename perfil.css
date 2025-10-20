@@ -3,3 +3,19 @@ body {
     background-repeat: repeat;
 }
 
+#profile-main{
+    height: 100vh;
+}
+#user-section{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+#user-info{
+    display: block;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+}

@@ -12,14 +12,6 @@ body {
 
 }
 
-#right-main-section {
-    display: flex;
-    flex-direction: row;
-    width: calc(100% - 400px);
-    margin-left: 400px;
-    min-height: 100vh;
-    align-items: flex-start;
-}
 
 
 #painel-container {
@@ -27,7 +19,7 @@ body {
     height: 500px;
     width: 350px;
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 #checkbox-container {
@@ -40,68 +32,85 @@ body {
 }
 
 
+
+
+/* Div principal (Semana) */
+
+#right-main-section {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 400px);
+    margin-left: 400px;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+
 .weekdiv {
-    border-radius: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-left: 50px;
     margin-top: 30px;
     min-height: 300px;
-    background-color: rgb(255, 255, 255);
     max-width: 500px;
 }
 
 .weekdiv h2 {
     font-weight: 900;
-    color: rgb(231, 189, 0);
+    color: rgb(255, 255, 255);
     margin-top: 20px;
 }
 
-.weekdiv-container {
-    margin: 40px
+/* Divs menores (Dias) */
+
+.div-table{
+    width: 100%;
+    border-radius: 10px;
 }
 
 .addExerciseBtn {
     cursor: pointer;
     background-color: rgb(255, 217, 0);
-    border-radius: 100%;
     border-style: none;
-    margin-top: 20px;
     margin-bottom: 20px;
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 30px;
+    border-radius: 0px 0px 10px 10px;
 }
 
+/*Tabela*/
+
 .weektable {
+    width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.th-exercicio {
-    width: 210px;
-    height: 25px;
+.weektable td{
+    background-color: white;
+}
+.th-exercicio{
+    width: 200px;
 }
 
-.th-series{
-    width: 75px;
-}
-.th-repeticoes{
-    width: 115px;
+.th-series {
+    width: 70px;
 }
 
-.th-series,
 .th-repeticoes {
-    height: 25px;
-    text-align: center;
+    width: 120px;
 }
 
-.th-exercicio,
-.th-series,
-.th-repeticoes{
-    height: 25px;
-    background-color: rgb(255, 224, 167);
+.th-remove {
+    width: 30px;
 }
 
-.weekdiv th,
-.weekdiv td{
-    padding: 2px;
+.weektable th{
+    background-color: rgb(119, 0, 255);
+    height: 30px;
+}
+
+.weektable th:first-child {
+    border-radius: 10px 0px 0px 0px;
+}
+.weektable th:last-child {
+    border-radius: 0px 10px 0px 0px;
 }
