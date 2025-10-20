@@ -11,6 +11,7 @@ body {
     overflow-y: hidden;
 }
 
+/* VIDEO DE FUNDO */
 .background {
     width: 100%;
     height: 100%;
@@ -30,14 +31,14 @@ body {
     filter: brightness(0.3);/
 }
 
-
+/*LOGOMARCA*/
 .logo {
     height: 300px;
     margin-top: -50px;
 }
 
 
-
+/* AREA DE LOGIN */
 .div-login {
     display: flex;
     padding: 60px;
@@ -45,6 +46,7 @@ body {
     backdrop-filter: blur(10px) saturate(100%);
     border-radius: 20px;
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .User-div {
@@ -74,7 +76,7 @@ body {
 
 input {
     border-radius: 5px;
-    background: rgba(238, 242, 240, 0.15);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px) saturate(180%);
     height: 25px;
     width: 100%;
@@ -105,6 +107,7 @@ button {
     padding: 5px;
 }
 
+/* BOTÃO DE SUBMIT */
 .submit {
     background-color: #ffc428;
     border: none;
@@ -119,8 +122,23 @@ button {
 }
 
 
-
+/* BOTÃO DE CRIAR CONTA */
 .criar-conta {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease
+}
+
+.criar-conta:hover {
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 768px) {
+    .background video {
+        width: 100%;
+        height: 100%;
+    }
+
 }
