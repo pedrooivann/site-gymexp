@@ -143,6 +143,18 @@ button {
     display: flex;
 }
 
+.account-redirect{
+     cursor: pointer;
+     transition: all 0.4s ease;
+     margin-left: 30%;
+    
+}
+
+.account-redirect:hover{
+    transform: translateY(-5px);
+}
+
+
 /* RESPONSIVIDADE */
 @media screen and (max-width: 768px) {
     .background video {
