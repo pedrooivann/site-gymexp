@@ -26,24 +26,32 @@
 
         <form action="">
 
-         <div class="User-div">
-            <img class="user-logo"src="/images/user.png">
+            <div class="User-div">
+             <img class="user-logo"src="/images/user.png">
             </div>
 
             <div class="login-area">
-                <input class="Username" type="text" placeholder="Digite o usuário"required>
-                <input class="Password" type="password" placeholder="Digite a senha" required>
+                <input class="Username" type="text" id="Usuario" placeholder="Digite o usuário"required>
+                <input class="Password" type="password" id="Senha" placeholder="Digite a senha" required>
             
-                <button class="submit" type="submit">login</button>
+                <button class="submit" type="submit" onclick="logar();return false">login</button>
 
-               <a class="account-redirect" href="registro.html">Não possui uma conta conta?</a>
+               <div class="error"></div>
+
+
+            
+               <a class="account-redirect" href="registro.html">Não possui uma conta ainda?</a>
 
            </div>
 
+           
+         
+
         </form>
 
-        </div>
+    </div>
 
+        <script src="login.js"></script>
 </body>
 </html>
             
