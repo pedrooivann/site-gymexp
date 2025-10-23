@@ -4,6 +4,9 @@ function logar(){
     var Usuario = document.getElementById("Usuario").value;
     var Senha = document.getElementById("Senha").value;
     var error = document.querySelector(".error")
+    var Username = document.querySelector(".Username")
+    var Password = document.querySelector(".Password")
+   
     
 
     
@@ -21,5 +24,16 @@ function logar(){
     else{
         error.style.display = "block"
         error.innerHTML = "Usuario ou senha incorretos"
+        Username.style.outline = "1px solid red"
+        Username.style.background = "rgba(255, 122, 122, 0.3)"
+        Password.style.outline = "1px solid red"
+        Password.style.background = "rgba(255, 122, 122, 0.3)"
+        
+
+
+       
+
+       
+        
     }
 }
