@@ -1,11 +1,11 @@
 /*Esse codigo ainda será muito alterado*/
 function logar(){
 
-    var Usuario = document.getElementById("Usuario").value;
-    var Senha = document.getElementById("Senha").value;
-    var error = document.querySelector(".error")
-    var Username = document.querySelector(".Username")
-    var Password = document.querySelector(".Password")
+    const Usuario = document.getElementById("Usuario").value;
+    const Senha = document.getElementById("Senha").value;
+    const error = document.querySelector(".error")
+    const Username = document.querySelector(".Username")
+    const Password = document.querySelector(".Password")
    
     
 

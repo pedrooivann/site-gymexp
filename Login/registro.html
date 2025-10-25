@@ -40,23 +40,25 @@
                 <input id="reg-password" type="password" placeholder="Digite a senha" required>
                 <input id="confirm-reg-password" type="password" placeholder="Digite a senha novamente" required>
 
-                <input type="tel" name="" id="reg-telefone" placeholder="Telefone: (00) 000000000">
+                <input type="tel" name="" id="reg-telefone" placeholder="Telefone: (00) 000000000" required>
                 <div class="info-div">
                     <p>Data de nascimento:
                     <p>
-                        <input type="date" id="reg-idade">
+                        <input type="date" id="reg-idade" required>
                 </div>
                 
-                <button class="submit" type="submit">Criar conta</button>
+                <button class="submit" type="submit" onclick="salvar_usuario();return false">Criar conta</button>
 
                 <a class="account-redirect" href="login.html">Já possuo uma conta</a>
 
+                <div class="error">Senhas não conferem!</div>
             </div>
 
         </form>
 
     </div>
 
+    <script src="registro.js"></script>
 </body>
 
 </html>

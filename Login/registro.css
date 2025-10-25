@@ -154,6 +154,15 @@ button {
     transform: translateY(-5px);
 }
 
+.error{
+    display: none;
+    position: absolute;
+    font-size: 15px;
+    color: rgb(255, 239, 239);
+    bottom: 51%;
+    left: 58%;
+    white-space: nowrap;
+}
 
 /* RESPONSIVIDADE */
 @media screen and (max-width: 768px) {
