@@ -154,14 +154,61 @@ button {
     transform: translateY(-5px);
 }
 
+.Min_Char{
+    display: none;
+    position: absolute;
+    font-size: 15px;
+    background: rgba(255, 0, 0, 0.412);
+    backdrop-filter: blur(10px) saturate(100%);
+    color: white;
+    padding: 10px;
+    width: 37%;
+    top: -50px;
+    left: 130px;
+    border-radius: 5px;
+
+}
 .error{
     display: none;
     position: absolute;
     font-size: 15px;
-    color: rgb(255, 239, 239);
-    bottom: 51%;
-    left: 58%;
-    white-space: nowrap;
+    background: rgba(255, 0, 0, 0.412);
+    backdrop-filter: blur(10px) saturate(100%);
+    color: white;
+    padding: 10px;
+    width: 37%;
+    top: -50px;
+    left: 130px;
+    border-radius: 5px;
+}
+
+.Alert_1{
+    display: none;
+    position: absolute;
+    font-size: 15px;
+    background: rgba(255, 0, 0, 0.412);
+    backdrop-filter: blur(10px) saturate(100%);
+    color: white;
+    padding: 10px;
+    width: 51%;
+    top: -50px;
+    left: 100px;
+    border-radius: 5px;
+}
+
+.Alert_2{
+    display: none;
+    position: absolute;
+    font-size: 15px;
+    background: rgba(26, 216, 12, 0.412);
+    backdrop-filter: blur(10px) saturate(100%);
+    color: white;
+    padding: 10px;
+    width: 54%;
+    top: -50px;
+    left: 100px;
+    border-radius: 5px;
+
 }
 
 /* RESPONSIVIDADE */
