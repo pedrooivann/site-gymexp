@@ -1,39 +1,58 @@
-/*Esse codigo ainda será muito alterado*/
-function logar(){
+function entrar() {
+    let Usuario = document.getElementById("Usuario")
+    let Senha = document.getElementById("Senha")
+    let error = document.querySelector(".error")
+    let ListaUser = [] /*array vazio*/
+    let UserValid = {
+        nome: "",
+        sobrenome: "",
+        email: "",
+        usuario: "",
+        senha: "",
+        telefone: "",
+        idade: "",
 
-    const Usuario = document.getElementById("Usuario").value;
-    const Senha = document.getElementById("Senha").value;
-    const error = document.querySelector(".error")
-    const Username = document.querySelector(".Username")
-    const Password = document.querySelector(".Password")
-   
+        /*objeto com os campos que desejo pegar do localstorage*/
+}
+    ListaUser = JSON.parse(localStorage.getItem("ListaUser"))
+
+    /*O for each varrera a ListaUser no Localstorage afim de poder validar o login*/
+    ListaUser.forEach((item) => {
+        if (Usuario.value == item.NickUsuario || item.EmailUsuario && Senha.value == item.SenhaUsuario) {
+
+            UserValid = {
+                nome: item.NomeUsuario,
+                sobrenome: item.SobrenomeUsuario,
+                email: item.EmailUsuario,
+                usuario: item.NickUsuario,
+                senha: item.SenhaUsuario,
+                telefone: item.TelefoneUsuario,
+                idade: item.IdadeUsuario,
+            }
+          }
+     });
+
     
+    if(Usuario.value == UserValid.usuario || UserValid.email && Senha.value == UserValid.senha){
+        alert("AEIOU") /*será alterado em breve*/
 
-    
-    /*Se o If for true o usuario será redirecionado para a pagina inicial*/
-    if(Usuario == "admin" && Senha == "admin"){
-        location.href = "/home.html";
+        /*Cria um token para o usuario garantindo que ele está autenticado no site*/
+        let token = Math.random().toString(16).substring(2)
+        localStorage.setItem("token", token)
+
     }
-
-    /* Se nada for preenchido aparecerá esse alerta*/
-    else if(Usuario=="" || Senha == ""){
-        input.required.title = ""
-    }
-
-    /*Se for false ele cairá no else*/
     else{
-        error.style.display = "block"
-        error.innerHTML = "Usuario ou senha incorretos"
-        Username.style.outline = "1px solid red"
-        Username.style.background = "rgba(255, 122, 122, 0.3)"
-        Password.style.outline = "1px solid red"
-        Password.style.background = "rgba(255, 122, 122, 0.3)"
-        
-
-
-       
-
-       
-        
+       alert("Deu ruim menor") /*será alterado em breve*/
     }
 }
+
+/*Falta implementar a visualização de senha, mensagens de alerta para campos vazios e outras coisas a mais*/
+
+
+
+
+
+
+
+
+
