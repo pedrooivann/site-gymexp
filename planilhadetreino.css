@@ -1,6 +1,16 @@
 body {
     background-image: url('/images/planilhabackground.png');
     background-repeat: repeat;
+
+    overflow-y: visible;
+}
+
+main {
+
+    display: flex;
+    align-items: flex-start;
+    overflow-x: scroll;
+
 }
 
 #painel-section {
@@ -8,7 +18,7 @@ body {
     width: 400px;
     display: flex;
     justify-content: center;
-    position: absolute;
+    margin-left: 50px;
 
 }
 
@@ -39,13 +49,15 @@ body {
 #right-main-section {
     display: flex;
     flex-direction: row;
-    width: calc(100% - 400px);
-    margin-left: 400px;
     min-height: 100vh;
-    align-items: flex-start;
+    align-items: start;
+
+    flex-grow: 1;
+
 }
 
 .weekdiv {
+    flex: 0 0 auto;
     display: block;
     margin: 50px;
     color: rgb(255, 255, 255);
@@ -61,7 +73,7 @@ body {
 
 /* Divs menores (Dias) */
 
-.div-table{
+.div-table {
     width: 100%;
     border-radius: 10px;
 }
@@ -84,10 +96,11 @@ body {
     margin-top: 10px;
 }
 
-.weektable td{
+.weektable td {
     background-color: white;
 }
-.th-exercicio{
+
+.th-exercicio {
     width: 200px;
 }
 
@@ -103,7 +116,7 @@ body {
     width: 30px;
 }
 
-.weektable th{
+.weektable th {
     background-color: rgb(119, 0, 255);
     height: 30px;
 }
@@ -111,6 +124,44 @@ body {
 .weektable th:first-child {
     border-radius: 10px 0px 0px 0px;
 }
+
 .weektable th:last-child {
     border-radius: 0px 10px 0px 0px;
+}
+
+#createweekdiv {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 420px;
+    height: 1011px;
+    border: 3px solid yellow;
+    border-style: dashed;
+    transition: 1s;
+    margin: 50px;
+}
+
+#createweekdiv:hover {
+    background-color: rgba(255, 255, 0, 0.205);
+}
+
+#createweekbutton {
+    border-radius: 10px;
+    border: none;
+    background-color: yellow;
+    width: 80px;
+    height: 80px;
+}
+
+.rmspace {
+    width: 50px;
+    height: 50px;
+    background-color: wheat;
+}
+
+.topcontent {
+    display: flex;
+    justify-content: space-between;
 }

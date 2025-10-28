@@ -1,10 +1,12 @@
-
+let acumulador_semana = 1;
 const botaofuncao = document.querySelectorAll('.addExerciseBtn');
-
-botaofuncao.forEach((botao) => {
-    botao.addEventListener('click', () => {
-
-        const plan_tabela = botao.previousElementSibling.querySelector('.table-tbody');
+let semanaprincipal = document.querySelector('.weektitle');
+semanaprincipal.textContent = "Semana " + acumulador_semana;
+const secaosemanas = document.getElementById('right-main-section');
+// Função Criar Linhas
+secaosemanas.addEventListener('click', (e) => {
+    if (e.target.classList.contains('addExerciseBtn')) {
+        const plan_tabela = e.target.previousElementSibling.querySelector('.table-tbody');
 
         //Cria linha da tabela e celulas
         const linha = document.createElement("tr");
@@ -54,7 +56,7 @@ botaofuncao.forEach((botao) => {
                 paddingLeft: "15px"
             })
         })
-
+        linha.className = "trclass"
         //Estilização botão de remover linha
         removerLinhaBtn.textContent = "❌";
         removerLinhaBtn.style.cursor = "pointer";
@@ -79,5 +81,81 @@ botaofuncao.forEach((botao) => {
         removerLinhaBtn.addEventListener('click', () => {
             linha.remove();
         })
-    })
+    }
 });
+
+// Função criar nova semana
+
+// Cria botão criar semana
+const btncriarsemana = document.querySelector('#createweekbutton');
+//Pega a semana 1
+const semanaog = document.querySelector('.weekdiv');
+//Pega a div de criar semanas
+const div_criar_semana = document.getElementById('createweekdiv');
+
+const espacorm = document.querySelector('.topcontent');
+
+const removeweekbtn = document.createElement('button');
+Object.assign(removeweekbtn.style, {
+    width: "50px",
+    height: "50px",
+    backgroundColor: "red"
+});
+
+let contadorSemana = 2;
+
+btncriarsemana.addEventListener('click', () => {
+
+    removeweekbtn.remove();
+    //Clona a div
+    let semanaclone = semanaog.cloneNode(true);
+
+    //Seleciona o titulo da div e coloca o contador de semanas
+    semanaclone.querySelector('.weektitle').textContent = "Semana " + contadorSemana;
+    contadorSemana++;
+
+    //Insere a div antes da div de criar semanas
+    secaosemanas.insertBefore(semanaclone, div_criar_semana);
+
+    //As linhas do clone são apagadas para que ela esteja vazia
+    let linhabusca = semanaclone.querySelectorAll('.trclass');
+    linhabusca.forEach(e => { e.remove(); })
+
+    //A nova div é definida como ultima
+    const ultimaDiv = secaosemanas.querySelectorAll('.weekdiv');
+    const ultimaSemana = ultimaDiv[ultimaDiv.length - 1];
+
+
+    ultimaSemana.querySelector('.topcontent').appendChild(removeweekbtn);
+
+    removeweekbtn.addEventListener('click', () => {
+        ultimaSemana.remove();
+    });
+});
+
+
+
+
+
+
+
+
+// Script Chechboxes
+
+const chb_descanso = document.getElementById('resttime-checkbox');
+const lastcolumn = document.querySelector('.th-remove');
+lastcolumn = document.lastChild;
+
+const variable = document.querySelectorAll('.weektable tr td')
+const newthead = document.createElement('th');
+
+chb_descanso.addEventListener('change', () => {
+    if (chb_descanso.checked) {
+        variable.forEach((variable) => {
+            const newtd = document.createElement('td');
+            newthead.appendChild(newtd);
+        })
+
+        lastcolumn.insertBefore(newthead);
+    }
+})
