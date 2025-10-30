@@ -102,8 +102,8 @@ Object.assign(removeweekbtn.style, {
     backgroundColor: "red"
 });
 
-let contadorSemana = 2;
 
+let contadorSemana = 2;
 btncriarsemana.addEventListener('click', () => {
 
     removeweekbtn.remove();
@@ -130,14 +130,9 @@ btncriarsemana.addEventListener('click', () => {
 
     removeweekbtn.addEventListener('click', () => {
         ultimaSemana.remove();
+        contadorSemana = 2;
     });
 });
-
-
-
-
-
-
 
 
 // Script Chechboxes
