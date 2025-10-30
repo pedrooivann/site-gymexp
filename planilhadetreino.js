@@ -106,7 +106,7 @@ Object.assign(removeweekbtn.style, {
 let contadorSemana = 2;
 btncriarsemana.addEventListener('click', () => {
 
-    removeweekbtn.remove();
+
     //Clona a div
     let semanaclone = semanaog.cloneNode(true);
 
@@ -114,43 +114,44 @@ btncriarsemana.addEventListener('click', () => {
     semanaclone.querySelector('.weektitle').textContent = "Semana " + contadorSemana;
     contadorSemana++;
 
-    //Insere a div antes da div de criar semanas
+    // Cria um botão de remover específico para este clone (não reusar o mesmo)
+    const newRemoveBtn = document.createElement('button');
+    newRemoveBtn.className = 'remove-week-btn';
+    newRemoveBtn.textContent = 'Remover Semana';
+
+    // Insere o clone antes do botão de criar semana
     secaosemanas.insertBefore(semanaclone, div_criar_semana);
 
-    //As linhas do clone são apagadas para que ela esteja vazia
-    let linhabusca = semanaclone.querySelectorAll('.trclass');
-    linhabusca.forEach(e => { e.remove(); })
+    // Adiciona o botão ao topo da nova semana
+    semanaclone.querySelector('.topcontent').appendChild(newRemoveBtn);
 
-    //A nova div é definida como ultima
-    const ultimaDiv = secaosemanas.querySelectorAll('.weekdiv');
-    const ultimaSemana = ultimaDiv[ultimaDiv.length - 1];
+    // Listener ligado só ao botão novo — remove apenas este clone
+    newRemoveBtn.addEventListener('click', () => {
+        semanaclone.remove();
+        recontarSemanas(); //
+    })
 
-
-    ultimaSemana.querySelector('.topcontent').appendChild(removeweekbtn);
-
-    removeweekbtn.addEventListener('click', () => {
-        ultimaSemana.remove();
-        contadorSemana = 2;
-    });
 });
 
+//Fazer a recontagem das semanas após apagar uma 
+function recontarSemanas() {
 
-// Script Chechboxes
 
-const chb_descanso = document.getElementById('resttime-checkbox');
-const lastcolumn = document.querySelector('.th-remove');
-lastcolumn = document.lastChild;
+    //Seleciona todas as semanas - Cria NodeList
+    const weeks = secaosemanas.querySelectorAll('.weekdiv');
 
-const variable = document.querySelectorAll('.weektable tr td')
-const newthead = document.createElement('th');
+    let n = 1;
 
-chb_descanso.addEventListener('change', () => {
-    if (chb_descanso.checked) {
-        variable.forEach((variable) => {
-            const newtd = document.createElement('td');
-            newthead.appendChild(newtd);
-        })
+    //Para cada semana => Seleciona o título de cada uma
+    weeks.forEach(w => {
+        const title = w.querySelector('.weektitle');
 
-        lastcolumn.insertBefore(newthead);
-    }
-})
+        // Se tiver um titulo => Muda ele fazendo de 1 até o nº de semanas
+        if (title) title.textContent = `Semana ${n++}`;
+    });
+    //Pede o tamanho da qntd de semanas
+    contadorSemana = weeks.length + 1;
+}
+
+// Checkboxes
+
