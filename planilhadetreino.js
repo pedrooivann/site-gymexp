@@ -3,6 +3,7 @@ const botaofuncao = document.querySelectorAll('.addExerciseBtn');
 let semanaprincipal = document.querySelector('.weektitle');
 semanaprincipal.textContent = "Semana " + acumulador_semana;
 const secaosemanas = document.getElementById('right-main-section');
+
 // Função Criar Linhas
 secaosemanas.addEventListener('click', (e) => {
     if (e.target.classList.contains('addExerciseBtn')) {
@@ -13,13 +14,19 @@ secaosemanas.addEventListener('click', (e) => {
         const novo_exercicio = document.createElement("td");
         const nova_serie = document.createElement("td");
         const nova_repeticao = document.createElement("td");
+        const novo_peso = document.createElement("td");
+        const nova_descanso = document.createElement("td");
         const novo_removerbtn = document.createElement("td");
 
         //Cria os inputs
         const input_exercicio = document.createElement("input");
         const input_serie = document.createElement("input");
         const input_repeticao = document.createElement("input");
+        const input_peso = document.createElement("input");
+        const input_descanso = document.createElement("input");
 
+        input_peso.placeholder = "Kg";
+        input_descanso.placeholder = "--:--"
         //Cria botão de remover
         const removerLinhaBtn = document.createElement("button");
 
@@ -45,18 +52,28 @@ secaosemanas.addEventListener('click', (e) => {
             textAlign: "center",
         });
 
-        [input_exercicio, input_serie, input_repeticao].forEach(input => {
+        Object.assign(input_peso.style, {
+            backgroundColor: "rgb(205, 205, 205)",
+            textAlign: "center"
+        });
+
+        Object.assign(input_descanso.style, {
+            textAlign: "center"
+        });
+
+        [input_exercicio, input_serie, input_repeticao, input_peso, input_descanso].forEach(input => {
             Object.assign(input.style, {
                 width: "100%",
                 boxSizing: "border-box",
                 fontSize: "15px",
-                height: "25px",
                 border: "none",
                 borderBottom: "2px solid grey",
-                paddingLeft: "15px"
+                lineHeight: '1.4',        // evita corte das letras
+                padding: '6px 10px',      // espaço vertical suficiente
+                height: 'auto'
+
             })
         })
-        linha.className = "trclass"
         //Estilização botão de remover linha
         removerLinhaBtn.textContent = "❌";
         removerLinhaBtn.style.cursor = "pointer";
@@ -68,12 +85,16 @@ secaosemanas.addEventListener('click', (e) => {
         novo_exercicio.appendChild(input_exercicio);
         nova_serie.appendChild(input_serie);
         nova_repeticao.appendChild(input_repeticao);
+        novo_peso.appendChild(input_peso);
+        nova_descanso.appendChild(input_descanso);
         novo_removerbtn.appendChild(removerLinhaBtn);
 
         //Coloca as células dentro da linha
         linha.appendChild(novo_exercicio);
         linha.appendChild(nova_serie);
         linha.appendChild(nova_repeticao);
+        linha.appendChild(novo_peso);
+        linha.appendChild(nova_descanso);
         linha.appendChild(novo_removerbtn);
 
         plan_tabela.appendChild(linha);
@@ -84,9 +105,8 @@ secaosemanas.addEventListener('click', (e) => {
     }
 });
 
-// Função criar nova semana
 
-// Cria botão criar semana
+// Declara botão criar semana
 const btncriarsemana = document.querySelector('#createweekbutton');
 //Pega a semana 1
 const semanaog = document.querySelector('.weekdiv');
@@ -95,48 +115,75 @@ const div_criar_semana = document.getElementById('createweekdiv');
 
 const espacorm = document.querySelector('.topcontent');
 
-const removeweekbtn = document.createElement('button');
-Object.assign(removeweekbtn.style, {
-    width: "50px",
-    height: "50px",
-    backgroundColor: "red"
-});
+
+// Estilizar a imagem botão apagar semana
+const deleteimg = document.createElement('img');
+deleteimg.src = "/images/deleteweek.png";
+deleteimg.style.width = "60px";
+deleteimg.style.height = "65px";
+deleteimg.alt = "Remover semana";
+deleteimg.title = "Remover semana";
 
 
 let contadorSemana = 2;
-btncriarsemana.addEventListener('click', () => {
 
+//----- Função de criar semana
+btncriarsemana.addEventListener('click', () => {
 
     //Clona a div
     let semanaclone = semanaog.cloneNode(true);
+
+    //Limpa conteudo
+    const tbodies = semanaclone.querySelectorAll('.table-tbody');
+    tbodies.forEach(tb => tb.innerHTML = '');
 
     //Seleciona o titulo da div e coloca o contador de semanas
     semanaclone.querySelector('.weektitle').textContent = "Semana " + contadorSemana;
     contadorSemana++;
 
-    // Cria um botão de remover específico para este clone (não reusar o mesmo)
-    const newRemoveBtn = document.createElement('button');
-    newRemoveBtn.className = 'remove-week-btn';
-    newRemoveBtn.textContent = 'Remover Semana';
-
     // Insere o clone antes do botão de criar semana
     secaosemanas.insertBefore(semanaclone, div_criar_semana);
 
-    // Adiciona o botão ao topo da nova semana
-    semanaclone.querySelector('.topcontent').appendChild(newRemoveBtn);
+    criarRemoveButton(semanaclone);
+    recontarSemanas();
 
-    // Listener ligado só ao botão novo — remove apenas este clone
-    newRemoveBtn.addEventListener('click', () => {
-        semanaclone.remove();
-        recontarSemanas(); //
-    })
 
 });
 
-//Fazer a recontagem das semanas após apagar uma 
+
+
+//----- Função de copiar semana
+secaosemanas.addEventListener('click', (e) => {
+    const btn = e.target.closest('.copyweek'); // Pega o botão ou null
+    if (btn) {
+        const thisweek = btn.closest('.weekdiv'); // Pega a semana do botão
+        const thisweekclone = thisweek.cloneNode(true);
+        secaosemanas.insertBefore(thisweekclone, div_criar_semana);
+        recontarSemanas();
+        criarRemoveButton(thisweekclone);
+    }
+});
+
+//----- Função de criar botão de remover semana
+function criarRemoveButton(semanaclone) {
+    const newRemoveBtn = document.createElement('button');
+    newRemoveBtn.style.backgroundColor = "transparent";
+    newRemoveBtn.style.border = "none"
+    newRemoveBtn.className = 'remove-week-btn';
+    newRemoveBtn.appendChild(deleteimg.cloneNode(true));
+    semanaclone.querySelector('.topcontent').appendChild(newRemoveBtn);
+
+    newRemoveBtn.addEventListener('click', () => {
+        semanaclone.remove();
+        recontarSemanas();
+
+    })
+};
+
+
+
+//----- Função fazer recontagem constante
 function recontarSemanas() {
-
-
     //Seleciona todas as semanas - Cria NodeList
     const weeks = secaosemanas.querySelectorAll('.weekdiv');
 
@@ -152,6 +199,3 @@ function recontarSemanas() {
     //Pede o tamanho da qntd de semanas
     contadorSemana = weeks.length + 1;
 }
-
-// Checkboxes
-

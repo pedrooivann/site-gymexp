@@ -107,6 +107,13 @@ main {
     width: 120px;
 }
 
+.th-peso {
+width: 75px;
+}
+
+.th-descanso {
+    width: 80px;
+}
 .th-remove {
     width: 30px;
 }
@@ -158,5 +165,14 @@ main {
 
 .topcontent {
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-end;
+}
+
+.copyweek {
+    background-color: transparent;
+    border: none;
+}
+.copyweek img {
+    width: 60px;
+    height: 65px;
 }
