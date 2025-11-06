@@ -5,6 +5,20 @@ body {
     overflow-y: visible;
 }
 
+#Btsave{
+
+height: 50px;
+width: 300px;
+background-color: rgb(255, 213, 0);
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+border-radius: 15px;
+transition: all 0.6s ease;
+}
+#Btsave:hover{
+background-color: rgb(0, 255, 0);
+transform:translateY(-5px)
+}
+
 main {
 
     display: flex;
@@ -24,7 +38,7 @@ main {
 #painel-container {
     margin-top: 30px;
     height: 300px;
-    width: 350px;
+    width: 100%;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
