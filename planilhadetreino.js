@@ -199,3 +199,140 @@ function recontarSemanas() {
     //Pede o tamanho da qntd de semanas
     contadorSemana = weeks.length + 1;
 }
+
+//Lê e salva os treinos// 
+
+const botaoSalvarTreino = document.getElementById("Btsave");
+if (botaoSalvarTreino) botaoSalvarTreino.addEventListener("click", salvarTreino);
+
+function salvarTreino() {
+  const todasSemanas = document.querySelectorAll(".weekdiv");
+  const dadosTreino = [];
+
+  todasSemanas.forEach((semana) => {
+    const nomeSemana = (semana.querySelector(".weektitle")?.textContent || "").trim();
+    const dias = [];
+
+    semana.querySelectorAll(".weektable").forEach((tabela, idx) => {
+      const nomeDia = (tabela.previousElementSibling?.textContent || `Dia ${idx + 1}`).trim();
+      const exercicios = [];
+
+      tabela.querySelectorAll("tbody tr").forEach((linha) => {
+        const inputs = Array.from(linha.querySelectorAll("input"));
+        
+        if (inputs.length >= 5) {
+          const [exercicio, serie, repeticao, peso, descanso] = inputs.map(i => i.value.trim());
+          if (exercicio) {
+            exercicios.push({ exercicio, serie, repeticao, peso, descanso });
+          }
+        }
+      });
+
+      dias.push({ nomeDia, exercicios });
+    });
+
+    dadosTreino.push({ nomeSemana, dias });
+  });
+
+  localStorage.setItem("planilhaTreino", JSON.stringify(dadosTreino));
+  alert("✅ Seu treino foi salvo com sucesso!");
+}
+
+function criarInput(type, valor = "") {
+  const input = document.createElement("input");
+  input.type = type;
+  input.value = valor;
+  input.style.width = "100%";
+  input.style.boxSizing = "border-box";
+  input.style.border = "none";
+  input.style.borderBottom = "2px solid grey";
+  input.style.fontSize = "15px";
+  input.style.lineHeight = "1.4";
+  input.style.padding = "6px 10px";
+  input.style.height = "auto";
+  input.style.textAlign = (type === "text" ? "left" : "center");
+  return input;
+}
+
+
+function carregarTreino() {
+  const dados = localStorage.getItem("planilhaTreino");
+  if (!dados) return;
+
+  let treino;
+  try {
+    treino = JSON.parse(dados);
+    if (!Array.isArray(treino)) return;
+  } catch (e) {
+    console.error("Erro ao parsear planilhaTreino:", e);
+    return;
+  }
+
+  const secoes = document.getElementById("right-main-section");
+  if (!secoes) return;
+
+
+  secoes.querySelectorAll(".weekdiv").forEach(w => w.remove());
+
+  if (typeof semanaog === "undefined" || typeof div_criar_semana === "undefined") {
+    console.error("Variáveis semanaog ou div_criar_semana não encontradas. Elas precisam existir no script.");
+    return;
+  }
+
+  treino.forEach((semanaData) => {
+    const clone = semanaog.cloneNode(true);
+
+    clone.querySelector(".weektitle").textContent = semanaData.nomeSemana || "";
+
+    clone.querySelectorAll(".table-tbody").forEach(tbody => tbody.innerHTML = "");
+
+    semanaData.dias.forEach((diaData, idx) => {
+      const tabelas = clone.querySelectorAll(".weektable");
+      const tabela = tabelas[idx];
+      if (!tabela) return;
+      const tbody = tabela.querySelector("tbody");
+
+      (diaData.exercicios || []).forEach((ex) => {
+        const linha = document.createElement("tr");
+
+        const campos = [
+          criarInput("text", ex.exercicio),
+          criarInput("number", ex.serie),
+          criarInput("number", ex.repeticao),
+          criarInput("text", ex.peso),
+          criarInput("text", ex.descanso)
+        ];
+
+        campos.forEach((input) => {
+          const td = document.createElement("td");
+          td.appendChild(input);
+          linha.appendChild(td);
+        });
+
+        const tdBtn = document.createElement("td");
+        const btnRemover = document.createElement("button");
+        btnRemover.textContent = "❌";
+        btnRemover.style.border = "none";
+        btnRemover.style.background = "transparent";
+        btnRemover.style.cursor = "pointer";
+        btnRemover.addEventListener("click", () => linha.remove());
+        tdBtn.appendChild(btnRemover);
+        linha.appendChild(tdBtn);
+
+        tbody.appendChild(linha);
+      });
+    });
+
+    if (typeof criarRemoveButton === "function") criarRemoveButton(clone);
+
+  
+    secoes.insertBefore(clone, div_criar_semana);
+  });
+
+  
+  if (typeof recontarSemanas === "function") recontarSemanas();
+
+}
+
+
+window.addEventListener("load", carregarTreino);
