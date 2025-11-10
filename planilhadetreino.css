@@ -12,11 +12,11 @@ width: 300px;
 background-color: rgb(255, 213, 0);
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 border-radius: 15px;
-transition: all 0.6s ease;
+transition: all 0.8s ease;
 }
 #Btsave:hover{
 background-color: rgb(0, 255, 0);
-transform:translateY(-5px)
+transform:translateY(-2px)
 }
 
 main {
