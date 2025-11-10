@@ -118,7 +118,7 @@ const espacorm = document.querySelector('.topcontent');
 
 // Estilizar a imagem botão apagar semana
 const deleteimg = document.createElement('img');
-deleteimg.src = "/images/deleteweek.png";
+deleteimg.src = "/images/deleteweek.webp";
 deleteimg.style.width = "60px";
 deleteimg.style.height = "65px";
 deleteimg.alt = "Remover semana";
