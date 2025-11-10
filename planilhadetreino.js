@@ -181,7 +181,6 @@ function criarRemoveButton(semanaclone) {
 };
 
 
-
 //----- Função fazer recontagem constante
 function recontarSemanas() {
     //Seleciona todas as semanas - Cria NodeList
