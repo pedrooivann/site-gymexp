@@ -166,6 +166,10 @@ secaosemanas.addEventListener('click', (e) => {
 
 //----- Função de criar botão de remover semana
 function criarRemoveButton(semanaclone) {
+  //remove botões antigos
+const oldRemove = semanaclone.querySelectorAll('.remove-week-btn');
+oldRemove.forEach(btn => btn.remove());
+
     const newRemoveBtn = document.createElement('button');
     newRemoveBtn.style.backgroundColor = "transparent";
     newRemoveBtn.style.border = "none"
@@ -179,7 +183,6 @@ function criarRemoveButton(semanaclone) {
 
     })
 };
-
 
 
 //----- Função fazer recontagem constante
@@ -199,3 +202,78 @@ function recontarSemanas() {
     //Pede o tamanho da qntd de semanas
     contadorSemana = weeks.length + 1;
 }
+
+//Lê e salva os treinos// 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const botaoSalvar = document.getElementById("Btsave");
+  if (!botaoSalvar) return;
+
+  botaoSalvar.addEventListener("click", () => {
+    try {
+      const semanas = document.querySelectorAll(".weekdiv");
+      const dadosTreino = [];
+
+      semanas.forEach((semana) => {
+        const nomeSemana = (semana.querySelector(".weektitle")?.textContent || "").trim();
+        const dias = [];
+
+        semana.querySelectorAll(".weektable").forEach((tabela, idx) => {
+          const nomeDia = (tabela.previousElementSibling?.textContent || `Dia ${idx + 1}`).trim();
+          const exercicios = [];
+
+          tabela.querySelectorAll("tbody tr").forEach((linha) => {
+            const inputs = linha.querySelectorAll("input");
+            if (inputs.length >= 5) {
+              const valores = Array.from(inputs).map(i => i.value.trim());
+              const [exercicio, serie, repeticao, peso, descanso] = valores;
+              if (exercicio) {
+                exercicios.push({ exercicio, serie, repeticao, peso, descanso });
+              }
+            }
+          });
+
+          dias.push({ nomeDia, exercicios });
+        });
+
+        dadosTreino.push({ nomeSemana, dias });
+      });
+
+      localStorage.setItem("planilhaTreino", JSON.stringify(dadosTreino));
+      alert("✅ Treino salvo com sucesso!");
+    } catch (err) {
+      console.error("Erro ao salvar treino:", err);
+      alert("❌ Ocorreu um erro ao salvar o treino. Veja o console.");
+    }
+  });
+});
+
+//trabalho em andamento. Este código vai ser alterado daqui a alguns dias
+(function () {
+  const script = document.createElement("script");
+  script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+  script.onload = () => {
+    const botaoPDF = document.getElementById("BtPDF");
+    if (!botaoPDF) return;
+
+    botaoPDF.addEventListener("click", () => {
+      const elemento = document.getElementById("right-main-section");
+      if (!elemento) {
+        alert("❌ Seção do treino não encontrada!");
+        return;
+      }
+
+      const opcoes = {
+        margin: 10,
+        filename: `Treino_${new Date().toLocaleDateString("pt-BR")}.pdf`,
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+      };
+
+      html2pdf().set(opcoes).from(elemento).save();
+    });
+  };
+  document.head.appendChild(script);
+})();
+

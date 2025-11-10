@@ -1,26 +1,24 @@
 body {
-    background-image: url('/images/planilhabackground.png');
+    background-image: url('/images/NovoWalpaperPlanilha.png');
     background-repeat: repeat;
-
     overflow-y: visible;
 }
 
-#Btsave{
+#Btsave {
 
 height: 50px;
 width: 300px;
 background-color: rgb(255, 213, 0);
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 border-radius: 15px;
-transition: all 0.6s ease;
+transition: all 0.8s ease;
 }
 #Btsave:hover{
 background-color: rgb(0, 255, 0);
-transform:translateY(-5px)
+transform:translateY(-2px)
 }
 
 main {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +28,7 @@ main {
     width: 100%;
     display: flex;
     align-items: flex-start;
+    height: 100px;
 
 }
 
@@ -39,7 +38,7 @@ main {
     margin-top: 30px;
     height: 300px;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     border-radius: 10px;
 }
 
@@ -72,6 +71,8 @@ main {
     color: rgb(255, 255, 255);
     min-height: 300px;
     max-width: 500px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 100px rgba(0, 0, 0, 2);
 }
 
 .weekdiv h2 {
@@ -122,12 +123,13 @@ main {
 }
 
 .th-peso {
-width: 75px;
+    width: 75px;
 }
 
 .th-descanso {
     width: 80px;
 }
+
 .th-remove {
     width: 30px;
 }
@@ -179,13 +181,14 @@ width: 75px;
 
 .topcontent {
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
 }
 
 .copyweek {
     background-color: transparent;
     border: none;
 }
+
 .copyweek img {
     width: 60px;
     height: 65px;
