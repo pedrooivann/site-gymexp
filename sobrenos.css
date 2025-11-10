@@ -1,3 +1,7 @@
+body{
+    background-image: url(/images/sobrenos-wallpaper.webp);
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -24,4 +28,8 @@ main {
     justify-content: center;
     align-items: center;
     
+}
+
+li #sobrenos-link {
+    color: rgb(0, 204, 255);
 }
