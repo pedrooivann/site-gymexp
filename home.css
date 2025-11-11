@@ -1,4 +1,10 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #f5d000, #ff9100);
 
+}
 
 li #home-link {
     color: yellow;

@@ -23,6 +23,8 @@
     flex-direction: row;
     height: 75px;
     align-items: center;
+    box-shadow: 0px 0px 50px 60px black;
+
 }
 
 #header-navbar {
@@ -42,21 +44,34 @@
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
-    transition: color 1s;
+    transition: all 0.8s ease;
+
 }
 
 #home-link:hover {
     color: yellow;
+    text-shadow:
+        0 0 10px yellow,
+        0 0 20px yellow;
 }
 
 #planilha-link:hover {
     color: blueviolet;
+    text-shadow:
+        0 0 10px blueviolet,
+        0 0 20px blueviolet;
 }
 
 #sobrenos-link:hover {
     color: rgb(0, 204, 255);
+    text-shadow:
+        0 0 10px rgb(0, 204, 255),
+        0 0 20px rgb(0, 204, 255);
 }
 
 #perfil-link:hover {
-    color: green;
+    color: rgb(0, 204, 0);
+    text-shadow:
+        0 0 10px rgb(0, 204, 0),
+        0 0 20px rgb(0, 204, 0);
 }
