@@ -10,150 +10,174 @@
 </head>
 
 <body>
+
     <header id="main-header">
         <div id="div-logo">
-            <a href="./home.html"><img src="/images/GYMEXP-LOGO-Amarelo.png" alt="Logo"></a>
+            <a href="./home.html"><img src="/images/GYMEXP-LOGO-Amarelo.webp" alt="Logo"></a>
         </div>
         <nav id="header-navbar">
 
             <ul>
                 <li><a id="home-link" href="home.html">Home</a></li>
                 <li><a id="planilha-link" href="planilhadetreino.html">Planilha de Treino</a></li>
-                <li><a id="sobrenos-link" class="a-dir" href="sobrenos.html">Sobre nós</a></li>
-                <li><a id="perfil-link" class="a-dir" href="perfil.html">Perfil</a></li>
+                <li><a id="sobrenos-link" href="sobrenos.html">Sobre nós</a></li>
+                <li><a id="perfil-link" href="/perfil/perfil.html">Perfil</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="painel-section">
+    <main>
+        <section id="painel-section">
 
-        <div id="painel-container">
-            <div id="checkbox-container">
-                <input type="checkbox" name="" id="resttime-checkbox"> Incluir tempo de descanso.<br>
-                <input type="checkbox" name="" id="weight-checkbox"> Incluir peso.<br>
-                <input type="checkbox" name="" id="tempo-checkbox"> Incluir tempo.<br>
-                <input type="checkbox" name="" id="repsinreserve-checkbox"> Incluir Repetitions in Reserve (RIR)<br>
+            <div id="painel-container">
+                <div id="checkbox-container">
+              <button id="Btsave" class="botão-save">💾 Salvar seu Treino</button>
             </div>
-        </div>
 
-    </section>
+        </section>
 
-    <section id="right-main-section">
+        <section id="right-main-section">
 
-        <!--<div class="weekdiv">-->
-        <div class="weekdiv">
-            <h1 id="weektitle">Semana 1</h1>
+            <!--<div class="weekdiv">-->
+            <div class="weekdiv">
 
-            <!--Segunda Feira-->
-            <h2>Segunda Feira</h2>
-            <div class="div-table">
-                <table class="weektable">
+                <h1 class="weektitle"></h1>
+                <div class="topcontent">
+                    <button class="copyweek"><img src="/images/copyweek.webp" alt=""></button>
+                </div>
+
+
+                <!--Segunda Feira-->
+                <h2>Segunda Feira</h2>
+                <div class="div-table">
+                    <table class="weektable">
                         <thead>
                             <th class="th-exercicio">Exercício</th>
                             <th class="th-series">Séries</th>
                             <th class="th-repeticoes">Repetições</th>
+                            <th class="th-peso">Peso</th>
+                            <th class="th-descanso">Descanso</th>
                             <th class="th-remove"></th>
                         </thead>
                         <tbody class="table-tbody">
                         </tbody>
+                    </table>
+                </div>
+                <button class="addExerciseBtn">➕</button>
+
+                <!--Terça Feira-->
+                <h2>Terça Feira</h2>
+                <table class="weektable">
+                    <thead>
+                        <th class="th-exercicio">Exercício</th>
+                        <th class="th-series">Séries</th>
+                        <th class="th-repeticoes">Repetições</th>
+                        <th class="th-peso">Peso</th>
+                        <th class="th-descanso">Descanso</th>
+                        <th class="th-remove"></th>
+                    </thead>
+                    <tbody class="table-tbody">
+                    </tbody>
                 </table>
+                <button class="addExerciseBtn">➕</button>
+
+                <!--Quarta Feira-->
+                <h2>Quarta Feira</h2>
+                <table class="weektable">
+                    <thead>
+                        <th class="th-exercicio">Exercício</th>
+                        <th class="th-series">Séries</th>
+                        <th class="th-repeticoes">Repetições</th>
+                        <th class="th-peso">Peso</th>
+                        <th class="th-descanso">Descanso</th>
+                        <th class="th-remove"></th>
+                    </thead>
+                    <tbody class="table-tbody">
+                    </tbody>
+                </table>
+                <button class="addExerciseBtn">➕</button>
+
+
+                <!---->
+                <h2>Quinta Feira</h2>
+                <table class="weektable">
+                    <thead>
+                        <th class="th-exercicio">Exercício</th>
+                        <th class="th-series">Séries</th>
+                        <th class="th-repeticoes">Repetições</th>
+                        <th class="th-peso">Peso</th>
+                        <th class="th-descanso">Descanso</th>
+                        <th class="th-remove"></th>
+                    </thead>
+                    <tbody class="table-tbody">
+                    </tbody>
+                </table>
+                <button class="addExerciseBtn">➕</button>
+
+
+                <!---->
+                <h2>Sexta Feira</h2>
+                <table class="weektable">
+                    <thead>
+                        <th class="th-exercicio">Exercício</th>
+                        <th class="th-series">Séries</th>
+                        <th class="th-repeticoes">Repetições</th>
+                        <th class="th-peso">Peso</th>
+                        <th class="th-descanso">Descanso</th>
+                        <th class="th-remove"></th>
+                    </thead>
+                    <tbody class="table-tbody">
+                    </tbody>
+                </table>
+                <button class="addExerciseBtn">➕</button>
+
+                <!---->
+                <h2>Sábado</h2>
+                <table class="weektable">
+                    <thead>
+                        <th class="th-exercicio">Exercício</th>
+                        <th class="th-series">Séries</th>
+                        <th class="th-repeticoes">Repetições</th>
+                        <th class="th-peso">Peso</th>
+                        <th class="th-descanso">Descanso</th>
+                        <th class="th-remove"></th>
+                    </thead>
+                    <tbody class="table-tbody">
+                    </tbody>
+                </table>
+                <button class="addExerciseBtn">➕</button>
+
+
+                <!---->
+                <h2>Domingo</h2>
+                <table class="weektable">
+                    <thead>
+                        <th class="th-exercicio">Exercício</th>
+                        <th class="th-series">Séries</th>
+                        <th class="th-repeticoes">Repetições</th>
+                        <th class="th-peso">Peso</th>
+                        <th class="th-descanso">Descanso</th>
+                        <th class="th-remove"></th>
+                    </thead>
+                    <tbody class="table-tbody">
+                    </tbody>
+                </table>
+                <button class="addExerciseBtn">➕</button>
+
             </div>
-            <button class="addExerciseBtn">➕</button>
-
-            <!--Terça Feira-->
-            <h2>Terça Feira</h2>
-            <table class="weektable">
-                <thead>
-                    <th class="th-exercicio">Exercício</th>
-                    <th class="th-series">Séries</th>
-                    <th class="th-repeticoes">Repetições</th>
-                    <th class="th-remove"></th>
-                </thead>
-                <tbody class="table-tbody">
-                </tbody>
-            </table>
-            <button class="addExerciseBtn">➕</button>
-
-            <!--Quarta Feira-->
-            <h2>Quarta Feira</h2>
-            <table class="weektable">
-                <thead>
-                    <th class="th-exercicio">Exercício</th>
-                    <th class="th-series">Séries</th>
-                    <th class="th-repeticoes">Repetições</th>
-                    <th class="th-remove"></th>
-                </thead>
-                <tbody class="table-tbody">
-                </tbody>
-            </table>
-            <button class="addExerciseBtn">➕</button>
+            <div id="createweekdiv">
+                <button id="createweekbutton"><img src="/images/de" alt=""></button>
+            </div>
 
 
-            <!---->
-            <h2>Quinta Feira</h2>
-            <table class="weektable">
-                <thead>
-                    <th class="th-exercicio">Exercício</th>
-                    <th class="th-series">Séries</th>
-                    <th class="th-repeticoes">Repetições</th>
-                    <th class="th-remove"></th>
-                </thead>
-                <tbody class="table-tbody">
-                </tbody>
-            </table>
-            <button class="addExerciseBtn">➕</button>
+        </section>
 
 
-            <!---->
-            <h2>Sexta Feira</h2>
-            <table class="weektable">
-                <thead>
-                    <th class="th-exercicio">Exercício</th>
-                    <th class="th-series">Séries</th>
-                    <th class="th-repeticoes">Repetições</th>
-                    <th class="th-remove"></th>
-                </thead>
-                <tbody class="table-tbody">
-                </tbody>
-            </table>
-            <button class="addExerciseBtn">➕</button>
+    </main>
+</body>
 
-            <!---->
-            <h2>Sábado</h2>
-            <table class="weektable">
-                <thead>
-                    <th class="th-exercicio">Exercício</th>
-                    <th class="th-series">Séries</th>
-                    <th class="th-repeticoes">Repetições</th>
-                    <th class="th-remove"></th>
-                </thead>
-                <tbody class="table-tbody">
-                </tbody>
-            </table>
-            <button class="addExerciseBtn">➕</button>
-
-
-            <!---->
-            <h2>Domingo</h2>
-            <table class="weektable">
-                <thead>
-                    <th class="th-exercicio">Exercício</th>
-                    <th class="th-series">Séries</th>
-                    <th class="th-repeticoes">Repetições</th>
-                    <th class="th-remove"></th>
-                </thead>
-                <tbody class="table-tbody">
-                </tbody>
-            </table>
-            <button class="addExerciseBtn">➕</button>
-
-        </div>
-        </div>
-
-    </section>
-
-    <script src="planilhadetreino.js">
-    </script>
+<script src="planilhadetreino.js">
+</script>
 
 
 </body>

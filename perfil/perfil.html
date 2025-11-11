@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./perfil.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="perfil-conteudo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="main-header">
+        <div id="div-logo">
+            <a href="/home.html"><img src="/images/GYMEXP-LOGO-Amarelo.webp" alt="Logo"></a>
+        </div>
+        <nav id="header-navbar">
+            <ul>
+                <li><a id="home-link" href="/home.html">Home</a></li>
+                <li><a id="planilha-link" href="/planilhadetreino.html">Planilha de Treino</a></li>
+                <li><a id="sobrenos-link" class="a-dir" href="/sobrenos.html">Sobre nós</a></li>
+                <li><a id="perfil-link" class="a-dir" href="/perfil/perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="config-container">
+
+        <nav class="menu-coluna">
+            <img class="user-img" src="/images/user.webp" alt="">
+            <span><button class="tab-button ativo" data-target="#personal-info">
+                <i class="fas fa-user me-2"></i>Informações de Usuário
+            </button></span>
+            <span><button class="tab-button" data-target="#fisico">
+                <i class="fas fa-lock me-2"></i>Segurança
+            </button></span>
+            <span><button class="tab-button" data-target="#">
+                <i class="fas fa-bell me-2"></i>EXEMPLO
+            </button></span>
+            <span><button class="tab-button" data-target="#EX4">
+                <i class="fas fa-credit-card me-2"></i>EXEMPLO
+            </button></span>
+        </nav>
+
+        <div class="conteudo-coluna">
+            <section id="personal-info" class="tab-pane ativo">
+                <h5>Informações de Usuário</h5>
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label>Sobrenome</label>
+                    <input type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="">
+                </div>
+                <div class="form-group">
+                    <label>Telefone</label>
+                    <input type="tel" value="">
+                </div>
+                <div class="form-group">
+                    <label>Bio</label>
+                    <textarea rows="4">Lorem Ipsum</textarea>
+                </div>
+            </section>
+
+            <section id="fisico" class="tab-pane">
+                <h5>Configurações de Segurança</h5>
+                <p>Editar suas informações</p>
+                <div class="settings-card">
+
+                </div>
+            </section>
+
+            <section id="EX3" class="tab-pane">
+                <h5>Aba</h5>
+                <p>LOREM IPSUN</p>
+                 <div class_="settings-card">
+                    <h6>LOREM IPSUN</h6>
+            </section>
+
+            <section id="EX4" class="tab-pane">
+                <h5>aba</h5>
+                <p>Lorem Ipsum</p>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="./perfil.js"></script>
+</body>
+</html>
