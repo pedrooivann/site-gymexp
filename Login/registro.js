@@ -202,8 +202,8 @@ function Cadastrar() {
         Alert2.style.display = "block"
 
 
-        window.location.href = "login.html"
-        /*nescessario revisão aqui*/
+        window.location.href = "/Login/login.html"
+        
 
     } else {
         Alert1.style.display = "block"
