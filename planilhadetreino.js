@@ -240,55 +240,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       localStorage.setItem("planilhaTreino", JSON.stringify(dadosTreino));
-     showAlert("Treino salvo com sucesso!", "success");
+      alert("✅ Treino salvo com sucesso!");
     } catch (err) {
       console.error("Erro ao salvar treino:", err);
-     showAlert("Erro ao salvar treino.", "error");
+      alert("❌ Ocorreu um erro ao salvar o treino. Veja o console.");
     }
   });
 });
 
-//Salva o treino em arquivo PD
+//trabalho em andamento. Este código vai ser alterado daqui a alguns dias
 (function () {
   const script = document.createElement("script");
   script.src = "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
   script.onload = () => {
-    const botaoPDF = document.getElementById("Btpdf");
-    if (!Btpdf) return;
+    const botaoPDF = document.getElementById("BtPDF");
+    if (!botaoPDF) return;
 
     botaoPDF.addEventListener("click", () => {
-      const todasSemanas = document.querySelectorAll(".weekdiv");
-      if (!todasSemanas.length) {
-      showAlert("Nenhuma semana encontrada", "error");
-        return;
-      }
-
-      const areaPDF = document.createElement("div");
-
-     
-      todasSemanas.forEach((semana) => {
-        const linhas = semana.querySelectorAll("tbody tr");
-        let temExercicio = false;
-
-        linhas.forEach((linha) => {
-          const inputs = linha.querySelectorAll("input");
-          inputs.forEach((input) => {
-            if (input.value.trim() !== "") {
-              temExercicio = true;
-            }
-          });
-        });
-
-        
-        if (temExercicio) {
-          const clone = semana.cloneNode(true);
-          areaPDF.appendChild(clone);
-        }
-      });
-
-      if (areaPDF.children.length === 0) {
-     
-       showAlert("Nenhuma semana preenchida!", "warning");
+      const elemento = document.getElementById("right-main-section");
+      if (!elemento) {
+        alert("❌ Seção do treino não encontrada!");
         return;
       }
 
@@ -300,32 +271,9 @@ document.addEventListener("DOMContentLoaded", () => {
         pagebreak: { mode: ["avoid-all", "css", "legacy"] },
       };
 
-      html2pdf().set(opcoes).from(areaPDF).save();
+      html2pdf().set(opcoes).from(elemento).save();
     });
   };
   document.head.appendChild(script);
 })();
 
-//Sessão de alertas//
-function showAlert(message, type = "success") {
-  const modal = document.getElementById("customAlert");
-  const box = modal.querySelector(".alert-box");
-  const icon = document.getElementById("alertIcon");
-  const text = document.getElementById("alertMessage");
-
-  const icons = {
-    success: "✅",
-    error: "❌",
-    warning: "⚠️",
-  };
-
-  icon.textContent = icons[type] || "ℹ️";
-  text.textContent = message;
-
-  box.className = `alert-box ${type}`;
-  modal.classList.add("show");
-
-  setTimeout(() => {
-    modal.classList.remove("show");
-  }, 3000);
-}
