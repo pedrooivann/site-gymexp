@@ -201,9 +201,9 @@ function Cadastrar() {
         Alert1.style.display = "none"
         Alert2.style.display = "block"
 
-
+        setTimeout(()=>{
         window.location.href = "/Login/login.html"
-        
+        }, 1000)
 
     } else {
         Alert1.style.display = "block"
