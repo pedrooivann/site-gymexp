@@ -130,7 +130,18 @@ body {
     border-radius: 6px;
     font-size: 14px;
     box-sizing: border-box;
-    background-color: #fdfdfd; 
+    background-color: #fdfdfd;
+}
+
+.conteudo-coluna .form-group input:disabled,
+.conteudo-coluna .form-group textarea:disabled {
+    background-color: #f4f4f4;
+    cursor: not-allowed;     
+    color: #666;              
+}
+
+#btn-salvar-perfil {
+    display: none;
 }
 
 
