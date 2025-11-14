@@ -34,11 +34,20 @@ function entrar() {
         }
 
         if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
+            setTimeout(() =>{
             window.location.href = "/home.html"
+             }, 1000)
 
             /*Cria um token para o usuario garantindo que ele está autenticado no site*/
             let token = Math.random().toString(16).substring(2)
             localStorage.setItem("token", token)
+
+            error.style.display = "block"
+            error.style.width = "76%"
+            error.style.left = "34px"
+            error.style.background = "rgba(26, 216, 12, 0.412)"
+            error.innerHTML = "Usuario encontrado com sucesso"
+           
         }
     
         else {

@@ -148,7 +148,7 @@ button {
     transform: translateY(-5px);
 }
 
-/* MENSAGEM DE ERRO */
+/* MENSAGEM*/
 .error {
     display: none;
     position: absolute;
