@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(/images/sobrenos-wallpaper.webp);
 }
 
@@ -8,28 +8,96 @@ main {
     color: white;
 }
 
+#title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 #main-section {
-    background-color: rgb(56, 56, 56);
     width: 900px;
     height: auto;
-    box-shadow: 0px 1px 15px rgb(0, 0, 0);
+    font-size: 20px;
+
 
 }
 
 
-.inside-div {
-    height: 133px;
-    background-color: black;
+.profilediv {
+    position: relative;
+    display: flex;
+    
+    height: 250px;
     margin-top: 70px;
+    box-shadow: 0px 1px 10px 1px black;
 }
+
+.profilediv::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    /* espessura da “borda” */
+    height: 100%;
+    background: linear-gradient(180deg, rgb(0, 238, 255), rgb(111, 0, 255), rgb(111, 0, 255));
+}
+
+.tleft {
+    background: linear-gradient(90grad, transparent, rgb(0, 0, 0) );
+}
+
+.tright {
+    background: linear-gradient(90grad, rgb(0, 0, 0), transparent);
+}
+.tright::after {
+    left: auto;
+    right: 0;
+}
+
 #title.inside-div {
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 li #sobrenos-link {
     color: rgb(0, 204, 255);
+}
+
+#generaldiv {
+    height: 400px;
+    text-align: justify;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.7) 25%,
+            rgba(0, 0, 0, 0.5) 35%,
+            rgba(0, 0, 0, 0.4) 55%,
+            rgba(0, 0, 0, 0) 80%);
+}
+
+
+
+#generaldiv p,
+h4 {
+    padding: 0px 40px 0px 40px;
+}
+
+/* Conteúdo card perfil*/
+
+.profileimg-cnt {
+    width: 27.7%;
+    height: 100%;
+}
+
+.content-cnt{
+    width: 60%;
+    height: 100%;
+}
+
+.dir-cnt {
+    width: 12.3%;
+    height: 100%;
 }
