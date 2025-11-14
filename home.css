@@ -1,11 +1,42 @@
 body {
     padding: 0;
     margin: 0;
-    height: 100vh;
     background: linear-gradient(to bottom, #f5d000, #ff9100);
+    overflow-x: hidden;
+}
 
+main {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    
+    
+}
+
+h3 {
+    color: white;
+    color: 50px;
+}
+
+#main-section {
+    width: 1200px;
+    height: 100;
+    z-index: -1;
+    background-image: url(/images/metalic-background-main.webp);
 }
 
 li #home-link {
     color: yellow;
+}
+
+#apresentationdiv {
+height: 900px;
+}
+
+.sectiondiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

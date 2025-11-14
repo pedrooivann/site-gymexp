@@ -28,7 +28,7 @@ body {
     background-color: #ffffff; 
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.425);
-    overflow: hidden; 
+    height: 660px;
 }
 
 .menu-coluna {
@@ -41,6 +41,26 @@ body {
     padding: 20px;
     background-color: #fcfcfc;
     border-right: 1px solid #f0f0f0; 
+}
+
+.edit-button {
+    width: 100px;
+    padding: 15px;
+    border: none;
+    background-color: transparent; 
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px; 
+    font-weight: 600;
+    color: #444; 
+    margin-bottom: 5px;
+    border-radius: 8px; 
+    transition: background-color 0.2s ease-out, color 0.2s ease-out;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    margin: auto;
 }
 
 .tab-button{
@@ -89,8 +109,8 @@ body {
     flex-direction: column;
     align-items: stretch; 
     flex-grow: 1; 
-    padding: 40px;
-    
+    padding: 20px;
+    overflow-y: scroll;
 }
 
 .menu-coluna .user-img {
@@ -140,9 +160,11 @@ body {
     color: #666;              
 }
 
-#btn-salvar-perfil {
+
+.config-container #btn-salvar-perfil {
     display: none;
 }
+
 
 
 @media (max-width: 800px) {
