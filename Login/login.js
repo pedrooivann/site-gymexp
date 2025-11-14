@@ -32,33 +32,33 @@ function entrar() {
 
             }
         }
+    });
 
-        if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
-            window.location.href = "/home.html"
-
-            /*Cria um token para o usuario garantindo que ele está autenticado no site*/
-            let token = Math.random().toString(16).substring(2)
-            localStorage.setItem("token", token)
-        }
+    if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
+        window.location.href = "/home.html"
+        /*Cria um token para o usuario garantindo que ele está autenticado no site*/
+        let token = Math.random().toString(16).substring(2)
+        localStorage.setItem("token", token)
+        localStorage.setItem("userLogado", JSON.stringify(UserValid));
+    }
     
-        else {
-            error.style.display = "block"
-            error.style.width = "59%"
-            error.innerHTML = "Usuario não encontrado"
-        }
+    else {
+        error.style.display = "block"
+        error.style.width = "59%"
+        error.innerHTML = "Usuario não encontrado"
+    }
 
     
 
         // Oculta erro quando o usuário começa a digitar
-        [Usuario, Senha].forEach((input) => {
-            input.addEventListener("keyup", () => {
+    [Usuario, Senha].forEach((input) => {
+        input.addEventListener("keyup", () => {
                 
-                if (Usuario.value || Senha.value) {
-                    error.style.display = "none";
-                }
-                
-            })
-        })
-
+            if (Usuario.value || Senha.value) {
+                error.style.display = "none";
+            }            
+        });
     });
+
+    
 }
