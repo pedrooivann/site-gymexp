@@ -33,15 +33,31 @@
             <span><button class="tab-button ativo" data-target="#personal-info">
                 <i class="fas fa-user me-2"></i>Informações de Usuário
             </button></span>
-            <span><button class="tab-button" data-target="#fisico">
-                <i class="fa-solid fa-fire"></i>Informações Físicas
+            <span><button class="tab-button" data-target="#seguranca">
+                <i class="fa-solid fa-address-card"></i>Informações de segurança
             </button></span>
             <span><button class="tab-button" data-target="#">
                 <i class="fas fa-bell me-2"></i>Meus Treinos
             </button></span>
             <span><button class="tab-button" data-target="#EX4">
-                <i class="fa-solid fa-address-card"></i>EXEMPLO
+                EXEMPLO
             </button></span>
+
+            <div class="actionbuttons">
+                    
+                    <button id="btn-editar-perfil"  class="edit-button"
+                    style="background-color: #f0ad4e; color: white;">Editar Informações  
+                    </button>
+
+                    <button id="btn-salvar-perfil"  class="edit-button"
+                        style="background-color: #4CAF50; color: white;"> Salvar Alterações
+                    </button>
+
+                    <button id="btn-cancelar-alteracao"  class="edit-button"
+                        style="background-color: #d10000; color: white;">Cancelar Alterações
+                    </button>
+
+                </div>
         </nav>
 
         <div class="conteudo-coluna">
@@ -55,43 +71,28 @@
                     <label>Sobrenome</label>
                     <input type="text" value="" id="profile-sobrenome" disabled>
                 </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" value="" id="profile-email" disabled>
-                </div>
+                
                 <div class="form-group">
                     <label>Telefone</label>
                     <input type="tel" value="" id="profile-telefone" disabled>
                 </div>
-
-                <button id="btn-editar-perfil"  class="edit-button"
-                style="background-color: #f0ad4e; color: white;">Editar Informações  
-                 </button>
-
-                <button id="btn-salvar-perfil"  class="edit-button"
-                style="background-color: #4CAF50; color: white;"> Salvar Alterações
-                </button>
-
-                <button id="btn-cancelar-alteracao"  class="edit-button"
-                style="background-color: #d10000; color: white;">Cancelar Alterações</button>
+                
+                
             </section>
 
-            <section id="fisico" class="tab-pane">
+            <section id="seguranca" class="tab-pane">
                 <h5>Informações de segurança</h5>
-                <div class="settings-card">
-                    <div class="form-group">
-                    <label>Altura</label>
-                    <input type="text" value="">
+                <div class="form-group">
+                    <label>Usuário</label>
+                    <input type="text" value="" id="profile-user" disabled>
                 </div>
                 <div class="form-group">
-                    <label>Peso</label>
-                    <input type="text" value="">
+                    <label>Senha</label>
+                    <input type="text" value="" id="profile-senha" disabled>
                 </div>
                 <div class="form-group">
-                    <label>IMC</label>
-                    <input type="text" value="">
-                </div>
-
+                    <label>Email</label>
+                    <input type="email" value="" id="profile-email" disabled>
                 </div>
             </section>
 

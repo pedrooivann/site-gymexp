@@ -50,7 +50,7 @@ body {
     background-color: transparent; 
     text-align: center;
     cursor: pointer;
-    font-size: 15px; 
+    font-size: 13px; 
     font-weight: 600;
     color: #444; 
     margin-bottom: 5px;
@@ -59,7 +59,15 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    width: 300px;
+    width: 200px;
+    margin: auto;
+}
+
+.actionbuttons {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
     margin: auto;
 }
 
@@ -70,12 +78,13 @@ body {
     background-color: transparent; 
     text-align: left;
     cursor: pointer;
-    font-size: 15px; 
+    font-size: small; 
     font-weight: 600;
     color: #444; 
     margin-bottom: 5px;
     border-radius: 8px; 
     transition: background-color 0.2s ease-out, color 0.2s ease-out;
+
 }
 
 .tab-button i {
@@ -92,10 +101,10 @@ body {
 
 
 .tab-button.ativo{
-    /*background-color: #ffe711cc;*/
     background-color: rgb(0, 236, 0);
     color: #000; 
     font-weight: 700;
+    font-size: small;
 }
 
 .tab-button.ativo i {
@@ -162,6 +171,10 @@ body {
 
 
 .config-container #btn-salvar-perfil {
+    display: none;
+}
+
+.config-container #btn-cancelar-alteracao {
     display: none;
 }
 

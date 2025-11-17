@@ -42,33 +42,6 @@ function entrar() {
         }
     });
 
-<<<<<<< HEAD
-        if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
-            setTimeout(() => {
-                window.location.href = "/home.html"
-            }, 1000)
-
-            /*Cria um token para o usuario garantindo que ele está autenticado no site*/
-            let token = Math.random().toString(16).substring(2)
-            localStorage.setItem("token", token)
-
-            error.style.display = "block"
-            error.style.width = "78%"
-            error.style.left = "34px"
-            error.style.background = "rgba(26, 216, 12, 0.412)"
-            error.innerHTML = "Usuario encontrado com sucesso!"
-
-        }
-
-
-
-        else {
-            error.style.display = "block"
-            error.style.width = "59%"
-            error.style.left = "65px"
-            error.innerHTML = "Usuario não encontrado"
-        }
-=======
     if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
         window.location.href = "/home.html"
         /*Cria um token para o usuario garantindo que ele está autenticado no site*/
@@ -82,25 +55,10 @@ function entrar() {
         error.style.width = "59%"
         error.innerHTML = "Usuario não encontrado"
     }
->>>>>>> 1ceaee6f2efecbb3dbc5b96f51b6ee33e3dda914
 
 
 
         // Oculta erro quando o usuário começa a digitar
-<<<<<<< HEAD
-        [Usuario, Senha].forEach((input) => {
-            input.addEventListener("keyup", () => {
-
-                if (Usuario.value || Senha.value) {
-                    error.style.display = "none";
-                }
-
-            })
-
-
-        })
-
-=======
     [Usuario, Senha].forEach((input) => {
         input.addEventListener("keyup", () => {
                 
@@ -108,7 +66,6 @@ function entrar() {
                 error.style.display = "none";
             }            
         });
->>>>>>> 1ceaee6f2efecbb3dbc5b96f51b6ee33e3dda914
     });
 
     
