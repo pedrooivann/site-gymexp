@@ -16,6 +16,14 @@ function entrar() {
     }
     ListaUser = JSON.parse(localStorage.getItem("ListaUser"))
 
+    if (Usuario.value === "" || Senha.value === "") {
+        error.style.display = "block";
+        error.style.width = "45%"
+        error.style.left = "80px"
+        error.innerHTML = "Há campos vazios";
+        return;
+    }
+
     /*O for each varrera a ListaUser no Localstorage afim de poder validar o login*/
     ListaUser.forEach((item) => {
         if (Usuario.value == item.NickUsuario || Senha.value == item.SenhaUsuario) {
@@ -32,42 +40,33 @@ function entrar() {
 
             }
         }
+    });
 
-        if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
-            setTimeout(() =>{
-            window.location.href = "/home.html"
-             }, 1000)
-
-            /*Cria um token para o usuario garantindo que ele está autenticado no site*/
-            let token = Math.random().toString(16).substring(2)
-            localStorage.setItem("token", token)
-
-            error.style.display = "block"
-            error.style.width = "76%"
-            error.style.left = "34px"
-            error.style.background = "rgba(26, 216, 12, 0.412)"
-            error.innerHTML = "Usuario encontrado com sucesso"
-           
-        }
+    if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
+        window.location.href = "/home.html"
+        /*Cria um token para o usuario garantindo que ele está autenticado no site*/
+        let token = Math.random().toString(16).substring(2)
+        localStorage.setItem("token", token)
+        localStorage.setItem("userLogado", JSON.stringify(UserValid));
+    }
     
-        else {
-            error.style.display = "block"
-            error.style.width = "59%"
-            error.innerHTML = "Usuario não encontrado"
-        }
+    else {
+        error.style.display = "block"
+        error.style.width = "59%"
+        error.innerHTML = "Usuario não encontrado"
+    }
 
-    
+
 
         // Oculta erro quando o usuário começa a digitar
-        [Usuario, Senha].forEach((input) => {
-            input.addEventListener("keyup", () => {
+    [Usuario, Senha].forEach((input) => {
+        input.addEventListener("keyup", () => {
                 
-                if (Usuario.value || Senha.value) {
-                    error.style.display = "none";
-                }
-                
-            })
-        })
-
+            if (Usuario.value || Senha.value) {
+                error.style.display = "none";
+            }            
+        });
     });
+
+    
 }
