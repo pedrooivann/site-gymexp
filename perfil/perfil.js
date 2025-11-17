@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const btnCancel = document.getElementById("btn-cancelar-alteracao");
 
     if (userLogado) {
-        userIndex = listaUser.findIndex(user => user.NickUsuario === userLogado.NickUsuario);
+        userIndex = listaUser.findIndex(user => user.NickUsuario === userLogado.usuario);
     } else {
         console.log("AVISO: Nenhum utilizador logado.");
         btnEditar.style.display = 'none';
@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function carregarUsuario() {
         if (userLogado) {
-            inputNome.value = userLogado.NomeUsuario || "";
+            inputNome.value = userLogado.nome || "";
             inputSobrenome.value = userLogado.sobrenome || "";
             inputEmail.value = userLogado.email || "";
-            inputTelefone.value = userLogado.TelefoneUsuario || "";
-            inputUser.value = userLogado.NickUsuario || "";
-            inputPassword.value = userLogado.SenhaUsuario || "";
+            inputTelefone.value = userLogado.telefone || "";
+            inputUser.value = userLogado.usuario || "";
+            inputPassword.value = userLogado.senha || "";
         }
     }
     carregarUsuario();
@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function(){
         const novoPassword = inputPassword.value;
 
         listaUser[userIndex].NomeUsuario = novoNome;
-        listaUser[userIndex].sobrenome = novoSobrenome;
-        listaUser[userIndex].email = novoEmail;
+        listaUser[userIndex].SobrenomeUsuario = novoSobrenome;
+        listaUser[userIndex].EmailUsuario = novoEmail;
         listaUser[userIndex].TelefoneUsuario = novoTelefone;
         listaUser[userIndex].NickUsuario = novoUser;
         listaUser[userIndex].SenhaUsuario = novoPassword;
@@ -124,5 +124,30 @@ document.addEventListener("DOMContentLoaded", function(){
 
     });
 
+    const containerTreino = document.querySelector(".treinos-card");
+    const treinosSalvo = JSON.parse(localStorage.getItem("planilhaTreino") || "[]");
+
+
+    function carregarTreinos() {
+        
+        containerTreino.innerHTML = "";
+
+        if (treinosSalvo.length === 0) {
+            containerTreino.innerHTML = `<p>Nenhum treino salvo.</p>`;
+            return;
+        }
+        treinosSalvo.forEach((semana) => {
+            const divSemana = document.createElement("div");
+            const nomeSemana = document.createElement("h4");
+
+            nomeSemana.textContent = semana.nomeSemana;
+
+            divSemana.appendChild(nomeSemana);
+            containerTreino.appendChild(divSemana);
+        });
+        
+    
+    }
+    carregarTreinos();
 
 });
