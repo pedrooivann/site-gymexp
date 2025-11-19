@@ -163,6 +163,9 @@ main {
     color: rgb(255, 255, 255);
     margin-top: 20px;
 }
+.weekdiv button {
+        cursor: pointer;
+}
 
 /* Divs menores (Dias) */
 
@@ -284,6 +287,6 @@ li #planilha-link {
 
 @media (max-width: 768px) {
     #right-main-section {
-            grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
