@@ -106,6 +106,7 @@ main {
 }
 
 #painel-section {
+
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -116,6 +117,7 @@ main {
 
 
 #painel-container {
+
     margin-top: 30px;
     height: 300px;
     width: 100%;
@@ -217,6 +219,7 @@ main {
 
 .weektable th {
     background-color: rgb(119, 0, 255);
+    color: rgb(255, 255, 255);
     height: 30px;
 }
 
@@ -277,4 +280,10 @@ main {
 
 li #planilha-link {
     color: blueviolet;
+}
+
+@media (max-width: 768px) {
+    #right-main-section {
+            grid-template-columns: repeat(1, 1fr);
+    }
 }
