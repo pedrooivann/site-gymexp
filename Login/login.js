@@ -60,6 +60,8 @@ function entrar() {
             let token = Math.random().toString(16).substring(2)
             localStorage.setItem("token", token)
 
+            localStorage.setItem("userLogado", JSON.stringify(UserValid));
+
             error.style.display = "block"
             error.style.width = "78%"
             error.style.left = "34px"

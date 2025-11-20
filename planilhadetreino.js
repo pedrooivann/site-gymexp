@@ -210,9 +210,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!botaoSalvar) return;
 
   botaoSalvar.addEventListener("click", () => {
+
+    const dadosTreino = [];
+
     try {
       const semanas = document.querySelectorAll(".weekdiv");
-      const dadosTreino = [];
+      
 
       semanas.forEach((semana) => {
         const nomeSemana = (semana.querySelector(".weektitle")?.textContent || "").trim();
@@ -239,13 +242,35 @@ document.addEventListener("DOMContentLoaded", () => {
         dadosTreino.push({ nomeSemana, dias });
       });
 
-      localStorage.setItem("planilhaTreino", JSON.stringify(dadosTreino));
-     showAlert("Treino salvo com sucesso!", "success");
     } catch (err) {
       console.error("Erro ao salvar treino:", err);
-     showAlert("Erro ao salvar treino.", "error");
+      showAlert("Erro ao salvar treino.", "error");
+      return;
     }
+    const nomeDoTreino = prompt("Digite um nome para salvar este treino na sua Biblioteca (Ex.: Treino de Hipertrofia):");
+
+    if (!nomeDoTreino) return; 
+
+    
+    const novoTreino = {
+      id: Date.now(),
+      nome: nomeDoTreino,
+      dataCriacao: new Date().toLocaleDateString(),
+      conteudo: dadosTreino
+    };
+
+    const listaTreinos = JSON.parse(localStorage.getItem("meusTreinosSalvos") || "[]");
+
+    
+    listaTreinos.push(novoTreino);
+
+    
+    localStorage.setItem("meusTreinosSalvos", JSON.stringify(listaTreinos));
+
+    showAlert(`Treino "${nomeDoTreino}" salvo no Perfil!`, "success");
   });
+
+  
 });
 
 //Salva o treino em arquivo PD

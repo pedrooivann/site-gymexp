@@ -24,7 +24,33 @@ document.addEventListener("DOMContentLoaded", function(){
     
     const listaUser = JSON.parse(localStorage.getItem("ListaUser") || "[]");
     const userLogado =  JSON.parse(localStorage.getItem("userLogado"));
+
+    if (!userLogado) {
+        const userResgate = prompt("Não foi possivel captar a informação do login, digite novamente seu NOME DE USUÁRIO: ")
+
+        if (userResgate){
+            const userEncontrado = listaUser.find(u => u.NickUsuario === userResgate);
+
+            if (userEncontrado) {
+                userLogado = {
+                    nome: userEncontrado.NomeUsuario,
+                    sobrenome: userEncontrado.SobrenomeUsuario,
+                    email: userEncontrado.EmailUsuario,
+                    telefone: userEncontrado.TelefoneUsuario,
+                    usuario: userEncontrado.NickUsuario,
+                    senha: userEncontrado.SenhaUsuario
+                };
+                localStorage.setItem("userLogado", JSON.stringify(userLogado));
+            } else {
+                alert("Não foi possivel identificar seu usuário no banco, certifique-se de que tenha digitado corretamente.");
+            }
+        }
+    }
+
+
     let userIndex = -1;
+
+    
 
     const inputsPerfil = document.querySelectorAll(
         "#seguranca input, #seguranca textarea, #personal-info input, #personal-info textarea"
@@ -80,12 +106,46 @@ document.addEventListener("DOMContentLoaded", function(){
             return;
         }
         
-        const novoNome = inputNome.value;
-        const novoSobrenome = inputSobrenome.value;
-        const novoEmail = inputEmail.value;
-        const novoTelefone = inputTelefone.value;
-        const novoUser = inputUser.value;
-        const novoPassword = inputPassword.value;
+        const novoNome = inputNome.value.trim();
+        const novoSobrenome = inputSobrenome.value.trim();
+        const novoEmail = inputEmail.value.trim();
+        const novoTelefone = inputTelefone.value.trim();
+        const novoUser = inputUser.value.trim();
+        const novoPassword = inputPassword.value.trim();
+
+        if (!novoNome || !novoSobrenome || !novoEmail || !novoTelefone || !novoUser || !novoPassword) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
+
+        const userDuplicado = listaUser.some((userLista, index) => {
+            const difUser = index !== userIndex;
+
+            const mesmoUser = userLista.NickUsuario === novoUser;
+
+            return difUser && mesmoUser;
+        });
+
+        if (userDuplicado) {
+            alert("Usuário já cadastrado.");
+            return;
+        }
+
+        const emailDuplicado = listaUser.some((userLista, index) =>{
+
+            const diffEmail = index !== userIndex;
+
+            const mesmoEmail = userLista.EmailUsuario === novoEmail;
+
+            return diffEmail && mesmoEmail;
+
+        });
+
+        if (emailDuplicado) {
+            alert("E-mail já cadastrado.");
+            return;
+        }
+
 
         listaUser[userIndex].NomeUsuario = novoNome;
         listaUser[userIndex].SobrenomeUsuario = novoSobrenome;
@@ -125,28 +185,101 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     const containerTreino = document.querySelector(".treinos-card");
-    const treinosSalvo = JSON.parse(localStorage.getItem("planilhaTreino") || "[]");
-
-
+    
     function carregarTreinos() {
+        const treinosSalvo = JSON.parse(localStorage.getItem("meusTreinosSalvos") || "[]");
         
         containerTreino.innerHTML = "";
 
-        if (treinosSalvo.length === 0) {
-            containerTreino.innerHTML = `<p>Nenhum treino salvo.</p>`;
+        if(treinosSalvo.length === 0) {
+            containerTreino.innerHTML = `<p style="color: black; padding: 20px;">Nenhum treino salvo ainda.</p>`
             return;
         }
-        treinosSalvo.forEach((semana) => {
-            const divSemana = document.createElement("div");
-            const nomeSemana = document.createElement("h4");
 
-            nomeSemana.textContent = semana.nomeSemana;
+        treinosSalvo.forEach((treino) => {
+            const divItem = document.createElement("div");
 
-            divSemana.appendChild(nomeSemana);
-            containerTreino.appendChild(divSemana);
+            divItem.style.cssText = "background: #f8f9fa; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;"; 
+
+
+            const info = document.createElement("div");
+            info.innerHTML = `<strong>${treino.nome}</strong> <br> <small>Criado em: ${treino.dataCriacao}</small>`;
+
+            const btnDownload = document.createElement("button");
+            btnDownload.textContent = "Baixar PDF";
+            btnDownload.style.cssText = "background: #dc3545; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;";
+
+            btnDownload.addEventListener("click", () => {
+                gerarPdfTreino(treino);
+            });
+
+            divItem.appendChild(info);
+            divItem.appendChild(btnDownload);
+            containerTreino.appendChild(divItem);
         });
+    }
+
+    function gerarPdfTreino(treino) {
+        const elementoPDF = document.createElement("div");
+        elementoPDF.style.padding = "20px";
+        elementoPDF.style.fontFamily = "Arial, sans-serif";
+        elementoPDF.style.color = "#000";
+
         
-    
+        elementoPDF.innerHTML += `
+            <div style="text-align:center; margin-bottom:20px;">
+                <h1 style="color:#ed4b00; margin:0;">${treino.nome}</h1>
+                <p style="color:#666;">Gym Experience - Treino Personalizado</p>
+                <hr style="border:1px solid #ed4b00;">
+            </div>
+        `;
+        
+
+        treino.conteudo.forEach((semana) => {
+            let htmlSemana = `<h3 style="background:#333; color:white; padding:5px;">${semana.nomeSemana}</h3>`;
+
+            semana.dias.forEach((dia) => {
+                if(dia.exercicios && dia.exercicios.length > 0) {
+                    htmlSemana += `<h4 style="margin-top:15px; border-bottom: 2px solid #ed4b00;">${dia.nomeDia}</h4>`;
+
+                    htmlSemana += `
+                    <table style="width:100%; border-collapse: collapse; margin-bottom: 10px; font-size: 12px;">
+                        <thead style="background-color: #ed4b00; color: white;">
+                            <tr>
+                                <th style="padding: 5px; text-align: left;">Exercício</th>
+                                <th style="padding: 5px;">Séries</th>
+                                <th style="padding: 5px;">Reps</th>
+                                <th style="padding: 5px;">Carga</th>
+                                <th style="padding: 5px;">Descanso</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+                    dia.exercicios.forEach((ex) => {
+                        htmlSemana += `
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 5px;">${ex.exercicio}</td>
+                                <td style="padding: 5px; text-align: center;">${ex.serie}</td>
+                                <td style="padding: 5px; text-align: center;">${ex.repeticao}</td>
+                                <td style="padding: 5px; text-align: center;">${ex.peso || "-"}</td>
+                                <td style="padding: 5px; text-align: center;">${ex.descanso || "-"}</td>
+                            </tr>`;
+                    });
+                    htmlSemana += `</tbody></table>`;
+
+                }
+            });
+
+            elementoPDF.innerHTML += htmlSemana;
+        });
+
+        const opcoes = {
+            margin: 10,
+            filename: `${treino.nome.replace(/\s+/g, '_')}.pdf`,
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+        };
+        html2pdf().set(opcoes).from(elementoPDF).save();
     }
     carregarTreinos();
 
