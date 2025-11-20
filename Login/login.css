@@ -103,7 +103,6 @@ input:focus {
     background: white;
     backdrop-filter: blur(10px) saturate(180%);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
     color: black;
 
 }
@@ -148,6 +147,17 @@ button {
     transform: translateY(-5px);
 }
 
+.eye-btn{
+    position: absolute;
+    height: 42px;
+    top: 244px;
+    right: 19%;
+}
+
+.eye-btn:hover{
+     cursor: pointer;
+
+}
 /* MENSAGEM*/
 .error {
     display: none;

@@ -1,3 +1,13 @@
+
+let eye = document.getElementById("eye_btn")
+
+eye.addEventListener("click", () => {
+    if(Senha.getAttribute("type") == "password"){
+        Senha.setAttribute("type", "text")}
+
+    else(Senha.setAttribute("type", "password"))
+})
+
 function entrar() {
     let Usuario = document.getElementById("Usuario")
     let Senha = document.getElementById("Senha")
@@ -40,9 +50,7 @@ function entrar() {
 
             }
         }
-    });
 
-<<<<<<< HEAD
         if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
             setTimeout(() => {
                 window.location.href = "/home.html"
@@ -68,48 +76,22 @@ function entrar() {
             error.style.left = "65px"
             error.innerHTML = "Usuario não encontrado"
         }
-=======
-    if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
-        window.location.href = "/home.html"
-        /*Cria um token para o usuario garantindo que ele está autenticado no site*/
-        let token = Math.random().toString(16).substring(2)
-        localStorage.setItem("token", token)
-        localStorage.setItem("userLogado", JSON.stringify(UserValid));
-    }
-    
-    else {
-        error.style.display = "block"
-        error.style.width = "59%"
-        error.innerHTML = "Usuario não encontrado"
-    }
->>>>>>> 1ceaee6f2efecbb3dbc5b96f51b6ee33e3dda914
 
 
 
         // Oculta erro quando o usuário começa a digitar
-<<<<<<< HEAD
         [Usuario, Senha].forEach((input) => {
             input.addEventListener("keyup", () => {
 
                 if (Usuario.value || Senha.value) {
                     error.style.display = "none";
                 }
-
             })
 
 
         })
 
-=======
-    [Usuario, Senha].forEach((input) => {
-        input.addEventListener("keyup", () => {
-                
-            if (Usuario.value || Senha.value) {
-                error.style.display = "none";
-            }            
-        });
->>>>>>> 1ceaee6f2efecbb3dbc5b96f51b6ee33e3dda914
     });
-
-    
 }
+
+
