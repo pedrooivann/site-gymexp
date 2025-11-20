@@ -6,6 +6,13 @@ body {
 }
 
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
 .alert-modal {
     position: fixed;
     top: 0;
@@ -99,13 +106,9 @@ body {
     transform: translateY(-2px)
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 #painel-section {
+
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -160,6 +163,9 @@ main {
     font-weight: 900;
     color: rgb(255, 255, 255);
     margin-top: 20px;
+}
+.weekdiv button {
+        cursor: pointer;
 }
 
 /* Divs menores (Dias) */
@@ -217,6 +223,7 @@ main {
 
 .weektable th {
     background-color: rgb(119, 0, 255);
+    color: rgb(255, 255, 255);
     height: 30px;
 }
 
@@ -277,4 +284,10 @@ main {
 
 li #planilha-link {
     color: blueviolet;
+}
+
+@media (max-width: 768px) {
+    #right-main-section {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

@@ -1,40 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="icon" href="/images/GYMEXP-LOGO-Amarelo.webp">
-    <link rel="stylesheet" href="style.css">
+    <title>Gym Exp</title>
     <link rel="stylesheet" href="home.css">
 </head>
-
 <body>
-
-    <header id="main-header">
-        <div id="div-logo">
-            <a href="./home.html"><img src="/images/GYMEXP-LOGO-Amarelo.webp" alt="Logo"></a>
-        </div>
-        <nav id="header-navbar">
-
-            <ul>
-                <li><a id="home-link" href="home.html">Home</a></li>
-                <li><a id="planilha-link" href="planilhadetreino.html">Planilha de Treino</a></li>
-                <li><a id="sobrenos-link" class="a-dir" href="sobrenos.html">Sobre nós</a></li>
-                <li><a id="perfil-link" class="a-dir" href="/perfil/perfil.html">Perfil</a></li>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>Gym Exp</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a href="ajuda.html" class="nav-link">Ajuda</a>
+                </li>
             </ul>
-        </nav>
+            <div class="theme-toggle">
+                <button id="darkModeToggle">🌙</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Gym Exp</h1>
     </header>
 
-    <main>
-        <section id="main-section">
-            <div class="sectiondiv" id="apresentationdiv">
-            <h3>OLaaaaa</h3>
-                
-            </div>
-        </section>
-    </main>
-</body>
+    <main class="cards-container">
+        <div class="card">
+            <div class="card-icon">💪</div>
+            <h3>Monte Sua Planilha</h3>
+            <p>Crie seu treino personalizado</p>
+            <a href="planilhadetreino.html" class="card-btn">Criar</a>
+        </div>
 
+        <div class="card">
+            <div class="card-icon">👤</div>
+            <h3>Sobre Nós</h3>
+            <p>Conheça nossos Dev´s</p>
+            <a href="sobrenos.html" class="card-btn">Acessar</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🏆</div>
+            <h3>Treinos Famosos</h3>
+            <p>Métodos dos campeões</p>
+            <a href="https://www.hipertrofia.org/blog/2016/01/07/treinos-de-musculacao" class="card-btn" target="_blank">Acessar</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔬</div>
+            <h3>Bodybuilding</h3>
+            <p>Arte da musculatura</p>
+            <a href="https://blog.blackskullusa.com.br/bodybuilding/?gad_source=1&gad_campaignid=22638728826&gclid=Cj0KCQiA5uDIBhDAARIsAOxj0CFz06ZOutQFefI5UAIwT4WIyXG819ReoSsgYY4FvZujvkqVyXnwqqkaAkusEALw_wcB" class="card-btn" target="_blank">Acessar</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Powerlifting</h3>
+            <p>Força máxima</p>
+            <a href="https://blog.integralmedica.com.br/powerlifting" class="card-btn" target="_blank">Acessar</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📚</div>
+            <h3>Guia Completo</h3>
+            <p>Tudo sobre musculação</p>
+            <a href="guia.html" class="card-btn">Estudar</a>
+        </div>
+    </main>
+
+    <script src="javascript.js"></script>
+</body>
 </html>

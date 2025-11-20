@@ -16,6 +16,7 @@
 }
 
 #main-header {
+    position: relative;
     color: whitesmoke;
     justify-content: space-between;
     background-color: rgb(0, 0, 0);
@@ -23,7 +24,8 @@
     flex-direction: row;
     height: 75px;
     align-items: center;
-    box-shadow: 0px 0px 50px 60px black;
+    box-shadow: 0px 0px 30px 40px black;
+    z-index: 20;
 
 }
 

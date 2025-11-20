@@ -192,7 +192,7 @@ function Cadastrar() {
             EmailUsuario: email.value,
             NickUsuario: usuario.value,
             SenhaUsuario: senha.value,
-            telefoneUsuario: telefone.value,
+            TelefoneUsuario: telefone.value,
             IdadeUsuario: idade.value
         })
 
