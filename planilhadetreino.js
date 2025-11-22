@@ -17,7 +17,7 @@ secaosemanas.addEventListener('click', (e) => {
         const novo_peso = document.createElement("td");
         const nova_descanso = document.createElement("td");
         const novo_rir = document.createElement("td");
-        const novo_rep = document.createElement("td");
+        const novo_rpe = document.createElement("td");
         const novo_removerbtn = document.createElement("td");
 
         //Cria os inputs
@@ -27,12 +27,10 @@ secaosemanas.addEventListener('click', (e) => {
         const input_peso = document.createElement("input");
         const input_descanso = document.createElement("input");
         const input_rir = document.createElement("input");
-        const input_rep = document.createElement("input");
+        const input_rpe = document.createElement("input");
 
         input_peso.placeholder = "Kg";
         input_descanso.placeholder = "--:--";
-        input_rir.placeholder = "RIR";
-        input_rep.placeholder = "REP";
         
         //Cria botão de remover
         const removerLinhaBtn = document.createElement("button");
@@ -41,7 +39,7 @@ secaosemanas.addEventListener('click', (e) => {
         input_serie.type = "number";
         input_repeticao.type = "number";
         input_rir.type = "number";
-        input_rep.type = "number";
+        input_rpe.type = "number";
 
         // IMPEDIR NÚMEROS NO CAMPO EXERCÍCIO
         input_exercicio.addEventListener('input', (e) => {
@@ -74,16 +72,16 @@ secaosemanas.addEventListener('click', (e) => {
         });
 
         Object.assign(input_rir.style, {
-            backgroundColor: "rgba(255, 255, 255, 1)",
-            textAlign: "center"
-        });
-
-        Object.assign(input_rep.style, {
             backgroundColor: "rgb(205, 205, 205)",
             textAlign: "center"
         });
 
-        [input_exercicio, input_serie, input_repeticao, input_peso, input_descanso, input_rir, input_rep].forEach(input => {
+        Object.assign(input_rpe.style, {
+            backgroundColor: "rgba(255, 255, 255, 1)",
+            textAlign: "center"
+        });
+
+        [input_exercicio, input_serie, input_repeticao, input_peso, input_descanso, input_rir, input_rpe].forEach(input => {
             Object.assign(input.style, {
                 width: "100%",
                 boxSizing: "border-box",
@@ -112,7 +110,7 @@ secaosemanas.addEventListener('click', (e) => {
         novo_peso.appendChild(input_peso);
         nova_descanso.appendChild(input_descanso);
         novo_rir.appendChild(input_rir);
-        novo_rep.appendChild(input_rep);
+        novo_rpe.appendChild(input_rpe);
         novo_removerbtn.appendChild(removerLinhaBtn);
 
         //Coloca as células dentro da linha
@@ -122,7 +120,7 @@ secaosemanas.addEventListener('click', (e) => {
         linha.appendChild(novo_peso);
         linha.appendChild(nova_descanso);
         linha.appendChild(novo_rir);
-        linha.appendChild(novo_rep);
+        linha.appendChild(novo_rpe);
         linha.appendChild(novo_removerbtn);
 
         plan_tabela.appendChild(linha);
@@ -284,9 +282,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         const inputs = linha.querySelectorAll("input");
                         if (inputs.length >= 7) {
                             const valores = Array.from(inputs).map(i => i.value.trim());
-                            const [exercicio, serie, repeticao, peso, descanso, rir, rep] = valores;
+                            const [exercicio, serie, repeticao, peso, descanso, rir, rpe] = valores;
                             if (exercicio) {
-                                exercicios.push({ exercicio, serie, repeticao, peso, descanso, rir, rep });
+                                exercicios.push({ exercicio, serie, repeticao, peso, descanso, rir, rpe });
                             }
                         }
                     });

@@ -1,13 +1,16 @@
 
 
+const qblinha = document.createElement('br');
+const botao_bodybuilding = document.getElementById('bodybuilding-btn');
+const botao_powerlifting = document.getElementById('powerlifting-btn');
+
 //Botão BODYBUILDING
 
-const botao_bodybuilding = document.getElementById('bodybuilding-btn');
+
 const conteudo = document.getElementById('workoutselection-content');
 
 botao_bodybuilding.addEventListener('click', () => {
 
-    const qblinha = document.createElement('br');
     conteudo.innerHTML = "";
     const bodybuilding_title = document.createElement('h1');
     bodybuilding_title.innerHTML = "Fundamentos do Bodybuilding";
@@ -29,7 +32,7 @@ botao_bodybuilding.addEventListener('click', () => {
     const p_seisdias = document.createElement('p');
     const title_periodizacao = document.createElement('h1');
     const p_periodizacao = document.createElement('p');
-    const a_planilha = document.createElement('span');
+
 
     // Fundamentos do bodybuilding
     p1.innerText = "Bodybuilding é um processo sistemático de manipular estímulo muscular, recuperação e nutrição para gerar hipertrofia. O objetivo não é apenas ficar mais forte, mas criar um físico equilibrado, denso e proporcional. Isso exige compreender como o músculo responde ao treinamento e como organizar o estímulo de maneira mensurável. Treinar sem estrutura é como tentar construir uma casa sem planta: por acaso você até ergue alguma coisa, mas não chega ao resultado ideal. Bodybuilding depende de três pilares — tensão mecânica, estresse metabólico e dano muscular — e toda sessão de treino deve buscar pelo menos os dois primeiros de forma controlada.";
@@ -99,4 +102,44 @@ botao_bodybuilding.addEventListener('click', () => {
     //Periodizacao
     conteudo.appendChild(title_periodizacao);
     conteudo.appendChild(p_periodizacao);
+});
+
+botao_powerlifting.addEventListener('click', () => {
+
+    conteudo.innerHTML = "";
+    const powerlifting_title = document.createElement('h1');
+    powerlifting_title.innerHTML = "Fundamentos do Powerlifting";
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const divisao_powerlifting_title = document.createElement('h1');
+    const p4 = document.createElement('p');
+    const p5 = document.createElement('p');
+
+    const title_exemplo_power = document.createElement('h2');
+
+
+    p1.innerText = "Powerlifting é o esporte focado em produzir o maior nível de força possível em três movimentos — agachamento, supino e levantamento terra — com máxima eficiência técnica. A ideia é simples: diferente do bodybuilding, que “esculpe” o físico, o powerlifting funciona como preparar um carro de arrancada, onde tudo é voltado para explodir potência em um único momento. O atleta treina para mover a maior carga no menor tempo, com um padrão de movimento consistente, econômico e repetível. Cada centímetro, cada ângulo e cada detalhe da técnica influencia a força final. No powerlifting, você não treina apenas músculos; você treina o sistema nervoso para recrutar fibras mais rápido, coordenar melhor os movimentos e transformar o corpo em uma máquina de força pura.";
+    p2.innerText = "A base do treino em powerlifting é o desenvolvimento de força neural, porque força máxima não vem só de músculo, e sim de quão bem o seu sistema nervoso consegue recrutar fibras e coordenar o movimento sob carga. Quanto mais você pratica os três levantamentos com técnica consistente, mais eficiente seu corpo fica em ativar fibras rápidas, reduzir desperdício de energia e estabilizar articulações. Por isso o treino foca em baixas repetições, alta qualidade técnica e progressão planejada de carga. A ideia não é sair destruído, e sim ensinar o corpo a produzir força com precisão cirúrgica.";
+    p3.innerText = "Montar treino de powerlifting é sobre organizar os três movimentos principais — agachamento, supino e terra — de forma que você pratique técnica com frequência alta, progrida carga de maneira controlada e mantenha a fadiga sempre sob vigilância. A sessão começa pelos lifts principais, com poucas repetições e foco total na execução, porque força máxima depende de sistema nervoso descansado; depois entram os acessórios para corrigir pontos fracos, reforçar musculaturas específicas e impedir que a técnica colapse sob carga. A progressão deve ser simples, mexendo em um elemento por vez — peso, repetições ou séries — evitando aumentar tudo de uma vez para não afogar o corpo. A fadiga é administrada com ciclos de 3 semanas de subida e 1 semana mais leve, permitindo supercompensação real. A frequência ideal trabalha cada lift de 2 a 4 vezes por semana, porque técnica e força se constroem como idioma: repetição constante. No final, montar treino de powerlifting é afinar um carro de arrancada — tudo gira em torno de ajustar alavancas, potência e consistência para produzir o maior output possível quando importa.";
+
+    divisao_powerlifting_title.innerHTML = "Divisão de treino para Powerlifting";
+
+    p4.innerText = "Dito isso, é importante montar um treino de powerlifting que conserve o máximo o Sistema Nervoso Central e de forma que mantenha a intensidade de acordo com cada grupo muscular e evite o desgaste ligamentar. Cada um dos principais exercícios do Powerlifting possuem demandas diferentes, o agachamento (Squat) possui um desgaste intermediário por pegar quase toda parte inferior do corpo, causando fadiga também na cadeia posterior, atrapalhando no dia de levantamento terra, logo é aconselhavel treina-lo 2x na semana. O supino (Bench), por ser um grupo muscular menor (Peitoral, ombro e tríceps), requer menos tempo de recuperação, sendo viável colocá-lo até 3-4x na semana. E por fim o levantamento terra (Deadlift), que é o exercício de powerlifting mais desgastante, utilizando de toda cadeia posterior do corpo: glúteos, isquiotibiais e erétores da espinha (lombar), além dos dorsais, trapézios e quadríceps, além também de forçar músculos do antebraço, por isso é treinado de 1 até 2 vezes na semana para evitar lesões."
+    p5.innerText = "Além de organizar os levantamentos principais, é necessário que os músculos acumulem volume para gerar hipertrofia. Mesmo que o tamanho muscular não seja o único determinante da força, mais massa aumenta o potencial do músculo produzir e desenvolver força. Por isso, é importante incluir no planejamento exercícios acessórios — remadas, barras fixas, trabalhos de tríceps, leg press, entre outros — que adicionam volume e complementam os movimentos principais.";
+    
+    title_exemplo_power.innerHTML = "Exemplo de divisão de treino para Powerlifting."
+
+    conteudo.appendChild(powerlifting_title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha);
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha);
+    conteudo.appendChild(p3);
+    conteudo.appendChild(divisao_powerlifting_title);
+    conteudo.appendChild(p4);
+    conteudo.appendChild(p5);
+    conteudo.appendChild(title_exemplo_power);
+
 });

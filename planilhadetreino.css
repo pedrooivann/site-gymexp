@@ -13,8 +13,8 @@ main {
     align-items: center;
     height: auto;
     min-height: 100vh;
-    padding: 20px;
     box-sizing: border-box;
+    padding: 20px
 }
 
 /* Alertas */
@@ -154,7 +154,7 @@ main {
 #right-main-section {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     min-height: 100vh;
     align-items: start;
@@ -260,38 +260,31 @@ main {
 }
 
 .th-series {
-    width: 80px;
-    min-width: 80px;
+    min-width: 50px;
 }
 
 .th-repeticoes {
-    width: 100px;
-    min-width: 100px;
+    min-width: 40px;
 }
 
 .th-peso {
-    width: 80px;
-    min-width: 80px;
+    min-width: 50px;
 }
 
 .th-descanso {
-    width: 90px;
-    min-width: 90px;
+    min-width: 60px;
 }
 
 .th-rir {
-    width: 70px;
-    min-width: 70px;
+    min-width: 40px;
 }
 
-.th-rep {
-    width: 70px;
+.th-rpe {
     min-width: 70px;
 }
 
 .th-remove {
-    width: 40px;
-    min-width: 40px;
+    min-width: 15px;
 }
 
 .weektable th {
@@ -314,6 +307,20 @@ main {
 }
 
 /* Estilo para os inputs da tabela */
+
+/*remove setas de rolagem do input number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+ 
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .weektable input {
     width: 100%;
     box-sizing: border-box;
@@ -347,7 +354,7 @@ main {
 }
 
 #createweekdiv img {
-    max-width: 90% ;
+    max-width: 90%;
     height: auto;
     display: block;
     border-radius: 20%;
@@ -432,102 +439,78 @@ li #planilha-link {
     font-weight: bold;
 }
 
-/* Responsividade */
-@media (max-width: 1200px) {
-    #right-main-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .weekdiv {
-        max-width: 100%;
-    }
-}
 
 @media (max-width: 768px) {
     #right-main-section {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
-    .weekdiv {
-        margin: 10px;
-        padding: 15px;
-        max-width: 100%;
-    }
-    
+
+
+
     #painel-container {
         margin-top: 15px;
     }
-    
+
     #checkbox-container {
         margin: 20px 0;
         flex-direction: column;
         align-items: center;
     }
-    
-    #Btsave, #Btpdf {
+
+    #Btsave,
+    #Btpdf {
         width: 280px;
         height: 45px;
         font-size: 0.9em;
     }
-    
+
     .weektable {
         font-size: 12px;
-        min-width: 700px;
     }
-    
+
     .th-exercicio {
         width: 180px;
         min-width: 180px;
     }
-    
-    .th-series, .th-peso {
-        width: 70px;
-        min-width: 70px;
+
+    .th-series,
+    .th-peso {
+        width: 50px;
     }
-    
-    .th-rir, .th-rep {
-        width: 60px;
-        min-width: 60px;
+
+    .th-rir,
+    .th-rpe {
+        width: 30px;
     }
-    
+
+    .th-descanso {
+        width: 50px;
+    }
+
+    .th-repeticoes {
+        width: 20px;
+    }
+
     .weektable th {
         font-size: 12px;
         padding: 6px 2px;
     }
-    
+
     .weektable input {
         font-size: 12px;
         padding: 4px 2px;
     }
-    
+
     .weekdiv h1 {
         font-size: 1.5em;
     }
-    
+
     .weekdiv h2 {
         font-size: 1.1em;
     }
-}
 
-@media (max-width: 480px) {
-    main {
-        padding: 10px;
-    }
-    
-    .weekdiv {
-        margin: 5px;
-        padding: 10px;
-    }
-    
-    #Btsave, #Btpdf {
-        width: 250px;
-        height: 40px;
-        font-size: 0.85em;
-    }
-    
-    .addExerciseBtn {
-        height: 35px;
-        font-size: 16px;
+    .th-remove {
+        width: 10px;
     }
 }
