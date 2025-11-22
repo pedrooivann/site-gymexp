@@ -1,18 +1,23 @@
 body {
     background-image: url('/images/NovoWalpaperPlanilha.webp');
-
     background-repeat: repeat;
-    overflow-y: visible;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+/* Alertas */
 .alert-modal {
     position: fixed;
     top: 0;
@@ -33,7 +38,6 @@ main {
     opacity: 1;
     pointer-events: auto;
 }
-
 
 .alert-box {
     background: #1e1e2e;
@@ -56,7 +60,6 @@ main {
     transform: scale(1);
 }
 
-
 .alert-box.success {
     background: linear-gradient(135deg, #00b09b, #96c93d);
 }
@@ -74,6 +77,7 @@ main {
     font-size: 26px;
 }
 
+/* Botões principais */
 #Btsave {
     color: whitesmoke;
     height: 50px;
@@ -83,11 +87,15 @@ main {
     font-size: medium;
     border-radius: 15px;
     transition: all 0.8s ease;
+    cursor: pointer;
+    border: none;
+    margin: 10px;
 }
 
 #Btsave:hover {
     background-color: rgb(0, 255, 0);
-    transform: translateY(-2px)
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
 }
 
 #Btpdf {
@@ -99,35 +107,42 @@ main {
     font-size: medium;
     border-radius: 15px;
     transition: all 0.8s ease;
+    cursor: pointer;
+    border: none;
+    margin: 10px;
 }
 
 #Btpdf:hover {
     background-color: rgb(0, 255, 0);
-    transform: translateY(-2px)
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 255, 0, 0.3);
 }
 
-
+/* Painel de controle */
 #painel-section {
-
     width: 100%;
     display: flex;
     align-items: flex-start;
     height: 100px;
-
 }
-
-
 
 #painel-container {
     margin-top: 30px;
-    height: 300px;
+    height: auto;
     width: 100%;
     background-color: transparent;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #checkbox-container {
-    margin: 40px 0 0 30px;
+    margin: 40px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #checkbox-container input {
@@ -135,159 +150,384 @@ main {
     height: 20px;
 }
 
-
-
-
-/* Div principal (Semana) */
-
+/* Seção principal de semanas */
 #right-main-section {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     min-height: 100vh;
-
+    align-items: start;
 }
 
+/* Div principal (Semana) */
 .weekdiv {
-    flex: 0 0 auto;
-    display: block;
-    margin: 50px;
-    color: rgb(255, 255, 255);
-    min-height: 300px;
-    max-width: 500px;
     background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 4px 100px rgba(0, 0, 0, 2);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weekdiv:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.weekdiv h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #ffd700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .weekdiv h2 {
     font-weight: 900;
     color: rgb(255, 255, 255);
-    margin-top: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.3em;
 }
+
 .weekdiv button {
-        cursor: pointer;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 /* Divs menores (Dias) */
-
 .div-table {
     width: 100%;
     border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
 }
 
+
+
+/* Botão adicionar exercício */
 .addExerciseBtn {
     cursor: pointer;
     background-color: rgb(255, 217, 0);
-    border-style: none;
-    margin-bottom: 20px;
+    border: none;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 0 0 10px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: block;
     width: 100%;
-    height: 30px;
-    border-radius: 0px 0px 10px 10px;
 }
 
-/*Tabela*/
+.addExerciseBtn:hover {
+    background-color: #ffd700;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 217, 0, 0.4);
+}
 
+/* Tabela */
 .weektable {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 4px;
     margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .weektable td {
     background-color: white;
+    padding: 2px;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
 }
 
+.weektable td:hover {
+    background-color: #f0f0f0 !important;
+}
+
+/* Larguras das colunas com mais espaço */
 .th-exercicio {
-    width: 200px;
+    width: 220px;
+    min-width: 220px;
 }
 
 .th-series {
-    width: 70px;
+    width: 80px;
+    min-width: 80px;
 }
 
 .th-repeticoes {
-    width: 120px;
+    width: 100px;
+    min-width: 100px;
 }
 
 .th-peso {
-    width: 75px;
+    width: 80px;
+    min-width: 80px;
 }
 
 .th-descanso {
-    width: 80px;
+    width: 90px;
+    min-width: 90px;
+}
+
+.th-rir {
+    width: 70px;
+    min-width: 70px;
+}
+
+.th-rep {
+    width: 70px;
+    min-width: 70px;
 }
 
 .th-remove {
-    width: 30px;
+    width: 40px;
+    min-width: 40px;
 }
 
 .weektable th {
     background-color: rgb(119, 0, 255);
     color: rgb(255, 255, 255);
-    height: 30px;
+    height: 35px;
+    padding: 8px 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
 }
 
 .weektable th:first-child {
-    border-radius: 10px 0px 0px 0px;
+    border-radius: 8px 0 0 0;
 }
 
 .weektable th:last-child {
-    border-radius: 0px 10px 0px 0px;
+    border-radius: 0 8px 0 0;
 }
 
+/* Estilo para os inputs da tabela */
+.weektable input {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 4px;
+    font-family: inherit;
+}
+
+/* Input do exercício alinhado à esquerda */
+.th-exercicio input {
+    text-align: left;
+    padding-left: 8px;
+}
+
+/* Botão criar semana */
 #createweekdiv {
-    flex: 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    width: 420px;
-    height: 1011px;
-    border: 3px solid yellow;
-    border-style: dashed;
-    transition: 1s;
-    margin: 50px;
+    border-radius: 15px;
+    width: 100%;
+    min-height: 300px;
+    border: 3px dashed #ffd700;
+    transition: all 0.3s ease;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
+#createweekdiv img {
+    max-width: 90% ;
+    height: auto;
+    display: block;
+    border-radius: 20%;
+}
+
+
 #createweekdiv:hover {
-    background-color: rgba(255, 255, 0, 0.205);
+    background-color: rgba(255, 255, 0, 0.1);
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 255, 0, 0.2);
 }
 
 #createweekbutton {
-    border-radius: 10px;
+    border-radius: 20%;
     border: none;
-    background-color: yellow;
+    background-color: #00b09b;
     width: 80px;
     height: 80px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.rmspace {
-    width: 50px;
-    height: 50px;
-    background-color: wheat;
+#createweekbutton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 217, 0, 0.4);
 }
 
+/* Top content com botões */
 .topcontent {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .copyweek {
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.copyweek:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
 }
 
 .copyweek img {
-    width: 60px;
-    height: 65px;
+    width: 50px;
+    height: 55px;
+    transition: transform 0.2s ease;
 }
 
+.remove-week-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.remove-week-btn:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.remove-week-btn img {
+    width: 50px;
+    height: 55px;
+    transition: transform 0.2s ease;
+}
+
+/* Link ativo */
 li #planilha-link {
     color: blueviolet;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    #right-main-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .weekdiv {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
     #right-main-section {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .weekdiv {
+        margin: 10px;
+        padding: 15px;
+        max-width: 100%;
+    }
+    
+    #painel-container {
+        margin-top: 15px;
+    }
+    
+    #checkbox-container {
+        margin: 20px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #Btsave, #Btpdf {
+        width: 280px;
+        height: 45px;
+        font-size: 0.9em;
+    }
+    
+    .weektable {
+        font-size: 12px;
+        min-width: 700px;
+    }
+    
+    .th-exercicio {
+        width: 180px;
+        min-width: 180px;
+    }
+    
+    .th-series, .th-peso {
+        width: 70px;
+        min-width: 70px;
+    }
+    
+    .th-rir, .th-rep {
+        width: 60px;
+        min-width: 60px;
+    }
+    
+    .weektable th {
+        font-size: 12px;
+        padding: 6px 2px;
+    }
+    
+    .weektable input {
+        font-size: 12px;
+        padding: 4px 2px;
+    }
+    
+    .weekdiv h1 {
+        font-size: 1.5em;
+    }
+    
+    .weekdiv h2 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+    
+    .weekdiv {
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    #Btsave, #Btpdf {
+        width: 250px;
+        height: 40px;
+        font-size: 0.85em;
+    }
+    
+    .addExerciseBtn {
+        height: 35px;
+        font-size: 16px;
     }
 }
