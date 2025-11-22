@@ -465,10 +465,7 @@ li #planilha-link {
         font-size: 0.9em;
     }
 
-    .weektable {
-        font-size: 12px;
-    }
-
+    
     .th-exercicio {
         width: 180px;
         min-width: 180px;
@@ -513,4 +510,6 @@ li #planilha-link {
     .th-remove {
         width: 10px;
     }
+
+
 }

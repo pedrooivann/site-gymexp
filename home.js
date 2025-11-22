@@ -116,9 +116,128 @@ botao_powerlifting.addEventListener('click', () => {
     const divisao_powerlifting_title = document.createElement('h1');
     const p4 = document.createElement('p');
     const p5 = document.createElement('p');
-
     const title_exemplo_power = document.createElement('h2');
+    const p6 = document.createElement('p');
 
+    const exemplo_power = `
+  <section class="treino-4semanas">
+    <h2>Semana 1 — Base Técnica + Volume Moderado</h2>
+
+    <h3>Dia 1 — Agacho foco técnico + Supino volume</h3>
+    <ul>
+      <li>Agacho: 4×5 @ 70%</li>
+      <li>Supino: 5×5 @ 70%</li>
+      <li>Agacho pausado: 3×3 @ 60%</li>
+      <li>Remada curvada: 4×8</li>
+      <li>Extensora: 3×12</li>
+    </ul>
+
+    <h3>Dia 2 — Terra técnico + Supino variação</h3>
+    <ul>
+      <li>Terra: 4×4 @ 70%</li>
+      <li>Supino pegada média: 4×6 @ 65%</li>
+      <li>Terra RDL: 3×6 @ 60%</li>
+      <li>Tríceps corda: 4×12</li>
+      <li>Elevação lateral: 3×15</li>
+    </ul>
+
+    <h3>Dia 3 — Agacho volume + Supino leve</h3>
+    <ul>
+      <li>Agacho: 5×5 @ 72%</li>
+      <li>Supino: 3×5 @ 60%</li>
+      <li>Agacho frontal: 3×5 @ 60%</li>
+      <li>Barra fixa: 4×6</li>
+      <li>Core: 3×12</li>
+    </ul>
+
+    <h3>Dia 4 — Terra volume + Supino técnico</h3>
+    <ul>
+      <li>Terra: 4×5 @ 72%</li>
+      <li>Supino técnico: 4×5 @ 65%</li>
+      <li>Remada baixa: 4×10</li>
+      <li>Bíceps: 3×12</li>
+    </ul>
+
+    <h2>Semana 2 — Intensidade Subindo (75–80%)</h2>
+
+    <h3>Dia 1</h3>
+    <ul>
+      <li>Agacho: 5×4 @ 75%</li>
+      <li>Supino: 5×4 @ 75%</li>
+    </ul>
+
+    <h3>Dia 2</h3>
+    <ul>
+      <li>Terra: 4×4 @ 75%</li>
+      <li>Supino médio: 4×5 @ 70%</li>
+    </ul>
+
+    <h3>Dia 3</h3>
+    <ul>
+      <li>Agacho: 5×4 @ 77%</li>
+      <li>Supino: 3×5 @ 65%</li>
+    </ul>
+
+    <h3>Dia 4</h3>
+    <ul>
+      <li>Terra: 4×5 @ 77%</li>
+      <li>Supino técnico: 4×5 @ 68%</li>
+    </ul>
+    <p><em>Acessórios: mesmos da Semana 1</em></p>
+
+    <h2>Semana 3 — Pico de Estímulo (80–85%)</h2>
+
+    <h3>Dia 1</h3>
+    <ul>
+      <li>Agacho: 5×3 @ 80–82%</li>
+      <li>Supino: 5×3 @ 80%</li>
+    </ul>
+
+    <h3>Dia 2</h3>
+    <ul>
+      <li>Terra: 4×3 @ 80–82%</li>
+      <li>Supino médio: 4×4 @ 72–75%</li>
+    </ul>
+
+    <h3>Dia 3</h3>
+    <ul>
+      <li>Agacho: 4×3 @ 82–85%</li>
+      <li>Supino leve: 3×5 @ 60%</li>
+    </ul>
+
+    <h3>Dia 4</h3>
+    <ul>
+      <li>Terra: 4×3 @ 82–85%</li>
+      <li>Supino técnico: 4×4 @ 70%</li>
+    </ul>
+
+    <h2>Semana 4 — Deload Real (50–60%)</h2>
+
+    <h3>Dia 1</h3>
+    <ul>
+      <li>Agacho: 3×3 @ 55%</li>
+      <li>Supino: 3×5 @ 55%</li>
+    </ul>
+
+    <h3>Dia 2</h3>
+    <ul>
+      <li>Terra: 3×3 @ 55%</li>
+      <li>Supino médio: 2×5 @ 50%</li>
+    </ul>
+
+    <h3>Dia 3</h3>
+    <ul>
+      <li>Agacho técnico: 3×5 @ 50%</li>
+    </ul>
+
+    <h3>Dia 4</h3>
+    <ul>
+      <li>Supino técnico: 3×5 @ 50%</li>
+    </ul>
+
+    <p><em>Acessórios: 6 RPE leve, só o movimento.</em></p>
+
+`;
 
     p1.innerText = "Powerlifting é o esporte focado em produzir o maior nível de força possível em três movimentos — agachamento, supino e levantamento terra — com máxima eficiência técnica. A ideia é simples: diferente do bodybuilding, que “esculpe” o físico, o powerlifting funciona como preparar um carro de arrancada, onde tudo é voltado para explodir potência em um único momento. O atleta treina para mover a maior carga no menor tempo, com um padrão de movimento consistente, econômico e repetível. Cada centímetro, cada ângulo e cada detalhe da técnica influencia a força final. No powerlifting, você não treina apenas músculos; você treina o sistema nervoso para recrutar fibras mais rápido, coordenar melhor os movimentos e transformar o corpo em uma máquina de força pura.";
     p2.innerText = "A base do treino em powerlifting é o desenvolvimento de força neural, porque força máxima não vem só de músculo, e sim de quão bem o seu sistema nervoso consegue recrutar fibras e coordenar o movimento sob carga. Quanto mais você pratica os três levantamentos com técnica consistente, mais eficiente seu corpo fica em ativar fibras rápidas, reduzir desperdício de energia e estabilizar articulações. Por isso o treino foca em baixas repetições, alta qualidade técnica e progressão planejada de carga. A ideia não é sair destruído, e sim ensinar o corpo a produzir força com precisão cirúrgica.";
@@ -128,8 +247,10 @@ botao_powerlifting.addEventListener('click', () => {
 
     p4.innerText = "Dito isso, é importante montar um treino de powerlifting que conserve o máximo o Sistema Nervoso Central e de forma que mantenha a intensidade de acordo com cada grupo muscular e evite o desgaste ligamentar. Cada um dos principais exercícios do Powerlifting possuem demandas diferentes, o agachamento (Squat) possui um desgaste intermediário por pegar quase toda parte inferior do corpo, causando fadiga também na cadeia posterior, atrapalhando no dia de levantamento terra, logo é aconselhavel treina-lo 2x na semana. O supino (Bench), por ser um grupo muscular menor (Peitoral, ombro e tríceps), requer menos tempo de recuperação, sendo viável colocá-lo até 3-4x na semana. E por fim o levantamento terra (Deadlift), que é o exercício de powerlifting mais desgastante, utilizando de toda cadeia posterior do corpo: glúteos, isquiotibiais e erétores da espinha (lombar), além dos dorsais, trapézios e quadríceps, além também de forçar músculos do antebraço, por isso é treinado de 1 até 2 vezes na semana para evitar lesões."
     p5.innerText = "Além de organizar os levantamentos principais, é necessário que os músculos acumulem volume para gerar hipertrofia. Mesmo que o tamanho muscular não seja o único determinante da força, mais massa aumenta o potencial do músculo produzir e desenvolver força. Por isso, é importante incluir no planejamento exercícios acessórios — remadas, barras fixas, trabalhos de tríceps, leg press, entre outros — que adicionam volume e complementam os movimentos principais.";
-    
+
     title_exemplo_power.innerHTML = "Exemplo de divisão de treino para Powerlifting."
+
+    p6.innerText = "Vale lembrar do uso do deload durante o período de treino, que é quando se reduz a intensidade diminuindo tanto a carga quanto o volume. Também é importante entender a terminologia @ usada nas planilhas de powerlifting, que representa a porcentagem do seu 1RM - O peso no qual você só consegue fazer no máximo uma única repetição, usado para medir sua carga nos treinos.";
 
     conteudo.appendChild(powerlifting_title);
     conteudo.appendChild(p1);
@@ -141,5 +262,7 @@ botao_powerlifting.addEventListener('click', () => {
     conteudo.appendChild(p4);
     conteudo.appendChild(p5);
     conteudo.appendChild(title_exemplo_power);
+    conteudo.appendChild(p6)
+    conteudo.innerHTML += exemplo_power;
 
 });
