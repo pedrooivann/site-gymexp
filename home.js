@@ -272,8 +272,188 @@ botao_powerlifting.addEventListener('click', () => {
 });
 
 
+
+
+
+botao_calistenia.addEventListener('click', () => {
+
+  conteudo.innerHTML = "";
+
+  const title = document.createElement('h1');
+  title.innerHTML = "Fundamentos da Calistenia";
+
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const divisao_title = document.createElement('h1');
+  const p4 = document.createElement('p');
+
+  const title_iniciante = document.createElement('h2');
+  const p_iniciante = document.createElement('p');
+
+  const title_intermediario = document.createElement('h2');
+  const p_intermediario = document.createElement('p');
+
+  const title_avancado = document.createElement('h2');
+  const p_avancado = document.createElement('p');
+
+
+  p1.innerText = "Calistenia é o treinamento baseado em movimentos com o peso do próprio corpo, focando força relativa, controle corporal, coordenação e mobilidade. A mecânica se baseia em alavancas — quanto pior a alavanca, maior a intensidade. Isso torna possível progredir infinitamente mesmo sem pesos, avançando para variações mais difíceis.";
+  p2.innerText = "A base da calistenia é dominar padrões fundamentais como empurrar, puxar, agachar, estabilizar e sustentar o próprio peso. Com isso, surgem movimentos clássicos como barras, paralelas, flexões, L-sit, handstand e posteriormente progressões para movimentos avançados como muscle-up, front lever, back lever e planche.";
+  p3.innerText = "O progresso na calistenia vem principalmente de três pilares: progressões técnicas, aumento de repetições e aumento do tempo de alavanca. A periodização segue lógica semelhante ao treinamento tradicional, só que aplicada às progressões e à capacidade técnica.";
+
+  divisao_title.innerHTML = "Divisões de treino para Calistenia";
+  p4.innerText = "As divisões variam conforme nível. Iniciantes usam full body 3x/semana. Intermediários podem usar Push/Pull/Legs. Avançados combinam Push/Pull estático + dinâmico, além de sessões específicas para handstand, front lever e planche.";
+
+  title_iniciante.innerHTML = "Nível Iniciante (3 dias — Full Body)";
+  p_iniciante.innerText = "Flexões 3×8–12, Remada australiana 3×8–12, Agachamento 3×15, Prancha 3×30s, Barra negativa 3×3. Foco é controle e consistência.";
+
+  title_intermediario.innerHTML = "Nível Intermediário (Push / Pull / Legs)";
+  p_intermediario.innerText = "Push: Flexão declinada, dips, pseudo planche push-up. Pull: Barra fixa, remada alta, australian rows. Legs: Pistols progressões, glute bridge, calf raises.";
+
+  title_avancado.innerHTML = "Nível Avançado (Movimentos Técnicos)";
+  p_avancado.innerText = "Progressões de front lever, back lever, handstand push-up, muscle-up, planche lean, tuck planche, variações explosivas.";
+
+  conteudo.appendChild(title);
+  conteudo.appendChild(p1);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p2);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p3);
+
+  conteudo.appendChild(divisao_title);
+  conteudo.appendChild(p4);
+
+  conteudo.appendChild(title_iniciante);
+  conteudo.appendChild(p_iniciante);
+
+  conteudo.appendChild(title_intermediario);
+  conteudo.appendChild(p_intermediario);
+
+  conteudo.appendChild(title_avancado);
+  conteudo.appendChild(p_avancado);
+  scrollContent();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*funcional*/
+
+const botao_funcional = document.getElementById('funcional-btn');
+
+
+botao_funcional.addEventListener("click", () => {
+
+  conteudo.innerHTML = "";
+  const Funcional_title = document.createElement('h1');
+  Funcional_title.innerHTML = "Fundamentos do Funcional";
+
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const divisao_funcional_title = document.createElement('h1');
+
+  p1.innerText = "O treinamento funcional é um tipo de atividade física que tem como objetivo melhorar movimentos naturais do corpo, como correr, agachar, levantar, empurrar, puxar, girar e saltar."
+  p2.innerText = "Ou seja, ele treina funções reais do dia a dia, e não apenas músculos isolados."
+  p3.innerText = "Esse tipo de treinamento busca desenvolver força, equilíbrio, coordenação, estabilidade do core (músculos do tronco), mobilidade e resistência, tendo como foco tornar o corpo mais eficiente, forte e preparado para qualquer atividade cotidiana ou esportiva."
+
+  divisao_funcional_title.innerText = "Divisão de treino funcional (3x por semana)"
+
+  const exemplo_funcional = `
+<section>
+   <h2>DIA 1 — Força + Core</h2>
+
+   <h3>Aquecimento (5 min)</h3>
+   <ul>
+     <li>Corrida leve no lugar — 1 min</li>
+     <li>Mobilidade de quadril e ombros — 2 min</li>
+     <li>Agachamento leve — 2 min</li>
+   </ul>
+   <br>
+
+   <h3>Treino Principal</h3>
+   <ul>
+     <li>1. Agachamento — 3x12</li>
+     <li>2. Flexão — 3x8–12</li>
+     <li>3. Remada — 3x12</li>
+     <li>4. Lunge — 3x10 por perna</li>
+     <li>5. Prancha — 3x30–45s</li>
+   </ul>
+   <br>
+
+   <h3>Finalizador (opcional)</h3>
+   <ul>
+     <li>20s Mountain Climbers + 20s descanso</li>
+   </ul>
+
+   <h2>DIA 2 — Estabilidade + Mobilidade + Core</h2>
+
+   <h3>Aquecimento (3–5 min)</h3>
+   <ul>
+     <li>Marcha com joelho alto — 1 min</li>
+     <li>Mobilidade torácica e quadril — 2 min</li>
+   </ul>
+   <br>
+
+   <h3>Treino Principal</h3>
+   <ul>
+     <li>1. Prancha lateral — 3x20–30s por lado</li>
+     <li>2. Ponte de glúteo — 3x15</li>
+     <li>3. Agachamento unilateral assistido — 3x8 por perna</li>
+     <li>4. Bird Dog — 3x10 por lado</li>
+     <li>5. Dead Bug — 3x12</li>
+   </ul>
+   <br>
+
+   <h3>Alongamento final (3 min)</h3>
+   <ul>
+     <li>Foco em quadril, glúteo e lombar</li>
+   </ul>
+
+   <h2>DIA 3 — Condicionamento + Potência</h2>
+
+   <h3>Treino Principal (Circuito)</h3>
+   <h3>30s ON / 15s OFF — 3 a 4 voltas</h3>
+   <ul>
+     <li>1. Burpee</li>
+     <li>2. Swing (kettlebell ou mochila)</li>
+     <li>3. Jump Squat</li>
+     <li>4. Corrida estacionária</li>
+     <li>5. Prancha com toque no ombro</li>
+   </ul>
+   <br>
+
+   <h3>Desaceleração (3 min)</h3>
+   <ul>
+     <li>Respiração e alongamento leve.</li>
+   </ul>
+</section>
+`;
+
+  conteudo.appendChild(Funcional_title);
+  conteudo.appendChild(p1);
+  conteudo.appendChild(p2);
+  conteudo.appendChild(p3);
+  conteudo.appendChild(divisao_funcional_title);
+  conteudo.innerHTML += exemplo_funcional;
+  scrollContent();
+})
+
+
+
 function scrollContent() {
   const scrolledelement = document.getElementById('workoutselection-content');
   scrolledelement.scrollTop = 0;
   scrolledelement.scrollIntoView({ behavior: "smooth" });
 };
+
