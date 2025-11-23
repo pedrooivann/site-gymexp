@@ -25,6 +25,7 @@ body {
     max-width: 1000px; 
     width: 90%; 
     margin: 40px auto; 
+    margin-top: 80px;
     background-color: #ffffff; 
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.425);
@@ -185,7 +186,7 @@ body {
         flex-direction: column;
         width: 100%;
         margin: 0;
-        margin-top: 10px;
+        margin-top: 70px;
         border-radius: 2px;
     }
 

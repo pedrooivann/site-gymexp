@@ -129,29 +129,43 @@ main {
 #bodybuilding-btn {
     background-color: rgb(255, 154, 86);
 }
+
 #powerlifting-btn {
     background-color: rgb(255, 86, 86);
 }
+
 #calistenia-btn {
     background-color: rgb(255, 229, 86);
 }
+
 #crossfit-btn {
     background-color: rgb(173, 86, 255);
 }
+
 #funcional-btn {
     background-color: rgb(98, 255, 98);
 }
+
 #artesmarciais-btn {
     background-color: rgb(104, 225, 255);
 }
 
 #workoutselection-content {
+    box-shadow: 5px 5px 70px rgba(0, 0, 0, 0.5) inset;
+    color: rgb(39, 39, 39);
+    background-color: rgb(255, 251, 238);
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 50px;
     text-align: justify;
-    padding-top: 150px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 100px;
-    height: auto;
+    padding: 150px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-color: rgba(255, 105, 36, 0.925);
+}
+
+#workoutselection-content:empty {
+    display: none;
 }
 
 #workoutselection-content h1 {
@@ -167,7 +181,7 @@ main {
 
 #workoutselection-content a {
     text-decoration: none;
-    color: rgb(255, 217, 0);
+    color: rgb(255, 136, 0);
 }
 
 #workoutselection-content p {
@@ -190,14 +204,20 @@ main {
 
     #firstdiv img {
         position: static;
-        /* remove absolute só no mobile */
-        width: 40vh;
+        width: 38vh;
         margin-top: 20px;
+    }
+
+
+    #imagecontainer {
+        display: flex;
+        width: 60%;
+        justify-content: start;
+        align-items: start;
     }
 
     #textarea {
         margin-top: 40px;
-        width: 90%;
         font-size: 5vh;
     }
 
@@ -213,6 +233,17 @@ main {
     .workoutselection-button img {
         width: 80px;
         height: 80px;
-    }
-}
 
+    }
+
+    #workoutselection-title-div {
+        width: 100%;
+        text-align: center;
+    }
+
+    #workoutselection-content {
+        padding: 70px;
+        width: 75%;
+    }
+
+}
