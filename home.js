@@ -1,8 +1,12 @@
 
 
-const qblinha = document.createElement('br');
+
 const botao_bodybuilding = document.getElementById('bodybuilding-btn');
 const botao_powerlifting = document.getElementById('powerlifting-btn');
+const botao_calistenia = document.getElementById('calistenia-btn');
+const botao_crossfit = document.getElementById('crossfit-btn');
+
+const qblinha = document.createElement('br');
 
 //Botão BODYBUILDING
 
@@ -264,5 +268,121 @@ botao_powerlifting.addEventListener('click', () => {
     conteudo.appendChild(title_exemplo_power);
     conteudo.appendChild(p6)
     conteudo.innerHTML += exemplo_power;
+
+});
+
+//Calistenia
+
+
+botao_calistenia.addEventListener('click', () => {
+
+    conteudo.innerHTML = "";
+
+    const title = document.createElement('h1');
+    title.innerHTML = "Fundamentos da Calistenia";
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const divisao_title = document.createElement('h1');
+    const p4 = document.createElement('p');
+
+    const title_iniciante = document.createElement('h2');
+    const p_iniciante = document.createElement('p');
+
+    const title_intermediario = document.createElement('h2');
+    const p_intermediario = document.createElement('p');
+
+    const title_avancado = document.createElement('h2');
+    const p_avancado = document.createElement('p');
+
+    p1.innerText = "Calistenia é o treinamento baseado em movimentos com o peso do próprio corpo, focando força relativa, controle corporal, coordenação e mobilidade. A mecânica se baseia em alavancas — quanto pior a alavanca, maior a intensidade. Isso torna possível progredir infinitamente mesmo sem pesos, avançando para variações mais difíceis.";
+    p2.innerText = "A base da calistenia é dominar padrões fundamentais como empurrar, puxar, agachar, estabilizar e sustentar o próprio peso. Com isso, surgem movimentos clássicos como barras, paralelas, flexões, L-sit, handstand e posteriormente progressões para movimentos avançados como muscle-up, front lever, back lever e planche.";
+    p3.innerText = "O progresso na calistenia vem principalmente de três pilares: progressões técnicas, aumento de repetições e aumento do tempo de alavanca. A periodização segue lógica semelhante ao treinamento tradicional, só que aplicada às progressões e à capacidade técnica.";
+
+    divisao_title.innerHTML = "Divisões de treino para Calistenia";
+    p4.innerText = "As divisões variam conforme nível. Iniciantes usam full body 3x/semana. Intermediários podem usar Push/Pull/Legs. Avançados combinam Push/Pull estático + dinâmico, além de sessões específicas para handstand, front lever e planche.";
+
+    title_iniciante.innerHTML = "Nível Iniciante (3 dias — Full Body)";
+    p_iniciante.innerText = "Flexões 3×8–12, Remada australiana 3×8–12, Agachamento 3×15, Prancha 3×30s, Barra negativa 3×3. Foco é controle e consistência.";
+
+    title_intermediario.innerHTML = "Nível Intermediário (Push / Pull / Legs)";
+    p_intermediario.innerText = "Push: Flexão declinada, dips, pseudo planche push-up. Pull: Barra fixa, remada alta, australian rows. Legs: Pistols progressões, glute bridge, calf raises.";
+
+    title_avancado.innerHTML = "Nível Avançado (Movimentos Técnicos)";
+    p_avancado.innerText = "Progressões de front lever, back lever, handstand push-up, muscle-up, planche lean, tuck planche, variações explosivas.";
+
+    conteudo.appendChild(title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p3);
+
+    conteudo.appendChild(divisao_title);
+    conteudo.appendChild(p4);
+
+    conteudo.appendChild(title_iniciante);
+    conteudo.appendChild(p_iniciante);
+
+    conteudo.appendChild(title_intermediario);
+    conteudo.appendChild(p_intermediario);
+
+    conteudo.appendChild(title_avancado);
+    conteudo.appendChild(p_avancado);
+});
+
+
+//Crossfit
+
+botao_crossfit.addEventListener('click', () => {
+
+    conteudo.innerHTML = "";
+
+    const title = document.createElement('h1');
+    title.innerHTML = "Fundamentos do Crossfit";
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+
+    const divisao_title = document.createElement('h1');
+    const p4 = document.createElement('p');
+
+    const title_wod = document.createElement('h2');
+    const p_wod = document.createElement('p');
+
+    const title_movimentos = document.createElement('h2');
+    const p_movimentos = document.createElement('p');
+
+    // Textos Crossfit
+    p1.innerText = "Crossfit é um método de treinamento que combina levantamento de peso, ginástica e condicionamento metabólico. O objetivo é desenvolver simultaneamente força, resistência, potência, mobilidade e agilidade.";
+    p2.innerText = "As aulas são organizadas em blocos: aquecimento, técnica/força e o famoso WOD (Workout of the Day), que muda diariamente. A variedade constante evita estagnação e trabalha o corpo de forma completa.";
+    p3.innerText = "O progresso vem do aumento gradual de carga, tempo, rounds ou eficiência técnica nos movimentos. A base é dominar padrões como agachamentos, levantamentos olímpicos, movimentos ginásticos e exercícios metabólicos.";
+
+    divisao_title.innerHTML = "Estrutura de treino no Crossfit";
+    p4.innerText = "A divisão clássica é 3 dias de treino + 1 de descanso. Cada dia traz combinações distintas de força, técnica e condicionamento.";
+
+    title_wod.innerHTML = "O que é um WOD";
+    p_wod.innerText = "O WOD é o treino principal do dia. Pode ser AMRAP (máximos rounds), EMOM (todo minuto), For time (tempo), ou rounds fixos. O objetivo é intensidade controlada.";
+
+    title_movimentos.innerHTML = "Movimentos Comuns";
+    p_movimentos.innerText = "Thrusters, snatch, clean & jerk, pull-ups, toes-to-bar, burpees, handstand push-up, box jump, kettlebell swing e remador.";
+
+    conteudo.appendChild(title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p3);
+
+    conteudo.appendChild(divisao_title);
+    conteudo.appendChild(p4);
+
+    conteudo.appendChild(title_wod);
+    conteudo.appendChild(p_wod);
+
+    conteudo.appendChild(title_movimentos);
+    conteudo.appendChild(p_movimentos);
 
 });
