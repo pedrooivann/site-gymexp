@@ -3,6 +3,7 @@
 const qblinha = document.createElement('br');
 const botao_bodybuilding = document.getElementById('bodybuilding-btn');
 const botao_powerlifting = document.getElementById('powerlifting-btn');
+const botao_funcional = document.getElementById('funcional-btn');
 
 //Botão BODYBUILDING
 
@@ -99,11 +100,9 @@ botao_bodybuilding.addEventListener('click', () => {
   conteudo.appendChild(title_seisdias);
   conteudo.appendChild(p_seisdias);
 
-  //Periodizacao
-  conteudo.appendChild(title_periodizacao);
-  conteudo.appendChild(p_periodizacao);
-
-  scrollContent();
+    //Periodizacao
+    conteudo.appendChild(title_periodizacao);
+    conteudo.appendChild(p_periodizacao);
 });
 
 botao_powerlifting.addEventListener('click', () => {
@@ -254,26 +253,17 @@ botao_powerlifting.addEventListener('click', () => {
 
   p6.innerText = "Vale lembrar do uso do deload durante o período de treino, que é quando se reduz a intensidade diminuindo tanto a carga quanto o volume. Também é importante entender a terminologia @ usada nas planilhas de powerlifting, que representa a porcentagem do seu 1RM - O peso no qual você só consegue fazer no máximo uma única repetição, usado para medir sua carga nos treinos.";
 
-  conteudo.appendChild(powerlifting_title);
-  conteudo.appendChild(p1);
-  conteudo.appendChild(qblinha);
-  conteudo.appendChild(p2);
-  conteudo.appendChild(qblinha);
-  conteudo.appendChild(p3);
-  conteudo.appendChild(divisao_powerlifting_title);
-  conteudo.appendChild(p4);
-  conteudo.appendChild(p5);
-  conteudo.appendChild(title_exemplo_power);
-  conteudo.appendChild(p6);
+    conteudo.appendChild(powerlifting_title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha);
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha);
+    conteudo.appendChild(p3);
+    conteudo.appendChild(divisao_powerlifting_title);
+    conteudo.appendChild(p4);
+    conteudo.appendChild(p5);
+    conteudo.appendChild(title_exemplo_power);
+    conteudo.appendChild(p6)
+    conteudo.innerHTML += exemplo_power;
 
-  conteudo.insertAdjacentHTML("beforeend", exemplo_power);
-
-  scrollContent();
 });
-
-
-function scrollContent() {
-  const scrolledelement = document.getElementById('workoutselection-content');
-  scrolledelement.scrollTop = 0;
-  scrolledelement.scrollIntoView({ behavior: "smooth" });
-};
