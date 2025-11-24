@@ -1,3 +1,22 @@
+//olhin pra ver senha//
+let eye = document.getElementById("eye_btn")
+let eye2 = document.getElementById("eye_btn2")
+
+eye.addEventListener("click", () => {
+    if(senha.getAttribute("type") == "password"){
+        senha.setAttribute("type", "text")}
+
+    else(senha.setAttribute("type", "password"))
+})
+
+eye2.addEventListener("click", () => {
+    if(confsenha.getAttribute("type") == "password"){
+        confsenha.setAttribute("type", "text")}
+
+    else(confsenha.setAttribute("type", "password"))
+})
+
+//Funcionalidades//
 let nome = document.getElementById("reg-nome")
 let ValidNome = false
 
@@ -128,7 +147,10 @@ senha.addEventListener("keyup", () => {
             MinChar.setAttribute("style", "display: none")
             senha.setAttribute("style", "background:rgba(255, 255, 255, 0.15)")
         }
-    } else {
+
+        
+    }
+    else {
         senha.setAttribute("style", "background: white")
         MinChar.setAttribute("style", "display: none")
         ValidSenha = true
@@ -139,6 +161,7 @@ senha.addEventListener("keyup", () => {
 confsenha.addEventListener("keyup", () => {
     if (senha.value == confsenha.value) {
         confsenha.setAttribute("style", "background: green")
+        senha.setAttribute("style", "background: green")
         Senha_Incorreta.style.display = "none"
         ValidConfSenha = true
 
