@@ -198,20 +198,42 @@ document.addEventListener("DOMContentLoaded", function(){
 
         treinosSalvo.forEach((treino) => {
             const divItem = document.createElement("div");
-
             divItem.style.cssText = "background: #f8f9fa; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;"; 
 
 
             const info = document.createElement("div");
             info.innerHTML = `<strong>${treino.nome}</strong> <br> <small>Criado em: ${treino.dataCriacao}</small>`;
 
+            const btnContaier = document.createElement("div");
+            btnContaier.style.display = "flex";
+            btnContaier.style.gap = "10px";
+
             const btnDownload = document.createElement("button");
+            btnDownload.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
             btnDownload.textContent = "Baixar PDF";
             btnDownload.style.cssText = "background: #dc3545; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;";
 
             btnDownload.addEventListener("click", () => {
                 gerarPdfTreino(treino);
             });
+
+            const btnExcluir = document.createElement("button");
+            btnExcluir.innerHTML = '<i class="fas fa-trash"></i>';
+            btnExcluir.title = "Excluir treino";
+            btnExcluir.style.cssText = "background: #333; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;";
+
+
+            btnExcluir.addEventListener("click", () => {
+                if (confirm(`Tem certeza que deseja excluir o treino "${treino.nome}"?`)) {
+                    const novaLista = treinosSalvo.filter(item => item.id !== treino.id);
+                    localStorage.setItem("meusTreinosSalvos", JSON.stringify(novaLista));
+
+                    carregarTreinos();
+                }
+            });
+
+            btnContaier.appendChild(btnDownload);
+            btnContaier.appendChild(btnExcluir);
 
             divItem.appendChild(info);
             divItem.appendChild(btnDownload);
@@ -282,5 +304,8 @@ document.addEventListener("DOMContentLoaded", function(){
         html2pdf().set(opcoes).from(elementoPDF).save();
     }
     carregarTreinos();
+
+
+
 
 });
