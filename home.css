@@ -33,7 +33,7 @@ main {
     width: 100%;
     height: auto;
     min-height: 100vh;
-    border: 1px solid red;
+
 }
 
 #imagecontainer {
@@ -78,7 +78,6 @@ main {
 /* Seleção de treino*/
 
 #workoutselection-title-div {
-    border: 1px solid red;
     width: 100%;
     height: 200px;
     display: flex;
@@ -96,7 +95,6 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     height: 50%;
-    border: 1px solid red;
     gap: 50px;
     width: fit-content;
     margin: 0 auto;
@@ -112,7 +110,7 @@ main {
 }
 
 .workoutselection-button:hover {
-    border: 4px solid rgb(255, 255, 255);
+    transform: scale(0.9);
 }
 
 .workoutselection-item {
@@ -129,25 +127,43 @@ main {
 #bodybuilding-btn {
     background-color: rgb(255, 154, 86);
 }
+#bodybuilding-btn:hover {
+    background-color: rgb(255, 102, 0);
+}
 
 #powerlifting-btn {
     background-color: rgb(255, 86, 86);
+}
+#powerlifting-btn:hover {
+    background-color: red;
 }
 
 #calistenia-btn {
     background-color: rgb(255, 229, 86);
 }
+#calistenia-btn:hover {
+    background-color: rgb(255, 217, 0);
+}
 
 #crossfit-btn {
     background-color: rgb(173, 86, 255);
+}
+#crossfit-btn:hover {
+    background-color: rgb(132, 0, 255);
 }
 
 #funcional-btn {
     background-color: rgb(98, 255, 98);
 }
+#funcional-btn:hover {
+    background-color: rgb(0, 255, 0);
+}
 
 #artesmarciais-btn {
     background-color: rgb(104, 225, 255);
+}
+#artesmarciais-btn:hover {
+    background-color: rgb(0, 204, 255);
 }
 
 #workoutselection-content {
@@ -194,6 +210,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
 }
 
 #conhecanossaplanilha-visualtitle {
@@ -236,11 +253,14 @@ main {
 }
 
 #planilha-content {
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
 }
 
 #planilha-content p {
-
     text-align: justify;
     font-size: 1.4rem;
 }
@@ -251,13 +271,35 @@ main {
 }
 
 .planilha-home-card {
-    margin: 0 auto;
+    margin: 40px 0px 0px 0px;
     width: 80%;
     border: 1px;
 }
 
 .planilha-home-card p {
     padding-top: 20px;
+}
+
+.planilha-home-card h1 {
+    color: blueviolet;
+}
+
+.planilha-home-card a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: rgb(255, 255, 101);
+}
+
+.planilha-home-card i {
+    font-size: 1rem;
+}
+
+.planilha-home-card ul {
+    margin-top: 10px;
+}
+
+.planilha-home-card li {
+    font-size: 1rem;
 }
 
 
@@ -292,6 +334,10 @@ main {
     #textarea {
         margin-top: 40px;
         font-size: 5vh;
+    }
+
+    .textarea h5 {
+        font-size: 38px;
     }
 
     .default-div {

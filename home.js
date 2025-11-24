@@ -286,58 +286,55 @@ botao_powerlifting.addEventListener('click', () => {
 
 
 
-const botao_calistenia = document.getElementById('calistenia-btn');
-
-
 
 
 //Calistenia 
 
 botao_calistenia.addEventListener('click', () => {
 
-    conteudo.innerHTML = "";
+  conteudo.innerHTML = "";
 
-    const title = document.createElement('h1');
-    title.innerHTML = "Fundamentos da Calistenia";
+  const title = document.createElement('h1');
+  title.innerHTML = "Fundamentos da Calistenia";
 
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    const p3 = document.createElement('p');
-    const p4 = document.createElement('p');
-    const divisao_title = document.createElement('h1');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const p4 = document.createElement('p');
+  const divisao_title = document.createElement('h1');
 
-    const title_iniciante = document.createElement('h2');
-    const p_iniciante = document.createElement('p');
+  const title_iniciante = document.createElement('h2');
+  const p_iniciante = document.createElement('p');
 
-    const title_intermediario = document.createElement('h2');
-    const p_intermediario = document.createElement('p');
+  const title_intermediario = document.createElement('h2');
+  const p_intermediario = document.createElement('p');
 
-    const title_avancado = document.createElement('h2');
-    const p_avancado = document.createElement('p');
+  const title_avancado = document.createElement('h2');
+  const p_avancado = document.createElement('p');
 
-   //TextBox
-    p1.innerText = "Calistenia é o sistema de treinamento que utiliza o próprio peso corporal como resistência para desenvolver força, controle, mobilidade e coordenação. Em vez de depender de máquinas e anilhas, a calistenia trabalha alavancas, ângulos e tempo sob tensão para aumentar a dificuldade das variações. O objetivo é construir força relativa e controle motor, não apenas tamanho muscular.";
+  //TextBox
+  p1.innerText = "Calistenia é o sistema de treinamento que utiliza o próprio peso corporal como resistência para desenvolver força, controle, mobilidade e coordenação. Em vez de depender de máquinas e anilhas, a calistenia trabalha alavancas, ângulos e tempo sob tensão para aumentar a dificuldade das variações. O objetivo é construir força relativa e controle motor, não apenas tamanho muscular.";
 
-    p2.innerText = "Os padrões fundamentais incluem empurrar, puxar, agachar, sustentar e estabilizar. A partir deles surgem progressões técnicas como muscle up, front lever, back lever, planche e handstand. Cada variação altera a alavanca e a exigência: pernas estendidas aumentam a alavanca, mão mais afastada muda o torque, variações de pegada mudam o padrão de recrutamento.";
+  p2.innerText = "Os padrões fundamentais incluem empurrar, puxar, agachar, sustentar e estabilizar. A partir deles surgem progressões técnicas como muscle up, front lever, back lever, planche e handstand. Cada variação altera a alavanca e a exigência: pernas estendidas aumentam a alavanca, mão mais afastada muda o torque, variações de pegada mudam o padrão de recrutamento.";
 
-    p3.innerText = "A calistenia desenvolve controle neuromuscular e estabilidade articular. Movimentos isométricos e de alavanca exigem adaptação de tendões e estabilizadores; por isso a progressão deve ser gradual e bem planejada. A combinação de habilidade técnica, tempo sob tensão e frequência adequada gera ganhos consistentes.";
+  p3.innerText = "A calistenia desenvolve controle neuromuscular e estabilidade articular. Movimentos isométricos e de alavanca exigem adaptação de tendões e estabilizadores; por isso a progressão deve ser gradual e bem planejada. A combinação de habilidade técnica, tempo sob tensão e frequência adequada gera ganhos consistentes.";
 
-    p4.innerText = "A organização do treino deve incluir trabalho de habilidade (skill), força específica e acessórios para compensar assimetrias. Ciclos de 4 a 6 semanas com uma semana de deload são uma abordagem sensata para evitar excesso de carga nos tendões.";
+  p4.innerText = "A organização do treino deve incluir trabalho de habilidade (skill), força específica e acessórios para compensar assimetrias. Ciclos de 4 a 6 semanas com uma semana de deload são uma abordagem sensata para evitar excesso de carga nos tendões.";
 
-    
-    divisao_title.innerHTML = "Divisão de treino para Calistenia";
 
-    title_iniciante.innerHTML = "Nível Iniciante (3x semana - Full Body)";
-    p_iniciante.innerText = "Flexões 3x8 a 12; remada australiana 3x8 a 12; agachamento 3x15; prancha 3x30s; barra negativa 3x3. Foco em técnica, controle e consistência.";
+  divisao_title.innerHTML = "Divisão de treino para Calistenia";
 
-    title_intermediario.innerHTML = "Nível Intermediario (Push/Pull/Legs)";
-    p_intermediario.innerText = "Push: flexão declinada, dips, pseudo planche push-up. Pull: barra fixa, remada alta, front lever progressão. Legs: pistols progressão, glute bridge. Acrescente trabalho técnico de handstand e progressões de planche.";
+  title_iniciante.innerHTML = "Nível Iniciante (3x semana - Full Body)";
+  p_iniciante.innerText = "Flexões 3x8 a 12; remada australiana 3x8 a 12; agachamento 3x15; prancha 3x30s; barra negativa 3x3. Foco em técnica, controle e consistência.";
 
-    title_avancado.innerHTML = "Nível Avançado (Skills e Força Relativa)";
-    p_avancado.innerText = "Push: flexão declinada, dips, pseudo planche push-up. Pull: barra fixa, remada alta, front lever progressão. Legs: pistols progressão, glute bridge. Acrescente trabalho técnico de handstand e progressões de planche.";
+  title_intermediario.innerHTML = "Nível Intermediario (Push/Pull/Legs)";
+  p_intermediario.innerText = "Push: flexão declinada, dips, pseudo planche push-up. Pull: barra fixa, remada alta, front lever progressão. Legs: pistols progressão, glute bridge. Acrescente trabalho técnico de handstand e progressões de planche.";
 
-    //Sessão de Treino
-    const exemplo_calistenia = `
+  title_avancado.innerHTML = "Nível Avançado (Skills e Força Relativa)";
+  p_avancado.innerText = "Push: flexão declinada, dips, pseudo planche push-up. Pull: barra fixa, remada alta, front lever progressão. Legs: pistols progressão, glute bridge. Acrescente trabalho técnico de handstand e progressões de planche.";
+
+  //Sessão de Treino
+  const exemplo_calistenia = `
 <section class="treino-calistenia">
   <h2>Exemplo de 4 semanas (foco em técnica e progressão)</h2>
 
@@ -378,81 +375,75 @@ botao_calistenia.addEventListener('click', () => {
 </section>
 `;
 
-  
-    conteudo.appendChild(title);
-    conteudo.appendChild(p1);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p2);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p3);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p4);
-    conteudo.appendChild(qblinha.cloneNode());
 
-    conteudo.appendChild(divisao_title);
-    conteudo.appendChild(title_iniciante);
-    conteudo.appendChild(p_iniciante);
-    conteudo.appendChild(title_intermediario);
-    conteudo.appendChild(p_intermediario);
-    conteudo.appendChild(title_avancado);
-    conteudo.appendChild(p_avancado);
+  conteudo.appendChild(title);
+  conteudo.appendChild(p1);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p2);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p3);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p4);
+  conteudo.appendChild(qblinha.cloneNode());
+
+  conteudo.appendChild(divisao_title);
+  conteudo.appendChild(title_iniciante);
+  conteudo.appendChild(p_iniciante);
+  conteudo.appendChild(title_intermediario);
+  conteudo.appendChild(p_intermediario);
+  conteudo.appendChild(title_avancado);
+  conteudo.appendChild(p_avancado);
 
 
-    conteudo.innerHTML += exemplo_calistenia;
+  conteudo.innerHTML += exemplo_calistenia;
+  scrollContent();
 });
-
-
-
-
-
-
-
 
 
 // Crossfit
 
 botao_crossfit.addEventListener('click', () => {
 
-    conteudo.innerHTML = "";
+  conteudo.innerHTML = "";
 
-    const title = document.createElement('h1');
-    title.innerHTML = "Fundamentos do Crossfit";
+  const title = document.createElement('h1');
+  title.innerHTML = "Fundamentos do Crossfit";
 
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    const p3 = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
 
-    const divisao_title = document.createElement('h1');
-    const p4 = document.createElement('p');
+  const divisao_title = document.createElement('h1');
+  const p4 = document.createElement('p');
 
-    const title_wod = document.createElement('h2');
-    const p_wod = document.createElement('p');
+  const title_wod = document.createElement('h2');
+  const p_wod = document.createElement('p');
 
-    const title_movimentos = document.createElement('h2');
-    const p_movimentos = document.createElement('p');
+  const title_movimentos = document.createElement('h2');
+  const p_movimentos = document.createElement('p');
 
-    // TextBox
-p1.innerText = "Crossfit é um método de treinamento de alta intensidade que combina levantamento de peso, ginástica e condicionamento metabólico com o objetivo de desenvolver um corpo forte, resistente, móvel e explosivo. Ele trabalha simultaneamente força, resistência cardiorrespiratória, resistência muscular, potência, velocidade, coordenação, equilíbrio, mobilidade e precisão. A proposta é tornar o atleta capaz de performar bem em qualquer tipo de tarefa física — desde levantar cargas pesadas até realizar movimentos ginásticos avançados.";
+  // TextBox
+  p1.innerText = "Crossfit é um método de treinamento de alta intensidade que combina levantamento de peso, ginástica e condicionamento metabólico com o objetivo de desenvolver um corpo forte, resistente, móvel e explosivo. Ele trabalha simultaneamente força, resistência cardiorrespiratória, resistência muscular, potência, velocidade, coordenação, equilíbrio, mobilidade e precisão. A proposta é tornar o atleta capaz de performar bem em qualquer tipo de tarefa física — desde levantar cargas pesadas até realizar movimentos ginásticos avançados.";
 
-p2.innerText = "A estrutura de uma aula costuma ser dividida em três blocos principais: aquecimento, técnica/força e o WOD (Workout of the Day). No aquecimento, o objetivo é preparar o corpo, ativar musculaturas estabilizadoras e melhorar a mobilidade. Na parte técnica, trabalha-se movimentos complexos como agachamentos, levantamentos olímpicos, handstand, toes to bar ou muscle up. Já o WOD é o momento de alta intensidade, onde o atleta executa um treino variável, desafiador e normalmente cronometrado. Essa variação constante impede estagnação e estimula o corpo a evoluir de maneira completa.";
+  p2.innerText = "A estrutura de uma aula costuma ser dividida em três blocos principais: aquecimento, técnica/força e o WOD (Workout of the Day). No aquecimento, o objetivo é preparar o corpo, ativar musculaturas estabilizadoras e melhorar a mobilidade. Na parte técnica, trabalha-se movimentos complexos como agachamentos, levantamentos olímpicos, handstand, toes to bar ou muscle up. Já o WOD é o momento de alta intensidade, onde o atleta executa um treino variável, desafiador e normalmente cronometrado. Essa variação constante impede estagnação e estimula o corpo a evoluir de maneira completa.";
 
-p3.innerText = "O progresso no Crossfit vem de aumentos graduais em carga, repetições, tempo sob tensão, rounds, velocidade ou eficiência técnica. O atleta aprende a movimentar o corpo com maior economia de energia, melhorando sua mecânica e reduzindo desperdícios de movimento. Padrões fundamentais como agachar, puxar, empurrar, correr, saltar, levantar objetos e estabilizar o core servem como base estrutural para habilidades mais avançadas. Mesmo com a variação diária, o desenvolvimento segue uma linha lógica que une força, técnica e condicionamento.";
+  p3.innerText = "O progresso no Crossfit vem de aumentos graduais em carga, repetições, tempo sob tensão, rounds, velocidade ou eficiência técnica. O atleta aprende a movimentar o corpo com maior economia de energia, melhorando sua mecânica e reduzindo desperdícios de movimento. Padrões fundamentais como agachar, puxar, empurrar, correr, saltar, levantar objetos e estabilizar o core servem como base estrutural para habilidades mais avançadas. Mesmo com a variação diária, o desenvolvimento segue uma linha lógica que une força, técnica e condicionamento.";
 
-divisao_title.innerHTML = "Estrutura de treino no Crossfit";
+  divisao_title.innerHTML = "Estrutura de treino no Crossfit";
 
-p4.innerText = "A divisão tradicional utilizada por muitos boxes é o modelo 3 ON / 1 OFF, onde o atleta treina três dias seguidos e descansa um. Nesse formato, cada dia possui um foco: força pura, levantamento olímpico, ginástica, metcon longo, metcon curto, endurance ou combinação de elementos. Mesmo com a famosa 'variação constante', boxes bem estruturados seguem microciclos e mesociclos para garantir que o atleta evolua sem entrar em platô ou sofrer sobrecarga excessiva.";
+  p4.innerText = "A divisão tradicional utilizada por muitos boxes é o modelo 3 ON / 1 OFF, onde o atleta treina três dias seguidos e descansa um. Nesse formato, cada dia possui um foco: força pura, levantamento olímpico, ginástica, metcon longo, metcon curto, endurance ou combinação de elementos. Mesmo com a famosa 'variação constante', boxes bem estruturados seguem microciclos e mesociclos para garantir que o atleta evolua sem entrar em platô ou sofrer sobrecarga excessiva.";
 
-title_wod.innerHTML = "O que é um WOD e por que ele funciona";
+  title_wod.innerHTML = "O que é um WOD e por que ele funciona";
 
-p_wod.innerText = "O WOD é o treino principal do dia, podendo assumir formatos como AMRAP (as many rounds as possible), EMOM (every minute on the minute), For Time (concluir no menor tempo possível), por rounds fixos, ou os famosos Chippers — grandes volumes executados de forma contínua. Cada formato estimula sistemas energéticos diferentes, como o aeróbico, anaeróbico lático ou alático. Por isso, o Crossfit melhora simultaneamente resistência, potência, explosão, ritmo e recuperação.";
+  p_wod.innerText = "O WOD é o treino principal do dia, podendo assumir formatos como AMRAP (as many rounds as possible), EMOM (every minute on the minute), For Time (concluir no menor tempo possível), por rounds fixos, ou os famosos Chippers — grandes volumes executados de forma contínua. Cada formato estimula sistemas energéticos diferentes, como o aeróbico, anaeróbico lático ou alático. Por isso, o Crossfit melhora simultaneamente resistência, potência, explosão, ritmo e recuperação.";
 
-title_movimentos.innerHTML = "Movimentos mais comuns no Crossfit";
+  title_movimentos.innerHTML = "Movimentos mais comuns no Crossfit";
 
-p_movimentos.innerText = "Os movimentos mais utilizados no Crossfit incluem levantamentos olímpicos (snatch, clean and jerk), agachamentos (back squat, front squat, overhead squat), deadlift, push press, thrusters, kettlebell swings, box jumps, wall balls e corridas curtas. Na parte ginástica, são comuns pull-ups, chest to bar, toes to bar, dips, handstand push-up, rope climb e muscle up. Nos condicionamentos, aparecem exercícios como remo, assault bike, burpees, double unders, corrida e circuitos de alta intensidade. Esses movimentos desenvolvem força global, coordenação, mobilidade e condicionamento de forma integrada.";
+  p_movimentos.innerText = "Os movimentos mais utilizados no Crossfit incluem levantamentos olímpicos (snatch, clean and jerk), agachamentos (back squat, front squat, overhead squat), deadlift, push press, thrusters, kettlebell swings, box jumps, wall balls e corridas curtas. Na parte ginástica, são comuns pull-ups, chest to bar, toes to bar, dips, handstand push-up, rope climb e muscle up. Nos condicionamentos, aparecem exercícios como remo, assault bike, burpees, double unders, corrida e circuitos de alta intensidade. Esses movimentos desenvolvem força global, coordenação, mobilidade e condicionamento de forma integrada.";
 
-//Sessão de Treinos
-    const section_crossfit = document.createElement("section");
-   section_crossfit.innerHTML = `
+  //Sessão de Treinos
+  const section_crossfit = document.createElement("section");
+  section_crossfit.innerHTML = `
 <h2>Treino Completo — Crossfit(5 DIAS)</h2>
 
 <h3>DIA 1 — Força Técnica (Levantamento Olímpico)</h3>
@@ -593,81 +584,80 @@ p_movimentos.innerText = "Os movimentos mais utilizados no Crossfit incluem leva
 </ul>
 `;
 
- 
-    conteudo.appendChild(title);
-    conteudo.appendChild(p1);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p2);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p3);
 
-    conteudo.appendChild(divisao_title);
-    conteudo.appendChild(p4);
+  conteudo.appendChild(title);
+  conteudo.appendChild(p1);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p2);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p3);
 
-    conteudo.appendChild(title_wod);
-    conteudo.appendChild(p_wod);
+  conteudo.appendChild(divisao_title);
+  conteudo.appendChild(p4);
 
-    conteudo.appendChild(title_movimentos);
-    conteudo.appendChild(p_movimentos);
+  conteudo.appendChild(title_wod);
+  conteudo.appendChild(p_wod);
+
+  conteudo.appendChild(title_movimentos);
+  conteudo.appendChild(p_movimentos);
 
 
-    conteudo.appendChild(section_crossfit);
+  conteudo.appendChild(section_crossfit);
 
 });
 
 
-const botao_crossfit = document.getElementById('crossfit-btn');
 
 botao_crossfit.addEventListener('click', () => {
 
-    conteudo.innerHTML = "";
+  conteudo.innerHTML = "";
 
-    const title = document.createElement('h1');
-    title.innerHTML = "Fundamentos do Crossfit";
+  const title = document.createElement('h1');
+  title.innerHTML = "Fundamentos do Crossfit";
 
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    const p3 = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
 
-    const divisao_title = document.createElement('h1');
-    const p4 = document.createElement('p');
+  const divisao_title = document.createElement('h1');
+  const p4 = document.createElement('p');
 
-    const title_wod = document.createElement('h2');
-    const p_wod = document.createElement('p');
+  const title_wod = document.createElement('h2');
+  const p_wod = document.createElement('p');
 
-    const title_movimentos = document.createElement('h2');
-    const p_movimentos = document.createElement('p');
+  const title_movimentos = document.createElement('h2');
+  const p_movimentos = document.createElement('p');
 
-    // Textos Crossfit
-    p1.innerText = "Crossfit é um método de treinamento que combina levantamento de peso, ginástica e condicionamento metabólico. O objetivo é desenvolver simultaneamente força, resistência, potência, mobilidade e agilidade.";
-    p2.innerText = "As aulas são organizadas em blocos: aquecimento, técnica/força e o famoso WOD (Workout of the Day), que muda diariamente. A variedade constante evita estagnação e trabalha o corpo de forma completa.";
-    p3.innerText = "O progresso vem do aumento gradual de carga, tempo, rounds ou eficiência técnica nos movimentos. A base é dominar padrões como agachamentos, levantamentos olímpicos, movimentos ginásticos e exercícios metabólicos.";
+  // Textos Crossfit
+  p1.innerText = "Crossfit é um método de treinamento que combina levantamento de peso, ginástica e condicionamento metabólico. O objetivo é desenvolver simultaneamente força, resistência, potência, mobilidade e agilidade.";
+  p2.innerText = "As aulas são organizadas em blocos: aquecimento, técnica/força e o famoso WOD (Workout of the Day), que muda diariamente. A variedade constante evita estagnação e trabalha o corpo de forma completa.";
+  p3.innerText = "O progresso vem do aumento gradual de carga, tempo, rounds ou eficiência técnica nos movimentos. A base é dominar padrões como agachamentos, levantamentos olímpicos, movimentos ginásticos e exercícios metabólicos.";
 
-    divisao_title.innerHTML = "Estrutura de treino no Crossfit";
-    p4.innerText = "A divisão clássica é 3 dias de treino + 1 de descanso. Cada dia traz combinações distintas de força, técnica e condicionamento.";
+  divisao_title.innerHTML = "Estrutura de treino no Crossfit";
+  p4.innerText = "A divisão clássica é 3 dias de treino + 1 de descanso. Cada dia traz combinações distintas de força, técnica e condicionamento.";
 
-    title_wod.innerHTML = "O que é um WOD";
-    p_wod.innerText = "O WOD é o treino principal do dia. Pode ser AMRAP (máximos rounds), EMOM (todo minuto), For time (tempo), ou rounds fixos. O objetivo é intensidade controlada.";
+  title_wod.innerHTML = "O que é um WOD";
+  p_wod.innerText = "O WOD é o treino principal do dia. Pode ser AMRAP (máximos rounds), EMOM (todo minuto), For time (tempo), ou rounds fixos. O objetivo é intensidade controlada.";
 
-    title_movimentos.innerHTML = "Movimentos Comuns";
-    p_movimentos.innerText = "Thrusters, snatch, clean & jerk, pull-ups, toes-to-bar, burpees, handstand push-up, box jump, kettlebell swing e remador.";
+  title_movimentos.innerHTML = "Movimentos Comuns";
+  p_movimentos.innerText = "Thrusters, snatch, clean & jerk, pull-ups, toes-to-bar, burpees, handstand push-up, box jump, kettlebell swing e remador.";
 
-    conteudo.appendChild(title);
-    conteudo.appendChild(p1);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p2);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p3);
+  conteudo.appendChild(title);
+  conteudo.appendChild(p1);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p2);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p3);
 
-    conteudo.appendChild(divisao_title);
-    conteudo.appendChild(p4);
+  conteudo.appendChild(divisao_title);
+  conteudo.appendChild(p4);
 
-    conteudo.appendChild(title_wod);
-    conteudo.appendChild(p_wod);
+  conteudo.appendChild(title_wod);
+  conteudo.appendChild(p_wod);
 
-    conteudo.appendChild(title_movimentos);
-    conteudo.appendChild(p_movimentos);
-    scrollContent();
+  conteudo.appendChild(title_movimentos);
+  conteudo.appendChild(p_movimentos);
+  scrollContent();
 
 });
 
@@ -797,44 +787,44 @@ function scrollContent() {
 //Artes Marciais 
 
 botao_artesmarciais.addEventListener("click", () => {
-    
+
   conteudo.innerHTML = "";
 
-    const title = document.createElement('h1');
-    title.innerHTML = "Fundamentos das Artes Marciais";
+  const title = document.createElement('h1');
+  title.innerHTML = "Fundamentos das Artes Marciais";
 
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    const p3 = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
 
-    const divisao_title = document.createElement('h1');
-    const p4 = document.createElement('p');
+  const divisao_title = document.createElement('h1');
+  const p4 = document.createElement('p');
 
-    const title_metodos = document.createElement('h2');
-    const p_metodos = document.createElement('p');
+  const title_metodos = document.createElement('h2');
+  const p_metodos = document.createElement('p');
 
-    const title_movimentos = document.createElement('h2');
-    const p_movimentos = document.createElement('p');
+  const title_movimentos = document.createElement('h2');
+  const p_movimentos = document.createElement('p');
 
-    // TextBox
-    p1.innerText = "Artes marciais englobam um conjunto de sistemas e práticas de combate — de striking a grappling — cujo objetivo é desenvolver capacidade técnica, economia de movimento, timing, tomada de decisão sob pressão e resistência física/mental. Ao contrário de treinos puramente físicos, o treinamento marcial integra técnica, tática, leitura do oponente e adaptação. Trabalha-se não só força e potência, mas também precisão, reflexo, postura, equilíbrio e respiração: atributos que permitem executar técnicas complexas com eficiência e minimizar o gasto energético.";
+  // TextBox
+  p1.innerText = "Artes marciais englobam um conjunto de sistemas e práticas de combate — de striking a grappling — cujo objetivo é desenvolver capacidade técnica, economia de movimento, timing, tomada de decisão sob pressão e resistência física/mental. Ao contrário de treinos puramente físicos, o treinamento marcial integra técnica, tática, leitura do oponente e adaptação. Trabalha-se não só força e potência, mas também precisão, reflexo, postura, equilíbrio e respiração: atributos que permitem executar técnicas complexas com eficiência e minimizar o gasto energético.";
 
-    p2.innerText = "Uma aula típica combina aquecimento, trabalho técnico, drills específicos (repetição com resistência progressiva), pad work/partner drills e rounds de sparring controlado ou randori. O desenvolvimento é sistemático: começa pela mecânica básica (postura, deslocamento, guard, pegada), passa por combinações elementares (ataque/defesa) e evolui para sequência de técnicas aplicadas com resistência progressiva e critérios de tempo, distância e pressão.";
+  p2.innerText = "Uma aula típica combina aquecimento, trabalho técnico, drills específicos (repetição com resistência progressiva), pad work/partner drills e rounds de sparring controlado ou randori. O desenvolvimento é sistemático: começa pela mecânica básica (postura, deslocamento, guard, pegada), passa por combinações elementares (ataque/defesa) e evolui para sequência de técnicas aplicadas com resistência progressiva e critérios de tempo, distância e pressão.";
 
-    p3.innerText = "O progresso nas artes marciais depende de três pilares: técnica repetida corretamente (motor learning), condicionamento específico (energia e resistência dos movimentos marcantes) e inteligência de luta (estratégia, leitura e tomada de decisão). Periodizações bem feitas alternam blocos de 4–6 semanas focados em técnica, força explosiva, capacidade anaeróbia e sparring controlado, com semanas de recuperação/integração para consolidar ganhos.";
+  p3.innerText = "O progresso nas artes marciais depende de três pilares: técnica repetida corretamente (motor learning), condicionamento específico (energia e resistência dos movimentos marcantes) e inteligência de luta (estratégia, leitura e tomada de decisão). Periodizações bem feitas alternam blocos de 4–6 semanas focados em técnica, força explosiva, capacidade anaeróbia e sparring controlado, com semanas de recuperação/integração para consolidar ganhos.";
 
-    divisao_title.innerHTML = "Estrutura de treino para Artes Marciais";
-    p4.innerText = "Treinos podem ser organizados por ênfase: Técnica (habilidade), Condicionamento (capacidade física), Força/Prevenção (musculatura e articulações) e Sparring (aplicação). Em academias mistas, uma semana típica combina 2–3 sessões técnicas, 1–2 sessões de condicionamento específico e 1 sessão de sparring/repetição aplicável.";
+  divisao_title.innerHTML = "Estrutura de treino para Artes Marciais";
+  p4.innerText = "Treinos podem ser organizados por ênfase: Técnica (habilidade), Condicionamento (capacidade física), Força/Prevenção (musculatura e articulações) e Sparring (aplicação). Em academias mistas, uma semana típica combina 2–3 sessões técnicas, 1–2 sessões de condicionamento específico e 1 sessão de sparring/repetição aplicável.";
 
-    title_metodos.innerHTML = "Métodos de treino";
-    p_metodos.innerText = "Work drills (repetição dirigida), pad work (precision e potência), partner drills (resistência progressiva), drilling posicional (especialmente em grappling), technical sparring (baixo intensidade implementando técnica) e full sparring (simulação de luta). Complementam: pliometria, treino de resistência localizada, trabalho de core, mobilidade articular e propriocepção.";
+  title_metodos.innerHTML = "Métodos de treino";
+  p_metodos.innerText = "Work drills (repetição dirigida), pad work (precision e potência), partner drills (resistência progressiva), drilling posicional (especialmente em grappling), technical sparring (baixo intensidade implementando técnica) e full sparring (simulação de luta). Complementam: pliometria, treino de resistência localizada, trabalho de core, mobilidade articular e propriocepção.";
 
-    title_movimentos.innerHTML = "Movimentos e habilidades comuns";
-    p_movimentos.innerText = "Striking: jab, cross, hooks, uppercuts, low/ high kicks, knees, clinch; Grappling: quedas (takedowns), controle de clinch, passes de guarda, raspagens, finalizações; Defesa: esquivas, bloqueios, controle de distância e manejo de pegadas. Além disso: footwork (movimentação), mudança de nível, timing, cadência e respiração tática.";
+  title_movimentos.innerHTML = "Movimentos e habilidades comuns";
+  p_movimentos.innerText = "Striking: jab, cross, hooks, uppercuts, low/ high kicks, knees, clinch; Grappling: quedas (takedowns), controle de clinch, passes de guarda, raspagens, finalizações; Defesa: esquivas, bloqueios, controle de distância e manejo de pegadas. Além disso: footwork (movimentação), mudança de nível, timing, cadência e respiração tática.";
 
-   //Sessão de Treinos 
-    const section_artesmarciais = document.createElement("section");
-    section_artesmarciais.innerHTML = `
+  //Sessão de Treinos 
+  const section_artesmarciais = document.createElement("section");
+  section_artesmarciais.innerHTML = `
 <h2>Semana Modelo — Artes Marciais (6 dias)</h2>
 
 <h3>DIA 1 — Técnica de Striking + Mobilidade</h3>
@@ -974,26 +964,26 @@ botao_artesmarciais.addEventListener("click", () => {
 </ul>
 `;
 
-   
-    conteudo.appendChild(title);
-    conteudo.appendChild(p1);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p2);
-    conteudo.appendChild(qblinha.cloneNode());
-    conteudo.appendChild(p3);
 
-    conteudo.appendChild(divisao_title);
-    conteudo.appendChild(p4);
+  conteudo.appendChild(title);
+  conteudo.appendChild(p1);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p2);
+  conteudo.appendChild(qblinha.cloneNode());
+  conteudo.appendChild(p3);
 
-    conteudo.appendChild(title_metodos);
-    conteudo.appendChild(p_metodos);
+  conteudo.appendChild(divisao_title);
+  conteudo.appendChild(p4);
 
-    conteudo.appendChild(title_movimentos);
-    conteudo.appendChild(p_movimentos);
+  conteudo.appendChild(title_metodos);
+  conteudo.appendChild(p_metodos);
 
-   
-    conteudo.appendChild(section_artesmarciais);
+  conteudo.appendChild(title_movimentos);
+  conteudo.appendChild(p_movimentos);
 
-    
+
+  conteudo.appendChild(section_artesmarciais);
+  scrollContent();
+
 });
 
