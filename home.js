@@ -1,14 +1,27 @@
 
-
+//Quebra Linha
 const qblinha = document.createElement('br');
+//BodyBuilding
 const botao_bodybuilding = document.getElementById('bodybuilding-btn');
+//Powerlifting
 const botao_powerlifting = document.getElementById('powerlifting-btn');
+//Calistenia
+const botao_calistenia = document.getElementById('calistenia-btn');
+//Crossfit
+const botao_crossfit = document.getElementById('crossfit-btn');
+//Funcional
+const botao_funcional = document.getElementById('funcional-btn')
+//Artes Marciais 
+const botao_artesmarciais = document.getElementById('artesmarciais-btn')
 
-//Botão BODYBUILDING
 
-
+//Seleção
 const conteudo = document.getElementById('workoutselection-content');
 
+
+
+
+//Bodybuilding
 botao_bodybuilding.addEventListener('click', () => {
 
   conteudo.innerHTML = "";
@@ -275,64 +288,331 @@ botao_powerlifting.addEventListener('click', () => {
 
 
 
+
+
+
+//Calistenia 
+
 botao_calistenia.addEventListener('click', () => {
 
-  conteudo.innerHTML = "";
+    conteudo.innerHTML = "";
 
-  const title = document.createElement('h1');
-  title.innerHTML = "Fundamentos da Calistenia";
+    const title = document.createElement('h1');
+    title.innerHTML = "Fundamentos da Calistenia";
 
-  const p1 = document.createElement('p');
-  const p2 = document.createElement('p');
-  const p3 = document.createElement('p');
-  const divisao_title = document.createElement('h1');
-  const p4 = document.createElement('p');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const p4 = document.createElement('p');
+    const divisao_title = document.createElement('h1');
 
-  const title_iniciante = document.createElement('h2');
-  const p_iniciante = document.createElement('p');
+    const title_iniciante = document.createElement('h2');
+    const p_iniciante = document.createElement('p');
 
-  const title_intermediario = document.createElement('h2');
-  const p_intermediario = document.createElement('p');
+    const title_intermediario = document.createElement('h2');
+    const p_intermediario = document.createElement('p');
 
-  const title_avancado = document.createElement('h2');
-  const p_avancado = document.createElement('p');
+    const title_avancado = document.createElement('h2');
+    const p_avancado = document.createElement('p');
+
+   //TextBox
+    p1.innerText = "Calistenia é o sistema de treinamento que utiliza o próprio peso corporal como resistência para desenvolver força, controle, mobilidade e coordenação. Em vez de depender de máquinas e anilhas, a calistenia trabalha alavancas, ângulos e tempo sob tensão para aumentar a dificuldade das variações. O objetivo é construir força relativa e controle motor, não apenas tamanho muscular.";
+
+    p2.innerText = "Os padrões fundamentais incluem empurrar, puxar, agachar, sustentar e estabilizar. A partir deles surgem progressões técnicas como muscle up, front lever, back lever, planche e handstand. Cada variação altera a alavanca e a exigência: pernas estendidas aumentam a alavanca, mão mais afastada muda o torque, variações de pegada mudam o padrão de recrutamento.";
+
+    p3.innerText = "A calistenia desenvolve controle neuromuscular e estabilidade articular. Movimentos isométricos e de alavanca exigem adaptação de tendões e estabilizadores; por isso a progressão deve ser gradual e bem planejada. A combinação de habilidade técnica, tempo sob tensão e frequência adequada gera ganhos consistentes.";
+
+    p4.innerText = "A organização do treino deve incluir trabalho de habilidade (skill), força específica e acessórios para compensar assimetrias. Ciclos de 4 a 6 semanas com uma semana de deload são uma abordagem sensata para evitar excesso de carga nos tendões.";
+
+    
+    divisao_title.innerHTML = "Divisão de treino para Calistenia";
+
+    title_iniciante.innerHTML = "Nível Iniciante (3x semana - Full Body)";
+    p_iniciante.innerText = "Flexões 3x8 a 12; remada australiana 3x8 a 12; agachamento 3x15; prancha 3x30s; barra negativa 3x3. Foco em técnica, controle e consistência.";
+
+    title_intermediario.innerHTML = "Nível Intermediario (Push/Pull/Legs)";
+    p_intermediario.innerText = "Push: flexão declinada, dips, pseudo planche push-up. Pull: barra fixa, remada alta, front lever progressão. Legs: pistols progressão, glute bridge. Acrescente trabalho técnico de handstand e progressões de planche.";
+
+    title_avancado.innerHTML = "Nível Avançado (Skills e Força Relativa)";
+    p_avancado.innerText = "Push: flexão declinada, dips, pseudo planche push-up. Pull: barra fixa, remada alta, front lever progressão. Legs: pistols progressão, glute bridge. Acrescente trabalho técnico de handstand e progressões de planche.";
+
+    //Sessão de Treino
+    const exemplo_calistenia = `
+<section class="treino-calistenia">
+  <h2>Exemplo de 4 semanas (foco em técnica e progressão)</h2>
+
+  <h3>Semana 1 - Base técnica + volume moderado</h3>
+  <h4>Dia A - Força push/habilidade</h4>
+  <ul>
+    <li>Skill handstand: 10 min de prática (wall walks e holds)</li>
+    <li>Pseudo planche push-up : 4 x 6</li>
+    <li>Dips: 3 x 6–8</li>
+    <li>Flexões inclinadas (controle): 3x10</li>
+    <li>Core: L-sit 3x15s</li>
+  </ul>
+
+  <h4>Dia B - Força pull / habilidade</h4>
+  <ul>
+    <li>Barra fixa (controlada): 4x4-6</li>
+    <li>Remada australiana variada: 4x8-10</li>
+    <li>Front lever tuck hold: 3x10-15s</li>
+    <li>Face pulls com elástico: 3x12</li>
+  </ul>
+
+  <h4>Dia C - Pernas e core</h4>
+  <ul>
+    <li>Agachamento corporal: 4x15</li>
+    <li>Progressões de pistol: 3x5 cada perna</li>
+    <li>Glute bridge: 3x12</li>
+    <li>Prancha lateral: 3x30s</li>
+  </ul>
+
+  <h3>Semana 2 - Aumentar intensidade nas progressões</h3>
+  <p>Suba dificuldade nas progressões (menos assistência, maior tempo de hold).</p>
+
+  <h3>Semana 3 - Pico técnico</h3>
+  <p>Foque attempts de skill em situações próximas ao limiar (e.g. attempts de muscle up, planche lean progressado).</p>
+
+  <h3>Semana 4 - Deload e consolidação</h3>
+  <p>Reduza volume e intensidade, mantenha técnica e mobilidade.</p>
+</section>
+`;
+
+  
+    conteudo.appendChild(title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p3);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p4);
+    conteudo.appendChild(qblinha.cloneNode());
+
+    conteudo.appendChild(divisao_title);
+    conteudo.appendChild(title_iniciante);
+    conteudo.appendChild(p_iniciante);
+    conteudo.appendChild(title_intermediario);
+    conteudo.appendChild(p_intermediario);
+    conteudo.appendChild(title_avancado);
+    conteudo.appendChild(p_avancado);
 
 
-  p1.innerText = "Calistenia é o treinamento baseado em movimentos com o peso do próprio corpo, focando força relativa, controle corporal, coordenação e mobilidade. A mecânica se baseia em alavancas — quanto pior a alavanca, maior a intensidade. Isso torna possível progredir infinitamente mesmo sem pesos, avançando para variações mais difíceis.";
-  p2.innerText = "A base da calistenia é dominar padrões fundamentais como empurrar, puxar, agachar, estabilizar e sustentar o próprio peso. Com isso, surgem movimentos clássicos como barras, paralelas, flexões, L-sit, handstand e posteriormente progressões para movimentos avançados como muscle-up, front lever, back lever e planche.";
-  p3.innerText = "O progresso na calistenia vem principalmente de três pilares: progressões técnicas, aumento de repetições e aumento do tempo de alavanca. A periodização segue lógica semelhante ao treinamento tradicional, só que aplicada às progressões e à capacidade técnica.";
+    conteudo.innerHTML += exemplo_calistenia;
+});
 
-  divisao_title.innerHTML = "Divisões de treino para Calistenia";
-  p4.innerText = "As divisões variam conforme nível. Iniciantes usam full body 3x/semana. Intermediários podem usar Push/Pull/Legs. Avançados combinam Push/Pull estático + dinâmico, além de sessões específicas para handstand, front lever e planche.";
 
-  title_iniciante.innerHTML = "Nível Iniciante (3 dias — Full Body)";
-  p_iniciante.innerText = "Flexões 3×8–12, Remada australiana 3×8–12, Agachamento 3×15, Prancha 3×30s, Barra negativa 3×3. Foco é controle e consistência.";
 
-  title_intermediario.innerHTML = "Nível Intermediário (Push / Pull / Legs)";
-  p_intermediario.innerText = "Push: Flexão declinada, dips, pseudo planche push-up. Pull: Barra fixa, remada alta, australian rows. Legs: Pistols progressões, glute bridge, calf raises.";
 
-  title_avancado.innerHTML = "Nível Avançado (Movimentos Técnicos)";
-  p_avancado.innerText = "Progressões de front lever, back lever, handstand push-up, muscle-up, planche lean, tuck planche, variações explosivas.";
 
-  conteudo.appendChild(title);
-  conteudo.appendChild(p1);
-  conteudo.appendChild(qblinha.cloneNode());
-  conteudo.appendChild(p2);
-  conteudo.appendChild(qblinha.cloneNode());
-  conteudo.appendChild(p3);
 
-  conteudo.appendChild(divisao_title);
-  conteudo.appendChild(p4);
 
-  conteudo.appendChild(title_iniciante);
-  conteudo.appendChild(p_iniciante);
 
-  conteudo.appendChild(title_intermediario);
-  conteudo.appendChild(p_intermediario);
 
-  conteudo.appendChild(title_avancado);
-  conteudo.appendChild(p_avancado);
-  scrollContent();
+// Crossfit
+
+botao_crossfit.addEventListener('click', () => {
+
+    conteudo.innerHTML = "";
+
+    const title = document.createElement('h1');
+    title.innerHTML = "Fundamentos do Crossfit";
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+
+    const divisao_title = document.createElement('h1');
+    const p4 = document.createElement('p');
+
+    const title_wod = document.createElement('h2');
+    const p_wod = document.createElement('p');
+
+    const title_movimentos = document.createElement('h2');
+    const p_movimentos = document.createElement('p');
+
+    // TextBox
+p1.innerText = "Crossfit é um método de treinamento de alta intensidade que combina levantamento de peso, ginástica e condicionamento metabólico com o objetivo de desenvolver um corpo forte, resistente, móvel e explosivo. Ele trabalha simultaneamente força, resistência cardiorrespiratória, resistência muscular, potência, velocidade, coordenação, equilíbrio, mobilidade e precisão. A proposta é tornar o atleta capaz de performar bem em qualquer tipo de tarefa física — desde levantar cargas pesadas até realizar movimentos ginásticos avançados.";
+
+p2.innerText = "A estrutura de uma aula costuma ser dividida em três blocos principais: aquecimento, técnica/força e o WOD (Workout of the Day). No aquecimento, o objetivo é preparar o corpo, ativar musculaturas estabilizadoras e melhorar a mobilidade. Na parte técnica, trabalha-se movimentos complexos como agachamentos, levantamentos olímpicos, handstand, toes to bar ou muscle up. Já o WOD é o momento de alta intensidade, onde o atleta executa um treino variável, desafiador e normalmente cronometrado. Essa variação constante impede estagnação e estimula o corpo a evoluir de maneira completa.";
+
+p3.innerText = "O progresso no Crossfit vem de aumentos graduais em carga, repetições, tempo sob tensão, rounds, velocidade ou eficiência técnica. O atleta aprende a movimentar o corpo com maior economia de energia, melhorando sua mecânica e reduzindo desperdícios de movimento. Padrões fundamentais como agachar, puxar, empurrar, correr, saltar, levantar objetos e estabilizar o core servem como base estrutural para habilidades mais avançadas. Mesmo com a variação diária, o desenvolvimento segue uma linha lógica que une força, técnica e condicionamento.";
+
+divisao_title.innerHTML = "Estrutura de treino no Crossfit";
+
+p4.innerText = "A divisão tradicional utilizada por muitos boxes é o modelo 3 ON / 1 OFF, onde o atleta treina três dias seguidos e descansa um. Nesse formato, cada dia possui um foco: força pura, levantamento olímpico, ginástica, metcon longo, metcon curto, endurance ou combinação de elementos. Mesmo com a famosa 'variação constante', boxes bem estruturados seguem microciclos e mesociclos para garantir que o atleta evolua sem entrar em platô ou sofrer sobrecarga excessiva.";
+
+title_wod.innerHTML = "O que é um WOD e por que ele funciona";
+
+p_wod.innerText = "O WOD é o treino principal do dia, podendo assumir formatos como AMRAP (as many rounds as possible), EMOM (every minute on the minute), For Time (concluir no menor tempo possível), por rounds fixos, ou os famosos Chippers — grandes volumes executados de forma contínua. Cada formato estimula sistemas energéticos diferentes, como o aeróbico, anaeróbico lático ou alático. Por isso, o Crossfit melhora simultaneamente resistência, potência, explosão, ritmo e recuperação.";
+
+title_movimentos.innerHTML = "Movimentos mais comuns no Crossfit";
+
+p_movimentos.innerText = "Os movimentos mais utilizados no Crossfit incluem levantamentos olímpicos (snatch, clean and jerk), agachamentos (back squat, front squat, overhead squat), deadlift, push press, thrusters, kettlebell swings, box jumps, wall balls e corridas curtas. Na parte ginástica, são comuns pull-ups, chest to bar, toes to bar, dips, handstand push-up, rope climb e muscle up. Nos condicionamentos, aparecem exercícios como remo, assault bike, burpees, double unders, corrida e circuitos de alta intensidade. Esses movimentos desenvolvem força global, coordenação, mobilidade e condicionamento de forma integrada.";
+
+//Sessão de Treinos
+    const section_crossfit = document.createElement("section");
+   section_crossfit.innerHTML = `
+<h2>Treino Completo — Crossfit(5 DIAS)</h2>
+
+<h3>DIA 1 — Força Técnica (Levantamento Olímpico)</h3>
+<h4>Aquecimento (8 min)</h4>
+<ul>
+  <li>2 min de remo leve</li>
+  <li>Mobilidade de ombro e tornozelo — 3 min</li>
+  <li>Drills de snatch com PVC — 3 min</li>
+</ul>
+
+<h4>Força / Técnica</h4>
+<ul>
+  <li>Snatch técnico — 8×2 (leve a moderado, foco na forma)</li>
+  <li>Overhead squat — 4×3</li>
+  <li>Snatch pull — 3×3 (70–80%)</li>
+</ul>
+
+<h4>WOD — EMOM 12</h4>
+<ul>
+  <li>Min 1: 10 Overhead squats leves</li>
+  <li>Min 2: 12 burpees</li>
+  <li>Min 3: 14 box jumps</li>
+</ul>
+
+<h4>Acessório</h4>
+<ul>
+  <li>Core: 3×20 hollow rocks</li>
+</ul>
+
+
+<h3>DIA 2 — WOD For Time (Condicionamento)</h3>
+<h4>Aquecimento (5 min)</h4>
+<ul>
+  <li>Corrida leve — 400m</li>
+  <li>Alongamento dinâmico — 2 min</li>
+</ul>
+
+<h4>Força</h4>
+<ul>
+  <li>Back squat — 5×5 (70–75%)</li>
+</ul>
+
+<h4>WOD — For Time</h4>
+<ul>
+  <li>3 rounds:</li>
+  <ul>
+    <li>400m corrida</li>
+    <li>21 kettlebell swings</li>
+    <li>12 pull-ups</li>
+  </ul>
+</ul>
+
+<h4>Cooldown</h4>
+<ul>
+  <li>Mobilidade de quadril — 3 min</li>
+</ul>
+
+
+<h3>DIA 3 — Ginástica / Controle Corporal</h3>
+<h4>Aquecimento (6 min)</h4>
+<ul>
+  <li>2 min de pular corda</li>
+  <li>Shoulder taps — 2×20</li>
+  <li>Mobilidade de punho — 1 min</li>
+</ul>
+
+<h4>Skill / Habilidade</h4>
+<ul>
+  <li>Handstand hold — 10 min de prática</li>
+  <li>Muscle-up progressão — 5 sets de attempts</li>
+</ul>
+
+<h4>WOD — AMRAP 12</h4>
+<ul>
+  <li>10 toes-to-bar</li>
+  <li>15 sit-ups</li>
+  <li>20 air squats</li>
+</ul>
+
+<h4>Acessório</h4>
+<ul>
+  <li>3×12 face pulls (banda)</li>
+</ul>
+
+
+<h3>DIA 4 — Metcon Pesado (Power + Condicionamento)</h3>
+<h4>Aquecimento (6 min)</h4>
+<ul>
+  <li>Bike leve — 2 min</li>
+  <li>Mobilidade de quadril e tornozelo — 2 min</li>
+  <li>Drills de clean — 2 min</li>
+</ul>
+
+<h4>Força / Levantamento</h4>
+<ul>
+  <li>Clean & Jerk — 5×3 (técnico, subindo leve)</li>
+</ul>
+
+<h4>WOD — AMRAP 20</h4>
+<ul>
+  <li>15 box jumps</li>
+  <li>12 burpees</li>
+  <li>9 thrusters</li>
+  <li>6 kettlebell snatches por lado</li>
+</ul>
+
+<h4>Finalização</h4>
+<ul>
+  <li>Mobilidade torácica — 2 min</li>
+</ul>
+
+
+<h3>DIA 5 — Endurance + Core</h3>
+<h4>Aquecimento (5 min)</h4>
+<ul>
+  <li>Mobilidade leve</li>
+</ul>
+
+<h4>WOD — Intervalado</h4>
+<ul>
+  <li>5 rounds:</li>
+  <ul>
+    <li>500m remo</li>
+    <li>20 sit-ups</li>
+    <li>10 push-ups</li>
+  </ul>
+</ul>
+
+<h4>Core + Estabilidade</h4>
+<ul>
+  <li>Planchas: 3×1 minuto</li>
+  <li>Side plank: 3×30s por lado</li>
+</ul>
+
+<h4>Cooldown</h4>
+<ul>
+  <li>Alongamento geral — 3 min</li>
+</ul>
+`;
+
+ 
+    conteudo.appendChild(title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p3);
+
+    conteudo.appendChild(divisao_title);
+    conteudo.appendChild(p4);
+
+    conteudo.appendChild(title_wod);
+    conteudo.appendChild(p_wod);
+
+    conteudo.appendChild(title_movimentos);
+    conteudo.appendChild(p_movimentos);
+
+
+    conteudo.appendChild(section_crossfit);
+
 });
 
 
@@ -345,12 +625,7 @@ botao_calistenia.addEventListener('click', () => {
 
 
 
-
-
-/*funcional*/
-
-const botao_funcional = document.getElementById('funcional-btn');
-
+/*Funcional*/
 
 botao_funcional.addEventListener("click", () => {
 
@@ -456,4 +731,217 @@ function scrollContent() {
   scrolledelement.scrollTop = 0;
   scrolledelement.scrollIntoView({ behavior: "smooth" });
 };
+
+
+
+
+
+
+
+
+
+
+
+//Artes Marciais 
+
+botao_artesmarciais.addEventListener("click", () => {
+    
+  conteudo.innerHTML = "";
+
+    const title = document.createElement('h1');
+    title.innerHTML = "Fundamentos das Artes Marciais";
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+
+    const divisao_title = document.createElement('h1');
+    const p4 = document.createElement('p');
+
+    const title_metodos = document.createElement('h2');
+    const p_metodos = document.createElement('p');
+
+    const title_movimentos = document.createElement('h2');
+    const p_movimentos = document.createElement('p');
+
+    // TextBox
+    p1.innerText = "Artes marciais englobam um conjunto de sistemas e práticas de combate — de striking a grappling — cujo objetivo é desenvolver capacidade técnica, economia de movimento, timing, tomada de decisão sob pressão e resistência física/mental. Ao contrário de treinos puramente físicos, o treinamento marcial integra técnica, tática, leitura do oponente e adaptação. Trabalha-se não só força e potência, mas também precisão, reflexo, postura, equilíbrio e respiração: atributos que permitem executar técnicas complexas com eficiência e minimizar o gasto energético.";
+
+    p2.innerText = "Uma aula típica combina aquecimento, trabalho técnico, drills específicos (repetição com resistência progressiva), pad work/partner drills e rounds de sparring controlado ou randori. O desenvolvimento é sistemático: começa pela mecânica básica (postura, deslocamento, guard, pegada), passa por combinações elementares (ataque/defesa) e evolui para sequência de técnicas aplicadas com resistência progressiva e critérios de tempo, distância e pressão.";
+
+    p3.innerText = "O progresso nas artes marciais depende de três pilares: técnica repetida corretamente (motor learning), condicionamento específico (energia e resistência dos movimentos marcantes) e inteligência de luta (estratégia, leitura e tomada de decisão). Periodizações bem feitas alternam blocos de 4–6 semanas focados em técnica, força explosiva, capacidade anaeróbia e sparring controlado, com semanas de recuperação/integração para consolidar ganhos.";
+
+    divisao_title.innerHTML = "Estrutura de treino para Artes Marciais";
+    p4.innerText = "Treinos podem ser organizados por ênfase: Técnica (habilidade), Condicionamento (capacidade física), Força/Prevenção (musculatura e articulações) e Sparring (aplicação). Em academias mistas, uma semana típica combina 2–3 sessões técnicas, 1–2 sessões de condicionamento específico e 1 sessão de sparring/repetição aplicável.";
+
+    title_metodos.innerHTML = "Métodos de treino";
+    p_metodos.innerText = "Work drills (repetição dirigida), pad work (precision e potência), partner drills (resistência progressiva), drilling posicional (especialmente em grappling), technical sparring (baixo intensidade implementando técnica) e full sparring (simulação de luta). Complementam: pliometria, treino de resistência localizada, trabalho de core, mobilidade articular e propriocepção.";
+
+    title_movimentos.innerHTML = "Movimentos e habilidades comuns";
+    p_movimentos.innerText = "Striking: jab, cross, hooks, uppercuts, low/ high kicks, knees, clinch; Grappling: quedas (takedowns), controle de clinch, passes de guarda, raspagens, finalizações; Defesa: esquivas, bloqueios, controle de distância e manejo de pegadas. Além disso: footwork (movimentação), mudança de nível, timing, cadência e respiração tática.";
+
+   //Sessão de Treinos 
+    const section_artesmarciais = document.createElement("section");
+    section_artesmarciais.innerHTML = `
+<h2>Semana Modelo — Artes Marciais (6 dias)</h2>
+
+<h3>DIA 1 — Técnica de Striking + Mobilidade</h3>
+<h4>Aquecimento (8–10 min)</h4>
+<ul>
+  <li>Corrida leve / pular corda — 3 min</li>
+  <li>Mobilidade dinâmica (quadril, ombro, tornozelo) — 3 min</li>
+  <li>Shadowboxing leve — 2 min, foco deslocamento</li>
+</ul>
+
+<h4>Técnica</h4>
+<ul>
+  <li>Fundamentos de mão: Jab + cross + footwork — 6×3 movimentos</li>
+  <li>Combinações curtas no shadow e corrigir guard — 6×3</li>
+  <li>Defesa: slip, roll e block drills — 4×5 cada</li>
+</ul>
+
+<h4>Pad work (par parceiro ou treinador)</h4>
+<ul>
+  <li>5 rounds x 2 min: combinações técnicas (ritmo controlado)</li>
+</ul>
+
+<h4>Força & Prevenção (acessório)</h4>
+<ul>
+  <li>Core: 3×30s hollow hold</li>
+  <li>Fortalecimento de ombro com banda: 3×12</li>
+</ul>
+
+
+
+<h3>DIA 2 — Grappling (queda e controle) + Condicionamento específico</h3>
+<h4>Aquecimento (8 min)</h4>
+<ul>
+  <li>Rolamentos e deslocamentos no solo — 4 min</li>
+  <li>Mobilidade de quadril — 4 min</li>
+</ul>
+
+<h4>Tecnica</h4>
+<ul>
+  <li>Takedown drills (single/double leg progressão) — 5×4</li>
+  <li>Posições de controle (top pressure): manter e transitar — 6×2</li>
+  <li>Passagem de guarda — 5×3</li>
+</ul>
+
+<h4>Drills com resistência progressiva</h4>
+<ul>
+  <li>5 sets: 30s controlar + 30s recuperar (enfatizar postura)</li>
+</ul>
+
+<h4>Condicionamento</h4>
+<ul>
+  <li>Circuito: 4 rounds — 10 takedown shots, 10 burpees, 20 sit-ups (tempo moderado)</li>
+</ul>
+
+
+
+<h3>DIA 3 — Sparring técnico + análise (intensidade controlada)</h3>
+<h4>Aquecimento e preparação mental</h4>
+<ul>
+  <li>Respiração, visualização e mobilidade leve — 5 min</li>
+</ul>
+
+<h4>Sparring técnico</h4>
+<ul>
+  <li>6×3 min rounds: foco em objetivo técnico (ex.: jogar jab e sair; cortar distância)</li>
+  <li>Feedback entre rounds — 1 min</li>
+</ul>
+
+<h4>Drill de situação</h4>
+<ul>
+  <li>10 minutos: escapes e recoveries (posições de perigo)</li>
+</ul>
+
+
+
+<h3>DIA 4 — Força Explosiva e Potência para Luta</h3>
+<h4>Aquecimento (6 min)</h4>
+<ul>
+  <li>Pular corda e mobilidade — 4 min</li>
+</ul>
+
+<h4>Força / Potência</h4>
+<ul>
+  <li>Hang power clean ou kettlebell swing — 5×3</li>
+  <li>Pliometria: 3×8 box jumps</li>
+  <li>Agachamento unilateral (Pistol progressão) — 3×6 por perna</li>
+</ul>
+
+<h4>Complemento</h4>
+<ul>
+  <li>Farmer carries ou loaded carries — 3×30–40m</li>
+  <li>Neck work (prevenção de impactos) leve — 3×12</li>
+</ul>
+
+
+
+<h3>DIA 5 — Combinações Avançadas e Clinch / Trabalho de Perna</h3>
+<h4>Aquecimento técnico (5 min)</h4>
+
+<h4>Técnica</h4>
+<ul>
+  <li>Sequências striking-to-takedown: drillar transição — 6×3</li>
+  <li>Clinch work: posição, control, knees — 6×2</li>
+  <li>Leg conditioning: kicks controlados e recepção — 5×5 por perna</li>
+</ul>
+
+<h4>Pad rounds / Partner rounds</h4>
+<ul>
+  <li>6×2 min combinando striking e entradas de queda</li>
+</ul>
+
+
+
+<h3>DIA 6 — Endurance Marcial + Sparring livre (opcional)</h3>
+<h4>Condicionamento marcial</h4>
+<ul>
+  <li>Intervalado: 6–8 rounds 30s on / 30s off — alternar sacos, remada, sprint leve</li>
+</ul>
+
+<h4>Sparring livre (controlado)</h4>
+<ul>
+  <li>4–6 rounds com intensidade progressiva, monitorar fadiga e técnica</li>
+</ul>
+
+<h4>Recuperação ativa</h4>
+<ul>
+  <li>Rolo miofascial, alongamento e respiração — 10 min</li>
+</ul>
+
+
+
+<h3>Recomendações gerais</h3>
+<ul>
+  <li>Periodize: blocos de 4–6 semanas com foco alternado (técnica, potência, resistência, sparring).</li>
+  <li>Priorize sono, nutrição e trabalho de mobilidade para prevenir lesões.</li>
+  <li>Use sparring técnico para testar técnica e sparring livre com moderação — recuperação é tão importante quanto exposição.</li>
+</ul>
+`;
+
+   
+    conteudo.appendChild(title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p3);
+
+    conteudo.appendChild(divisao_title);
+    conteudo.appendChild(p4);
+
+    conteudo.appendChild(title_metodos);
+    conteudo.appendChild(p_metodos);
+
+    conteudo.appendChild(title_movimentos);
+    conteudo.appendChild(p_movimentos);
+
+   
+    conteudo.appendChild(section_artesmarciais);
+
+    
+});
 
