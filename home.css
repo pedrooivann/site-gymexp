@@ -51,7 +51,7 @@ main {
     justify-content: end;
 }
 
-#textarea {
+.textarea {
     height: 90%;
     width: 70%;
     font-size: 9vh;
@@ -59,18 +59,18 @@ main {
     margin-left: 5%;
 }
 
-#textarea hr {
+.textarea hr {
     background-color: aliceblue;
     width: 70%;
     height: 2px;
 }
 
-#textarea span {
+.textarea span {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 100;
 }
 
-#textarea h5 {
+.textarea h5 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 5vh;
 }
@@ -159,7 +159,7 @@ main {
     margin-top: 50px;
     text-align: justify;
     padding: 150px;
-    max-height: 100vh;
+    max-height: 70vh;
     overflow-y: scroll;
     scrollbar-color: rgba(255, 105, 36, 0.925);
 }
@@ -189,6 +189,79 @@ main {
     font-size: 1.4rem;
     padding-bottom: 10px;
 }
+
+#conhecanossaplanilha-main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conhecanossaplanilha-visualtitle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+#textarea-conhecanossaplanilha {
+    width: 30%;
+    padding-bottom: 60px;
+
+}
+
+#imagecontainer-planilha {
+    width: 50%;
+    justify-content: center;
+
+}
+
+#imagecontainer-planilha img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#textarea-conhecanossaplanilha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#textarea-conhecanossaplanilha span {
+    margin: 0;
+}
+
+#planilha-content {
+    border: 1px solid blue;
+}
+
+#planilha-content p {
+
+    text-align: justify;
+    font-size: 1.4rem;
+}
+
+#paragrafo-intro {
+    padding: 40px;
+    text-indent: 40px;
+}
+
+.planilha-home-card {
+    margin: 0 auto;
+    width: 80%;
+    border: 1px;
+}
+
+.planilha-home-card p {
+    padding-top: 20px;
+}
+
+
+
 
 
 /*media query*/
@@ -246,4 +319,14 @@ main {
         width: 75%;
     }
 
+
+    #conhecanossaplanilha-visualtitle {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+
+    #conhecanossaplanilha-visualtitle img {
+        width: 400px;
+    }
 }

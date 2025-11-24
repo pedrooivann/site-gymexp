@@ -273,7 +273,7 @@ botao_powerlifting.addEventListener('click', () => {
 
 
 
-
+const botao_calistenia = document.getElementById('calistenia-btn');
 
 botao_calistenia.addEventListener('click', () => {
 
@@ -336,8 +336,60 @@ botao_calistenia.addEventListener('click', () => {
 });
 
 
+const botao_crossfit = document.getElementById('crossfit-btn');
 
+botao_crossfit.addEventListener('click', () => {
 
+    conteudo.innerHTML = "";
+
+    const title = document.createElement('h1');
+    title.innerHTML = "Fundamentos do Crossfit";
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+
+    const divisao_title = document.createElement('h1');
+    const p4 = document.createElement('p');
+
+    const title_wod = document.createElement('h2');
+    const p_wod = document.createElement('p');
+
+    const title_movimentos = document.createElement('h2');
+    const p_movimentos = document.createElement('p');
+
+    // Textos Crossfit
+    p1.innerText = "Crossfit é um método de treinamento que combina levantamento de peso, ginástica e condicionamento metabólico. O objetivo é desenvolver simultaneamente força, resistência, potência, mobilidade e agilidade.";
+    p2.innerText = "As aulas são organizadas em blocos: aquecimento, técnica/força e o famoso WOD (Workout of the Day), que muda diariamente. A variedade constante evita estagnação e trabalha o corpo de forma completa.";
+    p3.innerText = "O progresso vem do aumento gradual de carga, tempo, rounds ou eficiência técnica nos movimentos. A base é dominar padrões como agachamentos, levantamentos olímpicos, movimentos ginásticos e exercícios metabólicos.";
+
+    divisao_title.innerHTML = "Estrutura de treino no Crossfit";
+    p4.innerText = "A divisão clássica é 3 dias de treino + 1 de descanso. Cada dia traz combinações distintas de força, técnica e condicionamento.";
+
+    title_wod.innerHTML = "O que é um WOD";
+    p_wod.innerText = "O WOD é o treino principal do dia. Pode ser AMRAP (máximos rounds), EMOM (todo minuto), For time (tempo), ou rounds fixos. O objetivo é intensidade controlada.";
+
+    title_movimentos.innerHTML = "Movimentos Comuns";
+    p_movimentos.innerText = "Thrusters, snatch, clean & jerk, pull-ups, toes-to-bar, burpees, handstand push-up, box jump, kettlebell swing e remador.";
+
+    conteudo.appendChild(title);
+    conteudo.appendChild(p1);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p2);
+    conteudo.appendChild(qblinha.cloneNode());
+    conteudo.appendChild(p3);
+
+    conteudo.appendChild(divisao_title);
+    conteudo.appendChild(p4);
+
+    conteudo.appendChild(title_wod);
+    conteudo.appendChild(p_wod);
+
+    conteudo.appendChild(title_movimentos);
+    conteudo.appendChild(p_movimentos);
+    scrollContent();
+
+});
 
 
 
