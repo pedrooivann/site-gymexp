@@ -53,8 +53,8 @@ function entrar() {
 
         if (Usuario.value == UserValid.usuario && Senha.value == UserValid.senha) {
             setTimeout(() => {
-                window.location.href = "../home/home.html";
-            }, 1000)
+                window.location.href = "home/home.html";
+            }, 1000);
 
             /*Cria um token para o usuario garantindo que ele está autenticado no site*/
             let token = Math.random().toString(16).substring(2)
