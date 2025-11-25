@@ -12,7 +12,7 @@ main {
 }
 
 #parallax {
-    background-image: url(/images/sobrenos-wallpaper.webp);
+    background-image: url(sobrenos-wallpaper.webp);
     background-size: cover;
     background-position: center;
     width: 100%;
