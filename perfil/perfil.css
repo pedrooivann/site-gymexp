@@ -138,6 +138,14 @@ body {
     background-color: #fff;
 }
 
+.user-photo-container {
+    align-self: center; 
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
 .menu-coluna .user-img {
     width: 120px;
     height: 120px;
@@ -147,6 +155,12 @@ body {
     align-self: center;
     border: 4px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.menu-coluna .user-img:hover {
+    opacity: 0.8;
 }
 
 .conteudo-coluna h5 {

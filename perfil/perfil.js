@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function(){
     const btnSalve = document.getElementById("btn-salvar-perfil");
     const btnCancel = document.getElementById("btn-cancelar-alteracao");
 
+    const profileImg = document.getElementById("profile-img");
+    const photoUpload = document.getElementById("photo-upload");
+
     if (userLogado) {
         userIndex = listaUser.findIndex(user => user.NickUsuario === userLogado.usuario);
     } else {
@@ -88,6 +91,17 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
     carregarUsuario();
+
+    function carregarFotoPerfil() {
+        if (userLogado && userLogado.foto) {
+            profileImg.src = userLogado.foto;
+        } else {
+            profileImg.src = "../images/user.webp";
+        }
+        
+    }
+
+    carregarFotoPerfil();
 
     btnEditar.addEventListener("click", () => {
         inputsPerfil.forEach((input) => {
@@ -154,6 +168,10 @@ document.addEventListener("DOMContentLoaded", function(){
         listaUser[userIndex].NickUsuario = novoUser;
         listaUser[userIndex].SenhaUsuario = novoPassword;
 
+        if (userLogado.foto) {
+            listaUser[userIndex].FotoUsuario = userLogado.foto;
+        }
+
         localStorage.setItem("ListaUser", JSON.stringify(listaUser));
         localStorage.setItem("userLogado",JSON.stringify(listaUser[userIndex]));
 
@@ -185,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     const containerTreino = document.querySelector(".treinos-card");
-    
+    const visualizacaoDetalhada = document.getElementById("visualizacao-detalhada");
     function carregarTreinos() {
         const treinosSalvo = JSON.parse(localStorage.getItem("meusTreinosSalvos") || "[]");
         
@@ -231,7 +249,17 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
             });
 
+            const btnVisualizar = document.createElement("button");
+            btnVisualizar.innerHTML = '<i class="fas fa-eye"></i> Visualizar';
+            btnVisualizar.title = "Visualizar Treino";
+            btnVisualizar.style.cssText = "background: #5a7d9b; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; font-weight: bold;";
+
+            btnVisualizar.addEventListener("click", () => {
+                visualizarTreino(treino);
+            });
+
             btnContaier.appendChild(btnDownload);
+            btnContaier.appendChild(btnVisualizar); 
             btnContaier.appendChild(btnExcluir);
             divItem.appendChild(info);
             divItem.appendChild(btnContaier); 
@@ -301,6 +329,78 @@ document.addEventListener("DOMContentLoaded", function(){
         };
         html2pdf().set(opcoes).from(elementoPDF).save();
     }
+
+    function visualizarTreino(treino) {
+        visualizacaoDetalhada.innerHTML = "";
+
+        visualizacaoDetalhada.style.cssText = `
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #f7f7f7; 
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            color: #333;
+            max-height: 450px; 
+            overflow-y: auto;
+        `;
+
+        const closeBtn = document.createElement("button");
+        closeBtn.innerHTML = "✖ Fechar Visualização";
+        closeBtn.style.cssText = "float: right; background: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; margin-bottom: 15px;";
+
+        closeBtn.addEventListener("click", () => {
+            visualizacaoDetalhada.innerHTML = "";
+            visualizacaoDetalhada.style.cssText = "";
+
+        });
+        visualizacaoDetalhada.appendChild(closeBtn);
+
+        let htmlContent =  `<h3 style="color:#222; border-bottom: 2px solid #ed4b00; padding-bottom: 10px; margin-top:0;">${treino.nome} <span style="font-size:14px; color:#999; font-weight: normal;">(Criado em: ${treino.dataCriacao})</span></h3>`;
+
+        treino.conteudo.forEach(semana => {
+            let htmlSemana = `<h4 style="background:#4CAF50; color:white; padding:8px; border-radius:4px; margin-top: 20px;">${semana.nomeSemana}</h4>`;
+
+            semana.dias.forEach(dia => {
+                if(dia.exercicios && dia.exercicios.length > 0) {
+                    htmlSemana += `<h5 style="margin-top:15px; color:#ed4b00; margin-bottom: 10px;">${dia.nomeDia}</h5>`;
+                    
+                        htmlSemana += `
+                        <table style="width:100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14px;">
+                            <thead style="background-color: #333; color: white;">
+                                <tr>
+                                    <th style="padding: 8px; text-align: left;">Exercício</th>
+                                    <th style="padding: 8px;">Séries</th>
+                                    <th style="padding: 8px;">Reps</th>
+                                    <th style="padding: 8px;">Carga</th>
+                                    <th style="padding: 8px;">Descanso</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+                
+                    dia.exercicios.forEach(ex =>{
+                        htmlSemana += `
+                                <tr style="border-bottom: 1px solid #eee;">
+                                    <td style="padding: 8px; border: 1px solid #f0f0f0;">${ex.exercicio}</td>
+                                    <td style="padding: 8px; text-align: center; border: 1px solid #f0f0f0;">${ex.serie || "-"}</td>
+                                    <td style="padding: 8px; text-align: center; border: 1px solid #f0f0f0;">${ex.repeticao || "-"}</td>
+                                    <td style="padding: 8px; text-align: center; border: 1px solid #f0f0f0;">${ex.peso || "-"}</td>
+                                    <td style="padding: 8px; text-align: center; border: 1px solid #f0f0f0;">${ex.descanso || "-"}</td>
+                                </tr>`;
+                    });
+                    htmlSemana += `</tbody></table>`;
+                }
+            });
+            htmlContent += htmlSemana;
+        });
+
+        const contentDiv = document.createElement('div');
+        contentDiv.innerHTML = htmlContent;
+        visualizacaoDetalhada.appendChild(contentDiv);
+        
+        visualizacaoDetalhada.scrollIntoView({ behavior: 'smooth' });
+
+    }
     carregarTreinos();
 
     const btnLogout = document.getElementById("btn-logout");
@@ -316,9 +416,19 @@ document.addEventListener("DOMContentLoaded", function(){
                 localStorage.removeItem("token");
 
                 
-                window.location.href = "/index.html"; 
+                window.location.href = "../index.html"; 
             }
         });
     }
+
+    profileImg.addEventListener("click", () =>{
+
+        if (userLogado) {
+            photoUpload.click();
+        } else {
+            alert("Faça login para alterar a foto.");
+        }
+
+    });
 
 });

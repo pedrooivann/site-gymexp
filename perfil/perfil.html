@@ -30,7 +30,10 @@
     <main class="config-container">
 
         <nav class="menu-coluna">
-            <img class="user-img" src="../images/user.webp" alt="">
+            <div class="user-photo-container">
+                <img class="user-img" id="profile-img" src="../images/user.webp" alt="Foto de Perfil"> 
+                <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+            </div>
             <span><button class="tab-button ativo" data-target="#personal-info">
                 <i class="fas fa-user me-2"></i>Informações de Usuário
             </button></span>
@@ -101,6 +104,11 @@
             <section id="meus-treinos" class="tab-pane">
                 <h2>TREINOS SALVOS</h2>
                  <div class="treinos-card">
+
+                 </div>
+
+                 <div id="visualizacao-detalhada">
+
                     
                  </div>
             </section>
