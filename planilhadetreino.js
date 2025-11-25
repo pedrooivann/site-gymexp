@@ -263,45 +263,69 @@ window.addEventListener('resize', () => {
 //Lê e salva os treinos// 
 document.addEventListener("DOMContentLoaded", () => {
     const botaoSalvar = document.getElementById("Btsave");
-    if (!botaoSalvar) return;
+  if (!botaoSalvar) return;
 
-    botaoSalvar.addEventListener("click", () => {
-        try {
-            const semanas = document.querySelectorAll(".weekdiv");
-            const dadosTreino = [];
+  botaoSalvar.addEventListener("click", () => {
 
-            semanas.forEach((semana) => {
-                const nomeSemana = (semana.querySelector(".weektitle")?.textContent || "").trim();
-                const dias = [];
+    let dadosTreino = [];
 
-                semana.querySelectorAll(".weektable").forEach((tabela, idx) => {
-                    const nomeDia = (tabela.previousElementSibling?.textContent || `Dia ${idx + 1}`).trim();
-                    const exercicios = [];
+    try {
+      const semanas = document.querySelectorAll(".weekdiv");
+      
 
-                    tabela.querySelectorAll("tbody tr").forEach((linha) => {
-                        const inputs = linha.querySelectorAll("input");
-                        if (inputs.length >= 7) {
-                            const valores = Array.from(inputs).map(i => i.value.trim());
-                            const [exercicio, serie, repeticao, peso, descanso, rir, rpe] = valores;
-                            if (exercicio) {
-                                exercicios.push({ exercicio, serie, repeticao, peso, descanso, rir, rpe });
-                            }
-                        }
-                    });
+      semanas.forEach((semana) => {
+        const nomeSemana = (semana.querySelector(".weektitle")?.textContent || "").trim();
+        const dias = [];
 
-                    dias.push({ nomeDia, exercicios });
-                });
+        semana.querySelectorAll(".weektable").forEach((tabela, idx) => {
+          const nomeDia = (tabela.previousElementSibling?.textContent || `Dia ${idx + 1}`).trim();
+          const exercicios = [];
 
-                dadosTreino.push({ nomeSemana, dias });
-            });
+          tabela.querySelectorAll("tbody tr").forEach((linha) => {
+            const inputs = linha.querySelectorAll("input");
+            if (inputs.length >= 5) {
+              const valores = Array.from(inputs).map(i => i.value.trim());
+              const [exercicio, serie, repeticao, peso, descanso] = valores;
+              if (exercicio) {
+                exercicios.push({ exercicio, serie, repeticao, peso, descanso });
+              }
+            }
+          });
 
-            localStorage.setItem("planilhaTreino", JSON.stringify(dadosTreino));
-            showAlert("Treino salvo com sucesso!", "success");
-        } catch (err) {
-            console.error("Erro ao salvar treino:", err);
-            showAlert("Erro ao salvar treino.", "error");
-        }
-    });
+          dias.push({ nomeDia, exercicios });
+        });
+
+        dadosTreino.push({ nomeSemana, dias });
+      });
+
+    } catch (err) {
+      console.error("Erro ao salvar treino:", err);
+      showAlert("Erro ao salvar treino.", "error");
+      return;
+    }
+    const nomeDoTreino = prompt("Digite um nome para salvar este treino na sua Biblioteca (Ex.: Treino de Hipertrofia):");
+
+    if (!nomeDoTreino) return; 
+
+    
+    const novoTreino = {
+      id: Date.now(),
+      nome: nomeDoTreino,
+      dataCriacao: new Date().toLocaleDateString(),
+      conteudo: dadosTreino
+    };
+
+    const listaTreinos = JSON.parse(localStorage.getItem("meusTreinosSalvos") || "[]");
+
+    
+    listaTreinos.push(novoTreino);
+
+    
+    localStorage.setItem("meusTreinosSalvos", JSON.stringify(listaTreinos));
+
+    showAlert(`Treino "${nomeDoTreino}" salvo no Perfil!`, "success");
+  });
+
 });
 
 //Salva o treino em arquivo PDF

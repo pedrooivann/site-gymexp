@@ -1,6 +1,17 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
 body {
     background-image: url('/images/perfil-wallpaper.webp');
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    color: #333;
 }
 
 .tab-pane {
@@ -8,108 +19,112 @@ body {
     visibility: hidden;
     height: 0;
     overflow: hidden;
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out, height 0.3s ease-out;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .tab-pane.ativo{
     opacity: 1;
     visibility: visible;
     height: auto;
-    transition-delay: 0.1s;
+    transform: translateY(0);
 }
-
 
 .config-container {
     display: flex;
     flex-direction: row;
-    max-width: 1000px; 
-    width: 90%; 
-    margin: 40px auto; 
-    margin-top: 80px;
-    background-color: #ffffff; 
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.425);
-    height: 660px;
+    max-width: 1100px;
+    width: 90%;
+    margin: 80px auto;
+    background-color: #ffffff;
+    border-radius: 16px;    
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
+    height: 700px;
+    overflow: hidden;
 }
 
 .menu-coluna {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
-    align-items: stretch; 
-    flex-basis: 240px; 
-    flex-shrink: 0; 
-    padding: 20px;
-    background-color: #fcfcfc;
-    border-right: 1px solid #f0f0f0; 
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-basis: 260px;
+    flex-shrink: 0;
+    padding: 30px 20px;
+    background-color: #f8f9fa; 
+    border-right: 1px solid #eaeaea;
 }
 
 .edit-button {
-    width: 100px;
-    padding: 15px;
+    width: 100%;
+    padding: 12px;
     border: none;
-    background-color: transparent; 
-    text-align: center;
-    cursor: pointer;
-    font-size: 13px; 
+    border-radius: 8px;
+    font-size: 14px;
     font-weight: 600;
-    color: #444; 
-    margin-bottom: 5px;
-    border-radius: 8px; 
-    transition: background-color 0.2s ease-out, color 0.2s ease-out;
-    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
     display: flex;
     justify-content: center;
-    width: 200px;
-    margin: auto;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-button:hover {
+    transform: translateY(-2px); /* Efeito de levitação */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0.9;
 }
 
 .actionbuttons {
     display: flex;
     flex-direction: column;
-    padding: 15px;
-    gap: 10px;
-    margin: auto;
+    gap: 12px;
+    margin-top: auto; /* Empurra para o final */
+    padding-top: 20px;
+    border-top: 1px solid #eaeaea;
 }
 
 .tab-button{
     width: 100%;
-    padding: 15px;
+    padding: 14px 20px;
     border: none;
-    background-color: transparent; 
+    background-color: transparent;
     text-align: left;
     cursor: pointer;
-    font-size: small; 
-    font-weight: 600;
-    color: #444; 
-    margin-bottom: 5px;
-    border-radius: 8px; 
-    transition: background-color 0.2s ease-out, color 0.2s ease-out;
-
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .tab-button i {
-    margin-right: 12px; 
-    width: 20px; 
-    color: #888; 
-    transition: color 0.2s ease-out;
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    color: #999;
+    transition: color 0.3s ease
 }
 
 .tab-button:hover{
-    background-color: #f4f4f4; 
-    color: #111;
+    background-color: #e9ecef;
+    color: #333;
+    transform: translateX(5px);
 }
 
 
 .tab-button.ativo{
-    background-color: rgb(0, 236, 0);
-    color: #000; 
+    background-color: rgba(76, 175, 79, 0.452); 
+    color: #1a3b1b; 
     font-weight: 700;
-    font-size: small;
 }
 
 .tab-button.ativo i {
-    color: #000; 
+    color: #2e7d32;
 }
 
 
@@ -117,68 +132,97 @@ body {
 .conteudo-coluna {
     display: flex;
     flex-direction: column;
-    align-items: stretch; 
-    flex-grow: 1; 
-    padding: 20px;
-    overflow-y: scroll;
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+    background-color: #fff;
 }
 
 .menu-coluna .user-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 25px;
-    align-self: center; 
+    margin-bottom: 30px;
+    align-self: center;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
 
 .conteudo-coluna h5 {
-    font-size: 24px;
-    color: #333;
-    border-bottom: 2px solid #f0f0f0; 
-    padding-bottom: 10px;
+    font-size: 26px;
+    color: #222;
+    font-weight: 700;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .conteudo-coluna .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .conteudo-coluna .form-group label {
     display: block;
-    font-weight: 600;
-    color: #555;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: #777;
     margin-bottom: 8px;
 }
 
 .conteudo-coluna .form-group input,
 .conteudo-coluna .form-group textarea {
     width: 100%;
-    padding: 12px; 
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
-    background-color: #fdfdfd;
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.conteudo-coluna .form-group input:focus,
+.conteudo-coluna .form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50; 
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1); 
 }
 
 .conteudo-coluna .form-group input:disabled,
 .conteudo-coluna .form-group textarea:disabled {
-    background-color: #f4f4f4;
-    cursor: not-allowed;     
-    color: #666;              
+    background-color: #f9f9f9;
+    border-color: #eee;
+    color: #888;
+    cursor: default;             
 }
 
 
-.config-container #btn-salvar-perfil {
-    display: none;
-}
-
+.config-container #btn-salvar-perfil,
 .config-container #btn-cancelar-alteracao {
-    display: none;
+    display: none; 
 }
 
+
+.conteudo-coluna::-webkit-scrollbar {
+    width: 8px;
+}
+
+.conteudo-coluna::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.conteudo-coluna::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.conteudo-coluna::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
 
 
 @media (max-width: 800px) {
@@ -186,39 +230,99 @@ body {
         flex-direction: column;
         width: 100%;
         margin: 0;
-        margin-top: 70px;
-        border-radius: 2px;
+        margin-top: 70px; 
+        height: auto; 
+        min-height: 100vh; 
+        border-radius: 0;
+        overflow: visible; 
     }
 
     .menu-coluna {
         flex-direction: row;
         width: 100%;
         flex-basis: auto;
-        overflow-x: auto;
-        white-space: nowrap;
         border-right: none;
         border-bottom: 1px solid #f0f0f0;
-        padding: 10px;
-    }
-
-    .tab-button {
-        text-align: center; 
-        flex-shrink: auto; 
-    }
-
-    .tab-button span {
-        display: none; 
-    }
-    
-    .conteudo-coluna {
-        padding: 20px; 
+        padding: 5px;
+        align-items: center;
+        gap: 15px;
+        overflow-x: auto; 
+        white-space: nowrap;
     }
 
     .menu-coluna .user-img {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 10px;
-        margin-right: 15px;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0;
+        margin-right: 10px;
+        border-width: 2px;
+    }
+
+    .tab-button {
+        width: auto;
+        margin-bottom: 0;
+        padding: 8px 15px;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+    }
+    
+    .tab-button.ativo {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    .tab-button.ativo i {
+        color: white;
+    }
+
+    .tab-button span {
+        display: inline; 
+    }
+    
+    
+    .actionbuttons {
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+        width: 100%;
+        border-top: none;
+        background-color: #f8f9fa;
+    }
+
+    .edit-button {
+        width: auto; 
+        flex-grow: 1; 
+        min-width: 120px;
+    }
+    
+    .conteudo-coluna {
+        padding: 20px;
+        padding-bottom: 40px;
+        overflow: visible; 
+    }
+}
+
+.tab-pane {
+    display: none; 
+    opacity: 0;
+}
+
+.tab-pane.ativo {
+    display: block; 
+    animation: slideIn 0.4s ease-out forwards; 
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

@@ -225,7 +225,7 @@ function Cadastrar() {
         Alert2.style.display = "block"
 
         setTimeout(()=>{
-        window.location.href = "/Login/login.html"
+        window.location.href = "/index.html"
         }, 1000)
 
     } else {

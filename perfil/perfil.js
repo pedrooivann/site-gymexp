@@ -209,8 +209,7 @@ document.addEventListener("DOMContentLoaded", function(){
             btnContaier.style.gap = "10px";
 
             const btnDownload = document.createElement("button");
-            btnDownload.innerHTML = '<i class="fas fa-file-pdf"></i> PDF';
-            btnDownload.textContent = "Baixar PDF";
+            btnDownload.innerHTML = '<i class="fas fa-file-pdf"></i> Baixar PDF'; 
             btnDownload.style.cssText = "background: #dc3545; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer;";
 
             btnDownload.addEventListener("click", () => {
@@ -234,9 +233,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
             btnContaier.appendChild(btnDownload);
             btnContaier.appendChild(btnExcluir);
-
             divItem.appendChild(info);
-            divItem.appendChild(btnDownload);
+            divItem.appendChild(btnContaier); 
             containerTreino.appendChild(divItem);
         });
     }
@@ -305,7 +303,22 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     carregarTreinos();
 
+    const btnLogout = document.getElementById("btn-logout");
 
+    if (btnLogout) {
+        btnLogout.addEventListener("click", () => {
+            
+            const confirmacao = confirm("Tem certeza que deseja sair da sua conta?");
 
+            if (confirmacao) {
+                
+                localStorage.removeItem("userLogado");
+                localStorage.removeItem("token");
+
+                
+                window.location.href = "/index.html"; 
+            }
+        });
+    }
 
 });
