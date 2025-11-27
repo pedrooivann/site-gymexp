@@ -77,3 +77,40 @@
         0 0 10px rgb(0, 204, 0),
         0 0 20px rgb(0, 204, 0);
 }
+
+
+
+
+@media (max-width: 768px) {
+
+    #main-header {
+        flex-direction: column;
+        height: auto; /* Remove a altura fixa */
+        padding: 10px 0;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #div-logo {
+        width: auto; /* Remover largura fixa */
+    }
+
+    #div-logo img {
+        width: 80px; /* reduz o logo */
+    }
+
+    #header-navbar {
+        margin-right: 0;
+    }
+
+    #header-navbar ul {
+        flex-direction: column; /* Menu vira vertical */
+        gap: 20px;              /* Diminui o espaço */
+        align-items: center;
+        padding: 0;
+    }
+
+    #header-navbar a {
+        font-size: 18px;
+    }
+}
