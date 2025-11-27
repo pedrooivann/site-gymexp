@@ -309,6 +309,11 @@ main {
 /*media query*/
 @media (max-width: 768px) {
 
+
+    #main-section {
+        width: 100%;
+    }
+    
     #firstdiv {
         flex-direction: row;
         align-items: center;
