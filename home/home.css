@@ -307,77 +307,46 @@ main {
 
 
 /*media query*/
+/* MOBILE */
+
 @media (max-width: 768px) {
 
-
-    #main-section {
-        width: 100%;
-    }
-    
     #firstdiv {
-        flex-direction: row;
-        align-items: center;
-        position: relative;
-        height: auto;
-        padding-bottom: 40px;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    #imagecontainer {
+        width: 100%;
+        justify-content: center;
     }
 
     #firstdiv img {
-        position: static;
-        width: 38vh;
-        margin-top: 20px;
+        max-width: 280px;
     }
 
-
-    #imagecontainer {
-        display: flex;
-        width: 60%;
-        justify-content: start;
-        align-items: start;
-    }
-
-    #textarea {
-        margin-top: 40px;
-        font-size: 5vh;
-    }
-
-    .textarea h5 {
-        font-size: 38px;
-    }
-
-    .default-div {
-        height: auto;
-    }
-
-    .workoutselection-button {
-        width: 120px;
-        height: 120px;
-    }
-
-    .workoutselection-button img {
-        width: 80px;
-        height: 80px;
-
-    }
-
-    #workoutselection-title-div {
-        width: 100%;
-        text-align: center;
+    .textarea {
+        width: 90%;
+        margin: 0 auto;
     }
 
     #workoutselection-content {
-        padding: 70px;
-        width: 75%;
+        width: 85%;
+        padding: 30px;
     }
-
 
     #conhecanossaplanilha-visualtitle {
         flex-direction: column-reverse;
-        align-items: center;
+        gap: 20px;
     }
 
-
-    #conhecanossaplanilha-visualtitle img {
-        width: 400px;
+    #imagecontainer-planilha img {
+        max-width: 350px;
     }
+
+    #textarea-conhecanossaplanilha {
+        width: 100%;
+    }
+
 }
