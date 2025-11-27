@@ -85,18 +85,18 @@
 
     #main-header {
         flex-direction: column;
-        height: auto; /* Remove a altura fixa */
+        height: auto; 
         padding: 10px 0;
         text-align: center;
         gap: 10px;
     }
 
     #div-logo {
-        width: auto; /* Remover largura fixa */
+        width: auto; 
     }
 
     #div-logo img {
-        width: 80px; /* reduz o logo */
+        width: 80px; 
     }
 
     #header-navbar {
@@ -104,8 +104,8 @@
     }
 
     #header-navbar ul {
-        flex-direction: column; /* Menu vira vertical */
-        gap: 20px;              /* Diminui o espaço */
+        flex-direction: column; 
+        gap: 20px;              
         align-items: center;
         padding: 0;
     }

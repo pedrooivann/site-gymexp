@@ -105,8 +105,8 @@ main {
 .workoutselection-button {
     border-radius: 10px;
     border: none;
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -312,7 +312,7 @@ main {
 /* MOBILE */
 
 @media (max-width: 768px) {
-
+/* Quando reduzir abaixo de 900px → vira 2 colunas */
 @media (max-width: 900px) {
     #workoutselection-div {
         grid-template-columns: repeat(2, 1fr);
@@ -331,7 +331,14 @@ main {
 
 
 
-
+.workoutselection-button {
+    border-radius: 10px;
+    border: none;
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+    transition: 0.5s;
+}
 
     #firstdiv {
         flex-direction: column;
